@@ -1,47 +1,54 @@
 {
-  "name": "sample-react",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "browserslist": [
-    "last 2 version",
-    "ie >= 11",
-    "iOS >= 8.1",
-    "Android >= 4.4"
-  ],
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "lint:html": "markuplint \"**/*.html\" & markuplint \"**/*.html\" --fix",
-    "lint:css": "stylelint \"**/*.{css,scss}\" --fix"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@markuplint/jsx-parser": "^3.12.0",
-    "@markuplint/react-spec": "^3.13.0",
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.17",
-    "eslint": "^8.55.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "markuplint": "^3.15.0",
-    "postcss": "^8.4.33",
-    "postcss-sort-media-queries": "^5.2.0",
-    "prettier": "3.2.4",
-    "stylelint": "^16.2.0",
-    "stylelint-config-css-modules": "^4.4.0",
-    "stylelint-config-property-sort-order-smacss": "^10.0.0",
-    "stylelint-config-recommended-scss": "^14.0.0",
-    "stylelint-order": "^6.0.4",
-    "vite": "^5.0.8"
-  }
+	"name": "sample-react",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"browserslist": [
+		"last 2 version",
+		"ie >= 11",
+		"iOS >= 8.1",
+		"Android >= 4.4"
+	],
+	"lint-staged": {
+		"\\.[jt]sx?$": "eslint --fix",
+		"*": "prettier --write"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+		"lint:html": "markuplint \"**/*.html\" & markuplint \"**/*.html\" --fix",
+		"lint:css": "stylelint \"**/*.{css,scss}\" --fix",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@markuplint/jsx-parser": "^3.12.0",
+		"@markuplint/react-spec": "^3.13.0",
+		"@types/react": "^18.2.43",
+		"@types/react-dom": "^18.2.17",
+		"@vitejs/plugin-react": "^4.2.1",
+		"autoprefixer": "^10.4.17",
+		"eslint": "^8.55.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-react": "^7.33.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.5",
+		"husky": "^9.0.5",
+		"lint-staged": "^15.2.0",
+		"markuplint": "^3.15.0",
+		"postcss": "^8.4.33",
+		"postcss-sort-media-queries": "^5.2.0",
+		"prettier": "3.2.4",
+		"stylelint": "^16.2.0",
+		"stylelint-config-css-modules": "^4.4.0",
+		"stylelint-config-property-sort-order-smacss": "^10.0.0",
+		"stylelint-config-recommended-scss": "^14.0.0",
+		"stylelint-order": "^6.0.4",
+		"vite": "^5.0.8"
+	}
 }

@@ -1,0 +1,28 @@
+// チームで共有したいVSCodeの推奨拡張機能を表示させるため設定
+// 詳しくは https://go.microsoft.com/fwlink/?LinkId=827846
+
+{
+	// 推奨の拡張機能
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"stylelint.vscode-stylelint",
+		"esbenp.prettier-vscode",
+		"ionutvmi.path-autocomplete",
+		"mosapride.zenkaku",
+		"christian-kohler.path-intellisense",
+		"formulahendry.auto-rename-tag",
+		"ritwickdey.liveserver",
+		"ecmel.vscode-html-css",
+		"zignd.html-css-class-completion",
+		"xabikos.javascriptsnippets",
+		"wallabyjs.quokka-vscode",
+		"christian-kohler.npm-intellisense",
+		"wix.vscode-import-cost",
+		"yzhang.markdown-all-in-one",
+		"chrmarti.regex",
+		"streetsidesoftware.code-spell-checker",
+		"yusukehirao.vscode-markuplint"
+	],
+	// 非推奨の拡張機能
+	"unwantedRecommendations": []
+}
