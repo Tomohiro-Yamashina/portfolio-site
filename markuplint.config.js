@@ -12,6 +12,9 @@ export default {
 		'\\.[jt]sx?$': '@markuplint/react-spec',
 	},
 	// 特定の要素のみの解析ルール
+	rules: {
+		'required-h1': false,
+	},
 	nodeRules: [
 		{
 			selector: 'img',
