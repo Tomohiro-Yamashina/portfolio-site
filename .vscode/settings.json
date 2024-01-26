@@ -1,0 +1,32 @@
+{
+	// VSCodeが提案する拡張機能の推奨を無視しない
+	"extensions.ignoreRecommendations": false,
+	// タブのサイズを2に設定
+	"editor.tabSize": 2,
+	// デフォルトフォーマッターをPrettierにする
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	// ファイル保存時にコード整形する
+	"editor.formatOnSave": true,
+	// markdownファイル保存時にはコード整形しない
+	"[markdown]": {
+		"editor.formatOnSave": false
+	},
+	// ファイル保存時のFixを自動修正する
+	"editor.codeActionsOnSave": {
+		// stylelint
+		"source.fixAll.stylelint": "explicit",
+		// eslint
+		"source.fixAll.eslint": "explicit"
+	},
+
+	"stylelint.snippet": ["css", "scss", "sass", "less", "postcss"],
+	"stylelint.validate": ["css", "scss", "sass", "less", "postcss"],
+
+	"cSpell.words": ["Avenir", "Rellax", "ryumin", "Typekit"],
+
+	"scss.lint.unknownAtRules": "ignore",
+
+	"files.associations": {
+		"*.jsx": "javascriptreact"
+	}
+}

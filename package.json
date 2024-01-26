@@ -24,7 +24,7 @@
 		"stylelint": "stylelint \"**/*.{css,scss}\" --fix",
 		"eslint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"prepare": "husky",
-		"postinstall": "npm run build"
+		"postinstall": "npm run dev"
 	},
 	"dependencies": {
 		"react": "^18.2.0",
