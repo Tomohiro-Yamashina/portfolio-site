@@ -11,13 +11,14 @@
 	],
 	"lint-staged": {
 		"\\.[jt]sx?$": "eslint --fix",
-		"*": "prettier --write"
+		"!(*.*)": "prettier  --write."
 	},
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview",
-		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+		"format": "prettier \"**/!(*.md)\" --write --ignore-unknown --ignore-path .gitignore",
+		"lint": "eslint . --ext \\.[jt]sx?$ --report-unused-disable-directives --max-warnings 0",
 		"lint:html": "markuplint \"**/*.html\" & markuplint \"**/*.html\" --fix",
 		"lint:css": "stylelint \"**/*.{css,scss}\" --fix",
 		"prepare": "husky"

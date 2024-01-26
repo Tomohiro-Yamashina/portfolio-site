@@ -6,7 +6,7 @@ coverage
 .eslintignore
 .eslintrc.js
 .prettierignore
-.husky
+# .husky
 jest.config.js
 lint-staged.config.js
 prettier.config.js
@@ -16,7 +16,6 @@ tsconfig.options.json
 *.tsbuildinfo
 beemo-error.log
 npm-shrinkwrap.json
-package.json
 package-lock.json
 tsconfig.json
 tsconfig.options.json
