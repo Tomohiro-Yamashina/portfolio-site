@@ -1,5 +1,5 @@
-/** markuplint 設定
- *  @see https://markuplint.dev/ja/docs/guides
+/** markuplint
+ *  @see https://markuplint.dev/ja/docs/configuration
  */
 
 export default {
@@ -16,7 +16,7 @@ export default {
 		{
 			selector: 'img',
 			rules: {
-				'required-attr': ['alt', 'src'],
+				'required-attr': ['src', 'alt'],
 			},
 		},
 	],

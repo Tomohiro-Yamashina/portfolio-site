@@ -10,19 +10,19 @@
 		"Android >= 4.4"
 	],
 	"lint-staged": {
-		"\\.html|[jt]sx?$": "markuplint --fix",
-		"\\.(css|scss)$": "stylelint --fix",
-		"\\.[jt]sx?$": "eslint --fix",
-		"!(*.*)": "prettier  --write."
+		"**/*.html|[jt]sx$": "markuplint",
+		"**/*.{css,scss}": "stylelint --fix",
+		"**/*.[jt]s?(x)": "eslint --fix",
+		"!([.]*.*)": "prettier --write"
 	},
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview",
 		"format": "prettier \"**/!(*.md)\" --write --ignore-unknown --ignore-path .gitignore",
-		"lint:markuplint": "markuplint \"**/*.html\" & markuplint \"**/*.html\" --fix",
-		"lint:stylelint": "stylelint \"**/*.{css,scss}\" --fix",
-		"lint:eslint": "eslint . --ext \\.[jt]sx?$ --report-unused-disable-directives --max-warnings 0",
+		"markuplint": "markuplint \"**/*.{html,jsx,tsx}\" ",
+		"stylelint": "stylelint \"**/*.{css,scss}\" --fix",
+		"eslint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"prepare": "husky",
 		"postinstall": "npm run build"
 	},
@@ -52,6 +52,7 @@
 		"stylelint-config-css-modules": "^4.4.0",
 		"stylelint-config-property-sort-order-smacss": "^10.0.0",
 		"stylelint-config-recommended-scss": "^14.0.0",
+		"stylelint-declaration-block-no-ignored-properties": "^2.8.0",
 		"stylelint-order": "^6.0.4",
 		"vite": "^5.0.8"
 	}
