@@ -10,10 +10,10 @@
 		"Android >= 4.4"
 	],
 	"lint-staged": {
-		"//.html|[jt]sx$": "markuplint",
-		"//.{css,scss}": "stylelint --fix",
-		"//.[jt]s?(x)": "eslint --fix",
-		"!([.]*.*)": "prettier --write"
+		"*.{html, jsx, tsx}": "markuplint",
+		"*.{css, scss}": "stylelint --fix",
+		"*.{js, jsx, ts, tsx}": "eslint --fix",
+		"!([.]*.*)": "prettier --write ."
 	},
 	"scripts": {
 		"dev": "vite",
