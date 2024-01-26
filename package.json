@@ -10,6 +10,8 @@
 		"Android >= 4.4"
 	],
 	"lint-staged": {
+		"\\.html|[jt]sx?$": "markuplint --fix",
+		"\\.(css|scss)$": "stylelint --fix",
 		"\\.[jt]sx?$": "eslint --fix",
 		"!(*.*)": "prettier  --write."
 	},
@@ -18,10 +20,11 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"format": "prettier \"**/!(*.md)\" --write --ignore-unknown --ignore-path .gitignore",
-		"lint": "eslint . --ext \\.[jt]sx?$ --report-unused-disable-directives --max-warnings 0",
-		"lint:html": "markuplint \"**/*.html\" & markuplint \"**/*.html\" --fix",
-		"lint:css": "stylelint \"**/*.{css,scss}\" --fix",
-		"prepare": "husky"
+		"lint:markuplint": "markuplint \"**/*.html\" & markuplint \"**/*.html\" --fix",
+		"lint:stylelint": "stylelint \"**/*.{css,scss}\" --fix",
+		"lint:eslint": "eslint . --ext \\.[jt]sx?$ --report-unused-disable-directives --max-warnings 0",
+		"prepare": "husky",
+		"postinstall": "npm run build"
 	},
 	"dependencies": {
 		"react": "^18.2.0",

@@ -4,7 +4,7 @@
 
 export default {
 	extends: ['markuplint:recommended-react'],
-	excludeFiles: ['./node_modules/**', './dist/**'],
+	excludeFiles: ['**/node_modules/**', '**/dist/**'],
 	parser: {
 		'\\.[jt]sx?$': '@markuplint/jsx-parser',
 	},
