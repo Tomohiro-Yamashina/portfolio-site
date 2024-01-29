@@ -1,0 +1,152 @@
+@charset 'utf-8';
+@use '../../../styles/mixin' as *;
+
+.container {
+	display: grid;
+	position: relative;
+	width: 100%;
+	min-height: 100dvh;
+	color: hsl(0, 0%, 10%);
+	place-items: center;
+
+	@include mq-max(lg) {
+		height: fit-content;
+	}
+}
+
+.titleWrapper {
+	width: min(100%, 1080px);
+}
+
+.title {
+	border-radius: 4px;
+	font-size: var(--titleFontSize);
+	line-height: 1;
+}
+
+.wrapper {
+	width: min(100%, 1080px);
+	height: fit-content;
+	margin-inline: auto;
+	border-top: 1px solid hsl(0, 0%, 70%);
+}
+
+.subTitleWrapper {
+	width: 100%;
+	margin-block: 2rem;
+	overflow: hidden;
+	border-left: 4px solid rgb(0, 0, 10);
+}
+
+.subTitle {
+	position: relative;
+	width: fit-content;
+	padding-inline-start: 2rem;
+	color: hsl(0, 0%, 10%);
+	font-size: var(--subTitleFontSize);
+	line-height: 1;
+
+	@include mq-max(md) {
+		padding-inline-start: 1rem;
+	}
+}
+
+.imageContainer {
+	flex-grow: 1;
+	width: min(100%, 1080px);
+	margin-inline: auto;
+	cursor: pointer;
+
+	&:active {
+		cursor: grabbing;
+	}
+
+	@include mq-max(lg) {
+		bottom: 0%;
+		margin-block-start: 5dvh;
+		cursor: auto;
+		&:active {
+			cursor: auto;
+		}
+	}
+}
+
+.flex {
+	display: flex;
+	flex-direction: row;
+	column-gap: 2rem;
+	scroll-snap-type: x proximity;
+	/*スクロールバー非表示（IE・Edge）*/
+	-ms-overflow-style: none;
+	/*スクロールバー非表示（Firefox）*/
+	scrollbar-width: none;
+	/*スクロールバー非表示（Chrome・Safari）*/
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	@include mq-max(md) {
+		flex-direction: column;
+		row-gap: 2rem;
+		column-gap: 0rem;
+	}
+
+	@include mq-max(sm) {
+		row-gap: 1rem;
+	}
+}
+
+.figure {
+	position: relative;
+	flex-basis: 600px;
+	flex-shrink: 0;
+	overflow: hidden;
+	border-radius: 5px;
+	aspect-ratio: 4/3;
+
+	@include mq-max(md) {
+		flex-basis: 100%;
+		width: 100%;
+		margin-inline: auto;
+	}
+
+	@include mq-max(sm) {
+		// margin-inline: auto;
+	}
+
+	picture {
+		width: 100%;
+		height: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: bottom;
+		}
+	}
+
+	.show {
+		position: absolute;
+		top: 0;
+	}
+
+	.hidden {
+		position: absolute;
+		top: 0;
+		transition: opacity 0.4s ease 0.1s;
+		opacity: 0;
+	}
+
+	&:hover > .hidden {
+		transition: opacity 0.4s ease 0.1s;
+		opacity: 1;
+	}
+
+	// .scroll {
+	// 	// overflow-y: scroll;
+	// 	img {
+	// 		height: auto;
+	// 		cursor: cursor;
+	// 	}
+	// }
+}

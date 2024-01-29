@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+// mixin
+/*------------------------------------------------
+ * line_height
+ * letter_spacing
+ * animation
+ * transition
+ * Media Query
+------------------------------------------------*/
+
+// line_height
+// ---------------------------------------------
+
+@mixin line_height($pixels, $height) {
+	font-size: $pixels * 1px;
+	line-height: $height / $pixels;
+}
+
+// letter_spacing
+// ---------------------------------------------
+
+@mixin letter_spacing($spacing) {
+	letter-spacing: ($spacing / 1000) + em;
+}
+
+// animation
+// ---------------------------------------------
+
+@mixin animation(
+	$name: none,
+	$duration: 0s,
+	$timing-function: ease,
+	$delay: 0s,
+	$iteration-count: 1,
+	$direction: normal,
+	$fill-mode: none,
+	$play-state: running
+) {
+	animation: {
+		name: $name; /* 命名 */
+		duration: $duration; /* 再生時間を設定 */
+		timing-function: $timing-function; /* 実行速度を設定 */
+		delay: $delay; /* 開始するまでの待機時間を指定 */
+		iteration-count: $iteration-count; /* 繰り返させる回数を指定 */
+		direction: $direction; /* 繰り返す際の最初の状態を指定 */
+		fill-mode: $fill-mode; /* 終了した後の状態を指定 */
+		play-state: $play-state; /* 途中で止めるかどうかを指定 */
+	}
+}
+
+// Media Query
+/* ---------------------------------------------
+
+「Bootstrap」「TailwindCSS」を参考に選定
+
+Bootstrap:(https://getbootstrap.com/docs/5.3/layout/breakpoints/)
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+
+
+TailwindCSS:(https://tailwindcss.com/docs/responsive-design)
+	sm: 640px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+	xxl: 1536px,
+
+--------------------------------------------- */
+
+$breakpoints: (
+	xs: 375px,
+	sm: 576px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+	xxl: 1536px,
+);
+
+// 画面幅 ○○px以上
+@mixin mq-min($breakpoint) {
+	@media ( #{map-get($breakpoints, $breakpoint)} <= width ) {
+		@content;
+	}
+}
+
+// 画面幅 ○○px未満
+@mixin mq-max($breakpoint) {
+	@media (width < #{map-get($breakpoints, $breakpoint)} ) {
+		@content;
+	}
+}
+// 画面幅 ○○px以上 かつ ○○px未満
+@mixin mq-minmax($minBreakpoint, $maxBreakpoint) {
+	@media (#{map-get($breakpoints, $minBreakpoint)} <= width < #{map-get($breakpoints, $maxBreakpoint)}) {
+		@content;
+	}
+}
+
+$pclg: 1200px; // PC
+$pc: 1024px; // PC
+$tab: 768px; // タブレット
+$sp: 480px; // スマホ
+
+@mixin pclg {
+	@media (max-width: ($pclg)) {
+		@content;
+	}
+}
+
+@mixin pc {
+	@media (max-width: ($pc)) {
+		@content;
+	}
+}
+@mixin tab {
+	@media (max-width: ($tab)) {
+		@content;
+	}
+}
+@mixin sp {
+	@media (max-width: ($sp)) {
+		@content;
+	}
+}

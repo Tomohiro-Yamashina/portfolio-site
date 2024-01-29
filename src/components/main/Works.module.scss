@@ -1,0 +1,24 @@
+@charset 'utf-8';
+@use '../../styles/mixin' as *;
+
+.container {
+	width: 100%;
+	padding-inline: 1rem;
+	overflow: hidden;
+}
+
+.titleWrapper {
+	width: min(100%, 1080px);
+	margin-block-start: 5rem;
+	margin-inline: auto;
+	overflow: hidden;
+}
+
+.title {
+	border-radius: 4px;
+	background-color: hsl(228, 6%, 17%);
+	color: hsl(0, 0%, 100%);
+	font-size: var(--titleFontSize);
+	line-height: 1;
+	text-align: center;
+}

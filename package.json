@@ -27,6 +27,8 @@
 		"postinstall": "npm run dev"
 	},
 	"dependencies": {
+		"@gsap/react": "^2.1.0",
+		"gsap": "^3.12.5",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
@@ -48,6 +50,7 @@
 		"postcss": "^8.4.33",
 		"postcss-sort-media-queries": "^5.2.0",
 		"prettier": "3.2.4",
+		"sass": "^1.70.0",
 		"stylelint": "^16.2.0",
 		"stylelint-config-css-modules": "^4.4.0",
 		"stylelint-config-property-sort-order-smacss": "^10.0.0",

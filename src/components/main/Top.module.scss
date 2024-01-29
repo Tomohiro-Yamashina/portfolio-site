@@ -1,0 +1,126 @@
+@charset 'utf-8';
+@use '../../styles/mixin' as *;
+
+.top {
+	position: relative;
+	width: 100%;
+	height: 100dvh;
+	overflow: hidden;
+}
+
+.svg {
+	display: grid;
+	position: absolute;
+	width: 100%;
+	height: 100dvh;
+	place-items: center;
+}
+
+.container {
+	display: grid;
+	position: absolute;
+	aspect-ratio: 1 / 1;
+	width: min(80vw, 600px);
+	place-items: center;
+}
+
+.svg_01 {
+	position: absolute;
+	z-index: -1;
+}
+
+.svg_02 {
+	position: absolute;
+	z-index: -2;
+	opacity: 0.8;
+	fill: #cfc1af;
+	scale: 1.25;
+	rotate: -15deg;
+}
+
+.svg_03 {
+	position: absolute;
+	z-index: -3;
+	fill: hsl(0, 0%, 100%);
+	scale: 1.4;
+	rotate: -30deg;
+}
+
+.loopText {
+	display: grid;
+	position: absolute;
+	width: 100%;
+	height: 100dvh;
+	place-items: center;
+	color: hsl(0, 0%, 100%);
+	font-size: 6vw;
+}
+
+// .loop {
+// 	display: grid;
+// 	// position: absolute;
+// 	width: 100%;
+// 	height: 100dvh;
+// 	overflow: hidden;
+// 	color: hsl(0, 0%, 100%);
+// 	place-items: center;
+// 	mix-blend-mode: overlay;
+// }
+
+// .container {
+// 	// display: grid;
+// 	position: relative;
+// 	font-family: 'ltc-goudy-oldstyle-pro', serif;
+// 	font-size: clamp(4rem, 1.273rem + 13.64vw, 10rem);
+// 	font-weight: 400;
+// 	letter-spacing: -0.045em;
+// 	line-height: 1;
+// 	// place-items: center;
+
+// 	& :nth-child(1) {
+// 		animation: loop 200s linear infinite;
+// 	}
+
+// 	& :nth-child(2) {
+// 		// inset: 0;
+// 		// margin: auto;
+// 		animation: loop 200s -100s linear infinite;
+// 	}
+// }
+
+// .text {
+// 	// height: fit-content;
+// 	white-space: nowrap;
+
+// 	& span {
+// 		padding-left: 8vw;
+// 	}
+// }
+
+// @keyframes loop {
+// 	from {
+// 		transform: translateX(100%);
+// 	}
+// 	to {
+// 		transform: translateX(-100%);
+// 	}
+// }
+
+// .text01 {
+// 	fill: #333;
+// 	font-family: ltc-goudy-oldstyle-pro, serif;
+// 	font-size: 3rem;
+// 	font-weight: 400;
+// 	letter-spacing: -0.04em;
+// 	line-height: 1.6;
+// }
+
+// .text02 {
+// 	// opacity: 0.4;
+// 	fill: #ffffff;
+// 	font-family: ltc-goudy-oldstyle-pro, serif;
+// 	font-size: 1.5rem;
+// 	font-weight: 400;
+// 	letter-spacing: -0.04em;
+// 	line-height: 1.6;
+// }
