@@ -5,12 +5,12 @@ import aboutImg02 from '../../assets/img/about002.jpg';
 
 import { useRef } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-gsap.registerPlugin(ScrollTrigger);
 
 function AboutUs() {
 	const aboutUs = useRef(null);
+	const image01 = useRef(null);
+	const image02 = useRef(null);
 	const aboutUsText = useRef(null);
 	const container = useRef(null);
 
@@ -18,10 +18,6 @@ function AboutUs() {
 		() => {
 			const aboutUsTextHeight = aboutUsText.current.offsetHeight;
 			const containerHeight = container.current.offsetHeight;
-			console.log(aboutUsTextHeight);
-			// const aboutUsLogo01 = document.querySelector('.c-logo-motion');
-			// const aboutUsLogo02 = document.querySelector('.c-logo-motion02');
-			// const aboutUsLogo03 = document.querySelector('.c-logo-motion03');
 
 			const aboutUsTextScroll = () =>
 				gsap.to(aboutUsText.current, {
@@ -29,56 +25,51 @@ function AboutUs() {
 					ease: 'none',
 
 					scrollTrigger: {
-						trigger: aboutUs.current, // アニメーション開始のトリガー要素
-						pin: true, // 要素を固定
-						scrub: 1, // スクロール量に合わせてアニメーション
-						start: 'top top', // アニメーションが始まる位置
+						trigger: aboutUs.current,
+						pin: true,
+						scrub: 1,
+						start: 'top top',
 						end: aboutUsTextHeight,
 						anticipatePin: 1, // ピン留めアニメーションをスムーズに開始
 						invalidateOnRefresh: true, // ページの再読み込み時(リサイズ時)に値を再計算する
-						// markers: true,
 					},
 				});
 
-			// const aboutUsLogoScroll01 = (Selector) =>
-			// 	gsap.to(Selector, {
-			// 		scrollTrigger: {
-			// 			trigger: aboutUsText, // アニメーション開始のトリガー要素
-			// 			scrub: 1, // スクロール量に合わせてアニメーション
-			// 			start: '15% top', // アニメーションが始まる位置
-			// 			// end: `${aboutUsTextHeight}`,
-			// 			end: '28% end',
-			// 			anticipatePin: 1, // ピン留めアニメーションをスムーズに開始
-			// 			invalidateOnRefresh: true, // ページの再読み込み時(リサイズ時)に値を再計算する
-			// 			// markers: true,
-			// 		},
+			const aboutUsLogoScrollAlpha01 = () =>
+				gsap.to(image01.current, {
+					scrollTrigger: {
+						trigger: aboutUsText.current,
+						scrub: 1,
+						start: '15% top',
+						end: '25% end',
+						anticipatePin: 1,
+						invalidateOnRefresh: true,
+					},
 
-			// 		autoAlpha: 0,
-			// 		ease: 'none',
-			// 	});
+					autoAlpha: 0,
+					ease: 'none',
+				});
 
-			// const aboutUsLogoScroll02 = (Selector) =>
-			// 	gsap.to(Selector, {
-			// 		scrollTrigger: {
-			// 			trigger: aboutUsText, // アニメーション開始のトリガー要素
-			// 			scrub: 1, // スクロール量に合わせてアニメーション
-			// 			start: '28% top', // アニメーションが始まる位置
-			// 			end: `${aboutUsTextHeight}`,
-			// 			// end: 'end',
-			// 			anticipatePin: 1, // ピン留めアニメーションをスムーズに開始
-			// 			invalidateOnRefresh: true, // ページの再読み込み時(リサイズ時)に値を再計算する
-			// 			// markers: true,
-			// 		},
+			const aboutUsLogoScrollAlpha02 = () =>
+				gsap.to(image02.current, {
+					scrollTrigger: {
+						trigger: aboutUsText.current,
+						scrub: 1,
+						start: '25% top',
+						end: `${aboutUsTextHeight}`,
+						anticipatePin: 1,
+						invalidateOnRefresh: true,
+					},
 
-			// 		autoAlpha: 0,
-			// 		ease: 'none',
-			// 	});
+					autoAlpha: 0,
+					ease: 'none',
+				});
 
 			let mm = gsap.matchMedia();
 			mm.add('(min-width: 1024px)', () => {
 				aboutUsTextScroll();
-				// aboutUsLogoScroll01(aboutUsLogo01);
-				// aboutUsLogoScroll02(aboutUsLogo02);
+				aboutUsLogoScrollAlpha01();
+				aboutUsLogoScrollAlpha02();
 			});
 		},
 		{ scope: aboutUs },
@@ -103,9 +94,13 @@ function AboutUs() {
 									<p className={styles.text}>
 										まず、見た目の美しさだけでなく、
 										<br />
-										マーケティング的な視点からデザインを構築し、メッセージとの融合を目指します。
+										マーケティング的な視点からデザインを構築し、
 										<br />
-										効果的なコミュニケーションを提供し、クライアントとの関係を築き上げます。
+										メッセージとの融合を目指します。
+										<br />
+										効果的なコミュニケーションを提供し、
+										<br />
+										クライアントとの関係を築き上げます。
 									</p>
 									<p className={styles.text}>
 										そしてもう一つ、デザインという
@@ -138,12 +133,12 @@ function AboutUs() {
 						</div>
 					</div>
 					<div className={styles.logoContainer}>
-						<div className={styles.logoMotion01}>
+						<div className={styles.logoMotion01} ref={image01}>
 							<div className={styles.outer}>
 								<img className={styles.inner} src={logo} alt="malts-logo" />
 							</div>
 						</div>
-						<div className={styles.logoMotion02}>
+						<div className={styles.logoMotion02} ref={image02}>
 							<div className={styles.outer}>
 								<img
 									className={styles.inner}

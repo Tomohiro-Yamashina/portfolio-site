@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { useLenis } from '@studio-freight/react-lenis';
 import styles from './Header.module.scss';
 
 function Header() {
@@ -14,18 +15,23 @@ function Header() {
 		nav: useRef(null),
 	};
 
+	// Lenisのインスタンス化
+	const lenis = useLenis();
+
+	// ナビ開閉時のスクロール挙動
 	const handleHamburger = () => {
 		setActive(!active);
-		// if (headerNavEl.classList.contains('active')) {
-		// 	lenis.stop();
-		// } else {
-		// 	lenis.start();
-		// }
+
+		if (refs.nav.current.classList.contains('active')) {
+			lenis.start();
+		} else {
+			lenis.stop();
+		}
 	};
 
 	return (
-		<>
-			<header className={`${styles.header} ${active ? 'active' : ''}`}>
+		<header>
+			<div className={`${styles.header} ${active ? 'active' : ''}`}>
 				<div className={styles.container}>
 					<h1
 						className={`${styles.logo} ${active ? 'active' : ''}`}
@@ -55,7 +61,7 @@ function Header() {
 						))}
 					</div>
 				</div>
-			</header>
+			</div>
 
 			<nav className={`${styles.nav} ${active ? 'active' : ''}`} ref={refs.nav}>
 				<ul className={styles.menu}>
@@ -67,7 +73,7 @@ function Header() {
 					))}
 				</ul>
 			</nav>
-		</>
+		</header>
 	);
 }
 

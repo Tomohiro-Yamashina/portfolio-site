@@ -121,6 +121,13 @@
 	}
 }
 
+/* 回転アニメーションのためのカスタム定義 */
+@property --gradient-angle {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}
+
 .logoContainer {
 	position: relative;
 	flex: 1;
@@ -133,9 +140,9 @@
 
 	.logoMotion01 {
 		position: absolute;
-		z-index: 1;
+		z-index: 3;
 		width: 100%;
-		// opacity: 0;
+
 		background-color: hsl(0, 0%, 10%);
 		aspect-ratio: 1 / 1;
 	}
@@ -149,13 +156,6 @@
 		inset: 0;
 		aspect-ratio: 1 / 1;
 		place-items: center;
-
-		/* 回転アニメーションのためのカスタム定義 */
-		@property --gradient-angle {
-			syntax: '<angle>';
-			inherits: false;
-			initial-value: 0deg;
-		}
 
 		&::before,
 		&::after {
@@ -227,7 +227,7 @@
 
 	.logoMotion02 {
 		position: absolute;
-		z-index: -1;
+		z-index: 2;
 		width: 100%;
 		background-color: hsl(26, 25%, 75%);
 		aspect-ratio: 1 / 1;
@@ -242,7 +242,7 @@
 
 	.logoMotion03 {
 		position: absolute;
-		z-index: -1;
+		z-index: 1;
 		width: 100%;
 		background-color: hsl(11, 24%, 83%);
 		aspect-ratio: 1 / 1;

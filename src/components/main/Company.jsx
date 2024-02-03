@@ -3,7 +3,7 @@ import styles from './Company.module.scss';
 function Company() {
 	return (
 		<>
-			<article className={styles.container} id="company">
+			<article className={styles.module} id="company">
 				<div className={styles.titleWrapper}>
 					<h2 className={styles.title}>COMPANY</h2>
 				</div>
@@ -28,11 +28,11 @@ function Company() {
 								</tr>
 								<tr>
 									<th>代表者</th>
-									<td>代表取締役社長&ensp;&ensp;山科 哲広</td>
+									<td>代表取締役社長&ensp;&ensp;** **</td>
 								</tr>
 								<tr>
 									<th>取引銀行</th>
-									<td>さわやか信用金庫 青山渋谷支店 当座608477</td>
+									<td>さわやか信用金庫 青山渋谷支店 当座******</td>
 								</tr>
 								<tr>
 									<th>主要取引先</th>

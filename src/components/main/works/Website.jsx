@@ -2,9 +2,6 @@ import { useRef } from 'react';
 import styles from './Graphic.module.scss';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// 使用する gsapプラグイン を登録する
-gsap.registerPlugin(ScrollTrigger);
 
 function Website() {
 	const images = Object.values(
@@ -31,18 +28,17 @@ function Website() {
 			let mm = gsap.matchMedia();
 			mm.add('(min-width: 768px)', () => {
 				gsap.to(slides, {
-					xPercent: -100 * (slides.length - 1), // -X軸方向に移動
-					// x: 32 * (slides.length - 1),
-					ease: 'none', // アニメーションのイージング(noneは定速)
+					xPercent: -100 * (slides.length - 1),
+					ease: 'sine.out',
 					scrollTrigger: {
-						trigger: container.current, // アニメーション開始のトリガー要素
-						pin: true, // 要素を固定
-						scrub: 1, // スクロール量に合わせてアニメーション
-						start: 'bottom bottom', // アニメーションが始まる位置
-						end: `+=${wrapperWidth}`, // アニメーションが終わる位置
-						anticipatePin: 1, // ピン留めアニメーションをスムーズに開始
-						invalidateOnRefresh: true, // ページの再読み込み時(リサイズ時)に値を再計算する
-						// markers: true,
+						trigger: container.current,
+						pin: true,
+						scrub: 1,
+						start: 'bottom bottom',
+						end: `+=${wrapperWidth}`,
+						snap: 1 / (slides.length - 1),
+						anticipatePin: 1,
+						invalidateOnRefresh: true,
 					},
 				});
 			});

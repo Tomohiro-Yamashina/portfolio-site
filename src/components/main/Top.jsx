@@ -1,4 +1,3 @@
-// import { useState, useRef, Children } from 'react';
 import styles from './Top.module.scss';
 import wheatField from '../../assets/img/wheat_field.jpg';
 
@@ -18,22 +17,6 @@ function Top() {
 			</path>
 		);
 	}
-
-	// function Svg(Children, className) {
-	// 	return (
-	// 		<svg viewBox="0 0 500 500" className={styles.className}>
-	// 			{Children}
-	// 			<path>
-	// 				<animate
-	// 					attributeName="d"
-	// 					dur="20s"
-	// 					repeatCount="indefinite"
-	// 					values={svgValues}
-	// 				></animate>
-	// 			</path>
-	// 		</svg>
-	// 	);
-	// }
 
 	return (
 		<>
