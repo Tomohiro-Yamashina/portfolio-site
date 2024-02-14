@@ -22,7 +22,15 @@
 	"stylelint.snippet": ["css", "scss", "sass", "less", "postcss"],
 	"stylelint.validate": ["css", "scss", "sass", "less", "postcss"],
 
-	"cSpell.words": ["Avenir", "Rellax", "ryumin", "Typekit"],
+	"cSpell.words": [
+		"Avenir",
+		"familyname",
+		"firstname",
+		"furigana",
+		"Rellax",
+		"ryumin",
+		"Typekit"
+	],
 
 	"scss.lint.unknownAtRules": "ignore",
 

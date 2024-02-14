@@ -27,7 +27,7 @@ function AboutUs() {
 					scrollTrigger: {
 						trigger: aboutUs.current,
 						pin: true,
-						scrub: 1,
+						scrub: true,
 						start: 'top top',
 						end: aboutUsTextHeight,
 						anticipatePin: 1, // ピン留めアニメーションをスムーズに開始
@@ -39,9 +39,9 @@ function AboutUs() {
 				gsap.to(image01.current, {
 					scrollTrigger: {
 						trigger: aboutUsText.current,
-						scrub: 1,
+						scrub: true,
 						start: '15% top',
-						end: '25% end',
+						end: '20% end',
 						anticipatePin: 1,
 						invalidateOnRefresh: true,
 					},
@@ -54,8 +54,8 @@ function AboutUs() {
 				gsap.to(image02.current, {
 					scrollTrigger: {
 						trigger: aboutUsText.current,
-						scrub: 1,
-						start: '25% top',
+						scrub: true,
+						start: '30% top',
 						end: `${aboutUsTextHeight}`,
 						anticipatePin: 1,
 						invalidateOnRefresh: true,

@@ -33,7 +33,7 @@ function Website() {
 					scrollTrigger: {
 						trigger: container.current,
 						pin: true,
-						scrub: 1,
+						scrub: 2,
 						start: 'bottom bottom',
 						end: `+=${wrapperWidth}`,
 						snap: 1 / (slides.length - 1),

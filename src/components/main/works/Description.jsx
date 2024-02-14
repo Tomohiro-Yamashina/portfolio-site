@@ -16,7 +16,6 @@ function Description() {
 	}
 	return (
 		<>
-			{}
 			<section className={styles.container}>
 				<div className={styles.subTitleWrapper}>
 					<h2 className={styles.subTitle}>CLIENT LIST</h2>

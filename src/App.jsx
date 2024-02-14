@@ -33,7 +33,7 @@ function App() {
 			root
 			options={{
 				lerp: 0.1,
-				duration: 1,
+				duration: 1.2,
 				smoothTouch: true,
 				easing: 'easeOutQuart',
 			}}

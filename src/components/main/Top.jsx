@@ -47,19 +47,15 @@ function Top() {
 						</svg>
 					</div>
 				</div>
-				{/* <div className="loopText">
-					<div className="container">
-						<p className="text">
-							<span>MALTS</span>
-							<span>GRAPHIC&ensp;FARM</span>
-						</p>
 
-						<p className="text">
-							<span>MALTS</span>
-							<span>GRAPHIC&ensp;FARM</span>
-						</p>
-					</div>
-				</div> */}
+				<div className={styles.loopContainer}>
+					<p className={styles.text01}>
+						MALTS&ensp;GRAPHIC&ensp;FARM&ensp;HARAJUKU
+					</p>
+					<p className={styles.text02}>
+						MALTS&ensp;GRAPHIC&ensp;FARM&ensp;HARAJUKU
+					</p>
+				</div>
 			</div>
 		</>
 	);

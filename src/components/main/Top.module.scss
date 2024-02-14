@@ -46,81 +46,39 @@
 	rotate: -30deg;
 }
 
-.loopText {
-	display: grid;
+.loopContainer {
 	position: absolute;
-	width: 100%;
-	height: 100dvh;
-	place-items: center;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
 	color: hsl(0, 0%, 100%);
-	font-size: 6vw;
+	font-family: 'ltc-goudy-oldstyle-pro', serif;
+	font-size: clamp(4rem, 1.273rem + 13.64vw, 10rem);
+	font-weight: 400;
+	letter-spacing: -0.045em;
+	inset: 0;
+	mix-blend-mode: overlay;
 }
 
-// .loop {
-// 	display: grid;
-// 	// position: absolute;
-// 	width: 100%;
-// 	height: 100dvh;
-// 	overflow: hidden;
-// 	color: hsl(0, 0%, 100%);
-// 	place-items: center;
-// 	mix-blend-mode: overlay;
-// }
+.text01 {
+	padding-left: 8vw;
+	animation: loop 100s linear infinite;
+	white-space: nowrap;
+}
+.text02 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-left: 8vw;
+	animation: loop 100s -50s linear infinite;
+	white-space: nowrap;
+}
 
-// .container {
-// 	// display: grid;
-// 	position: relative;
-// 	font-family: 'ltc-goudy-oldstyle-pro', serif;
-// 	font-size: clamp(4rem, 1.273rem + 13.64vw, 10rem);
-// 	font-weight: 400;
-// 	letter-spacing: -0.045em;
-// 	line-height: 1;
-// 	// place-items: center;
-
-// 	& :nth-child(1) {
-// 		animation: loop 200s linear infinite;
-// 	}
-
-// 	& :nth-child(2) {
-// 		// inset: 0;
-// 		// margin: auto;
-// 		animation: loop 200s -100s linear infinite;
-// 	}
-// }
-
-// .text {
-// 	// height: fit-content;
-// 	white-space: nowrap;
-
-// 	& span {
-// 		padding-left: 8vw;
-// 	}
-// }
-
-// @keyframes loop {
-// 	from {
-// 		transform: translateX(100%);
-// 	}
-// 	to {
-// 		transform: translateX(-100%);
-// 	}
-// }
-
-// .text01 {
-// 	fill: #333;
-// 	font-family: ltc-goudy-oldstyle-pro, serif;
-// 	font-size: 3rem;
-// 	font-weight: 400;
-// 	letter-spacing: -0.04em;
-// 	line-height: 1.6;
-// }
-
-// .text02 {
-// 	// opacity: 0.4;
-// 	fill: #ffffff;
-// 	font-family: ltc-goudy-oldstyle-pro, serif;
-// 	font-size: 1.5rem;
-// 	font-weight: 400;
-// 	letter-spacing: -0.04em;
-// 	line-height: 1.6;
-// }
+@keyframes loop {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}

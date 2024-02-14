@@ -32,7 +32,8 @@
 		"@studio-freight/react-lenis": "^0.0.43",
 		"gsap": "^3.12.5",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"react-hook-form": "^7.50.1"
 	},
 	"devDependencies": {
 		"@markuplint/jsx-parser": "^3.12.0",
