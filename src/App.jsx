@@ -7,6 +7,8 @@ import { ReactLenis } from '@studio-freight/react-lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import './library/adobefont.js';
+
 // ****************************************************************
 // GSAP 初期設定
 
