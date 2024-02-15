@@ -42,7 +42,7 @@ form {
 .name {
 	display: flex;
 	flex-direction: row;
-	align-items: end;
+	align-items: flex-end;
 	width: 100%;
 	padding-block: 0.5rem;
 	padding-inline: 1rem;
