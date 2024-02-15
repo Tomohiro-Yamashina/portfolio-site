@@ -10,14 +10,17 @@
 .outer {
 	width: min(100%, 1080px);
 	margin-inline: auto;
-	// border-top: 1px solid hsl(0, 0%, 70%);
+	border-top: 1px solid hsl(0, 0%, 70%);
 }
 
 .titleWrapper {
 	width: min(100%, 1080px);
+	margin-block: 2rem;
 }
 
 .title {
+	width: fit-content;
+	margin-inline: auto;
 	border-radius: 4px;
 	font-size: var(--titleFontSize);
 	line-height: 1;
@@ -25,7 +28,7 @@
 
 .inner {
 	width: min(100%, 1080px);
-	margin-block-start: 3rem;
+	// margin-block-start: 3rem;
 	margin-inline: auto;
 	overflow: hidden;
 	border: 1px solid var(--guideSolidColor);

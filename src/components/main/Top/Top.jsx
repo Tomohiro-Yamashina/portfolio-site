@@ -1,5 +1,6 @@
 import styles from './Top.module.scss';
-import wheatField from '../../assets/img/wheat_field.jpg';
+import wheatField from '../../../assets/img/wheat_field.jpg';
+import { LoopText } from './LoopText/LoopText.jsx';
 
 function Top() {
 	const svgValues =
@@ -47,14 +48,8 @@ function Top() {
 						</svg>
 					</div>
 				</div>
-
-				<div className={styles.loopContainer}>
-					<p className={styles.text01}>
-						MALTS&ensp;GRAPHIC&ensp;FARM&ensp;HARAJUKU
-					</p>
-					<p className={styles.text02}>
-						MALTS&ensp;GRAPHIC&ensp;FARM&ensp;HARAJUKU
-					</p>
+				<div className={styles.loopTextContainer}>
+					<LoopText position="Middle" />
 				</div>
 			</div>
 		</>

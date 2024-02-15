@@ -1,20 +1,23 @@
 @charset 'utf-8';
-@use '../../styles/_mixin.scss' as *;
+@use '../../styles/mixin.scss' as *;
 
 .module {
 	width: 100%;
 	min-height: 100dvh;
-	margin-block-start: 10rem;
 	padding-inline: 1rem;
 }
 
 .titleWrapper {
 	width: min(100%, 1080px);
-	margin-block: 2rem;
 	margin-inline: auto;
+	// margin-block: 1rem;
+	padding-block-start: 10rem;
+	border-top: 1px solid hsl(0, 0%, 70%);
 }
 
 .title {
+	width: fit-content;
+	margin-inline: auto;
 	font-size: var(--titleFontSize);
 	line-height: 1;
 }
@@ -25,31 +28,27 @@
 	container: company / inline-size;
 }
 
-.inner {
-	border-top: 1px solid hsl(0, 0%, 70%);
-}
-
 .subtitleWrapper {
 	margin-block: 2rem;
 	overflow: hidden;
-	border-left: 4px solid rgb(40, 41, 46);
 }
 
 .subtitle {
 	position: relative;
 	width: fit-content;
-	padding-inline-start: 2rem;
+	margin-inline: auto;
 	font-size: var(--subTitleFontSize);
+	font-weight: lighter;
 	line-height: 1;
 
-	@include mq-max(md) {
+	/* 	@include mq-max(md) {
 		padding-inline-start: 1rem;
-	}
+	 */
 }
 
 .info {
 	height: fit-content;
-	margin-block-end: 10rem;
+	margin-block-end: 3rem;
 	border-spacing: 0;
 	border-collapse: separate;
 	border: 1px solid var(--guideSolidColor);
@@ -86,6 +85,7 @@
 			padding-inline-start: 1rem;
 			& li:not(:last-child) {
 				margin-inline-end: 2rem;
+				line-height: 1.7;
 			}
 		}
 	}
@@ -99,7 +99,7 @@
 	display: flex;
 	position: relative;
 	width: 100%;
-	margin-block-end: 10rem;
+	margin-block-end: 8rem;
 	overflow: hidden;
 	border: 1px solid var(--guideSolidColor);
 	border-radius: 8px;

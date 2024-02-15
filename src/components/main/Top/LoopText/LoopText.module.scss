@@ -1,0 +1,72 @@
+.loopTextTop {
+	position: absolute;
+	// z-index: -4;
+	top: -8rem;
+	width: fit-content;
+	height: fit-content;
+	color: hsl(0, 0%, 0%);
+	font-family: 'ltc-goudy-oldstyle-pro', serif;
+	// font-size: clamp(2rem, 1.273rem + 13.64vw, 8rem);
+	font-weight: 400;
+	letter-spacing: -0.045em;
+	mix-blend-mode: overlay;
+}
+.loopTextMiddle {
+	position: absolute;
+	// z-index: 10;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+	color: hsl(0, 0%, 100%);
+	font-family: 'ltc-goudy-oldstyle-pro', serif;
+	// font-size: clamp(2rem, 1.273rem + 13.64vw, 8rem);
+	font-weight: 400;
+	letter-spacing: -0.045em;
+	inset: 0;
+	mix-blend-mode: overlay;
+	// rotate: -1deg;
+}
+.loopTextBottom {
+	position: absolute;
+	// z-index: -5;
+	bottom: -8rem;
+	width: fit-content;
+	height: fit-content;
+	color: hsl(0, 0%, 0%);
+	font-family: 'ltc-goudy-oldstyle-pro', serif;
+	// font-size: clamp(2rem, 1.273rem + 13.64vw, 8rem);
+	font-weight: 400;
+	letter-spacing: -0.045em;
+	mix-blend-mode: overlay;
+}
+
+.preText {
+	padding-left: 8vw;
+	animation: loop 100s linear infinite;
+	white-space: nowrap;
+}
+.postText {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-left: 8vw;
+	animation: loop 100s -50s linear infinite;
+	white-space: nowrap;
+}
+// .malts {
+// 	// font-family: sans-serif;
+// 	font-size: clamp(4rem, -0.364rem + 21.82vw, 16rem);
+// }
+// .harajuku {
+// 	font-family: sans-serif;
+// 	font-size: clamp(1rem, -0.091rem + 5.45vw, 4rem);
+// }
+
+@keyframes loop {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}

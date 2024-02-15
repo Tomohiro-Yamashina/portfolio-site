@@ -4,6 +4,7 @@
 .container {
 	width: min(100%, 1080px);
 	height: fit-content;
+	margin-block-end: 10rem;
 	margin-inline: auto;
 	border-top: 1px solid hsl(0, 0%, 70%);
 }
@@ -59,5 +60,6 @@
 
 	& li:not(:last-child) {
 		margin-inline-end: 2rem;
+		line-height: 1.7;
 	}
 }

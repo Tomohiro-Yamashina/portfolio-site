@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@use '../../styles/mixin' as *;
+@use '../../../styles/mixin.scss' as *;
 
 .top {
 	position: relative;
@@ -46,39 +46,10 @@
 	rotate: -30deg;
 }
 
-.loopContainer {
+.loopTextContainer {
 	position: absolute;
-	width: fit-content;
-	height: fit-content;
-	margin: auto;
-	color: hsl(0, 0%, 100%);
-	font-family: 'ltc-goudy-oldstyle-pro', serif;
-	font-size: clamp(4rem, 1.273rem + 13.64vw, 10rem);
-	font-weight: 400;
-	letter-spacing: -0.045em;
-	inset: 0;
+	width: 100%;
+	height: 100dvh;
 	mix-blend-mode: overlay;
-}
-
-.text01 {
-	padding-left: 8vw;
-	animation: loop 100s linear infinite;
-	white-space: nowrap;
-}
-.text02 {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding-left: 8vw;
-	animation: loop 100s -50s linear infinite;
-	white-space: nowrap;
-}
-
-@keyframes loop {
-	from {
-		transform: translateX(100%);
-	}
-	to {
-		transform: translateX(-100%);
-	}
+	font-size: clamp(2rem, -0.182rem + 10.91vw, 8rem);
 }
