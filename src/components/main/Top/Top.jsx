@@ -11,7 +11,7 @@ function Top() {
 			<path>
 				<animate
 					attributeName="d"
-					dur="20s"
+					dur="15s"
 					repeatCount="indefinite"
 					values={svgValues}
 				></animate>

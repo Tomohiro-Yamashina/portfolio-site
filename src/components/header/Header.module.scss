@@ -18,7 +18,7 @@
 	justify-content: space-between;
 	width: 100%;
 	padding-block: 0.5rem;
-	padding-inline: 1rem;
+	padding-inline: 1.5rem;
 }
 
 .logo {
@@ -26,13 +26,6 @@
 	color: currentColor;
 	font-size: 2rem;
 	line-height: 1;
-
-	// &:global(.active) {
-	// 	@include mq-max(lg) {
-	// 		transition: color 0.25s ease 0.25s;
-	// 		color: hsl(0, 0%, 100%);
-	// 	}
-	// }
 
 	a {
 		color: currentColor;

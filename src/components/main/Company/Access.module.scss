@@ -1,111 +1,21 @@
 @charset 'utf-8';
-@use '../../styles/mixin.scss' as *;
+@use '../../../styles/mixin.scss' as *;
 
-.module {
-	width: 100%;
-	min-height: 100dvh;
-	padding-inline: 1rem;
-}
-
-.titleWrapper {
-	width: min(100%, 1080px);
-	margin-inline: auto;
-	// margin-block: 1rem;
-	padding-block-start: 10rem;
-	border-top: 1px solid hsl(0, 0%, 70%);
-}
-
-.title {
-	width: fit-content;
-	margin-inline: auto;
-	font-size: var(--titleFontSize);
-	line-height: 1;
-}
-
-.outer {
+.container {
 	width: min(100%, 1080px);
 	margin-inline: auto;
 	container: company / inline-size;
-}
-
-.subtitleWrapper {
-	margin-block: 2rem;
-	overflow: hidden;
-}
-
-.subtitle {
-	position: relative;
-	width: fit-content;
-	margin-inline: auto;
-	font-size: var(--subTitleFontSize);
-	font-weight: lighter;
-	line-height: 1;
-
-	/* 	@include mq-max(md) {
-		padding-inline-start: 1rem;
-	 */
-}
-
-.info {
-	height: fit-content;
-	margin-block-end: 3rem;
-	border-spacing: 0;
-	border-collapse: separate;
-	border: 1px solid var(--guideSolidColor);
-	border-radius: 8px;
-	background-color: hsl(0, 0%, 100%, 0.5);
-	font-size: 1rem;
-
-	tbody {
-		border-radius: 1rem;
-	}
-
-	tr {
-		border: 1px solid var(--guideSolidColor);
-		text-align: left;
-	}
-
-	th {
-		position: relative;
-		box-sizing: border-box;
-		width: calc(100% / 4);
-		min-width: 113px;
-		padding: 1rem;
-		border-right: 1px solid var(--guideSolidColor);
-		border-bottom: 1px solid var(--guideSolidColor);
-	}
-
-	td {
-		padding: 1rem;
-		border-bottom: 1px solid var(--guideSolidColor);
-
-		ul {
-			display: flex;
-			flex-wrap: wrap;
-			padding-inline-start: 1rem;
-			& li:not(:last-child) {
-				margin-inline-end: 2rem;
-				line-height: 1.7;
-			}
-		}
-	}
-	tr:last-child th,
-	tr:last-child td {
-		border-bottom-style: none;
-	}
 }
 
 .access {
 	display: flex;
 	position: relative;
 	width: 100%;
-	margin-block-end: 8rem;
 	overflow: hidden;
 	border: 1px solid var(--guideSolidColor);
 	border-radius: 8px;
 	background-color: hsl(0, 0%, 100%, 0.5);
 }
-
 .location {
 	display: flex;
 	flex-direction: column;
@@ -162,7 +72,7 @@
 		display: block;
 		width: 100%;
 		transition: all 0.3s ease;
-		filter: grayscale(1);
+		filter: grayscale(0.5);
 		aspect-ratio: 16 / 9;
 	}
 
@@ -244,13 +154,13 @@
 	font-family: 'icomoon';
 	font-style: normal;
 	font-weight: normal;
-	src: url('../../assets/fonts/icomoon.eot?t6kbep');
+	src: url('../../../assets/fonts/icomoon.eot?t6kbep');
 	src:
-		url('../../assets/fonts/icomoon.eot?t6kbep#iefix')
+		url('../../../assets/fonts/icomoon.eot?t6kbep#iefix')
 			format('embedded-opentype'),
-		url('../../assets/fonts/icomoon.ttf?t6kbep') format('truetype'),
-		url('../../assets/fonts/icomoon.woff?t6kbep') format('woff'),
-		url('../../assets/fonts/icomoon.svg?t6kbep#icomoon') format('svg');
+		url('../../../assets/fonts/icomoon.ttf?t6kbep') format('truetype'),
+		url('../../../assets/fonts/icomoon.woff?t6kbep') format('woff'),
+		url('../../../assets/fonts/icomoon.svg?t6kbep#icomoon') format('svg');
 	font-display: block;
 }
 

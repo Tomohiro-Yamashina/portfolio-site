@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@use '../../../styles/mixin' as *;
+@use '../../../../styles/mixin' as *;
 
 .container {
 	display: grid;
@@ -14,41 +14,10 @@
 	}
 }
 
-.titleWrapper {
-	width: min(100%, 1080px);
-}
-
-.title {
-	border-radius: 4px;
-	font-size: var(--titleFontSize);
-	line-height: 1;
-}
-
 .wrapper {
 	width: min(100%, 1080px);
 	height: fit-content;
 	margin-inline: auto;
-	border-top: 1px solid hsl(0, 0%, 70%);
-}
-
-.subTitleWrapper {
-	width: 100%;
-	margin-block: 2rem;
-	overflow: hidden;
-	border-left: 4px solid rgb(0, 0, 10);
-}
-
-.subTitle {
-	position: relative;
-	width: fit-content;
-	padding-inline-start: 2rem;
-	color: hsl(0, 0%, 10%);
-	font-size: var(--subTitleFontSize);
-	line-height: 1;
-
-	@include mq-max(md) {
-		padding-inline-start: 1rem;
-	}
 }
 
 .imageContainer {
@@ -63,7 +32,6 @@
 
 	@include mq-max(lg) {
 		bottom: 0%;
-		margin-block-start: 5dvh;
 		cursor: auto;
 		&:active {
 			cursor: auto;
@@ -111,7 +79,7 @@
 	}
 
 	@include mq-max(sm) {
-		// margin-inline: auto;
+		margin-inline: auto;
 	}
 
 	picture {
@@ -141,12 +109,4 @@
 		transition: opacity 0.4s ease 0.1s;
 		opacity: 1;
 	}
-
-	// .scroll {
-	// 	// overflow-y: scroll;
-	// 	img {
-	// 		height: auto;
-	// 		cursor: cursor;
-	// 	}
-	// }
 }

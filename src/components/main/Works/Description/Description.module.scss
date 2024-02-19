@@ -1,37 +1,16 @@
 @charset 'utf-8';
-@use '../../../styles/mixin' as *;
+@use '../../../../styles/mixin' as *;
 
 .container {
 	width: min(100%, 1080px);
 	height: fit-content;
-	margin-block-end: 10rem;
 	margin-inline: auto;
-	border-top: 1px solid hsl(0, 0%, 70%);
-}
-
-.subTitleWrapper {
-	width: 100%;
-	margin-block: 2rem;
-	border-left: 4px solid rgb(0, 0, 10);
-}
-
-.subTitle {
-	position: relative;
-	width: fit-content;
-	padding-inline-start: 2rem;
-	color: hsl(0, 0%, 10%);
-	font-size: var(--subTitleFontSize);
-	line-height: 1;
-
-	@include mq-max(md) {
-		padding-inline-start: 1rem;
-	}
 }
 
 .description {
 	overflow: hidden;
 	border: 1px solid var(--guideSolidColor);
-	// border-radius: 8px;
+	border-radius: 8px;
 	background-color: hsl(0, 0%, 100%, 0.5);
 }
 

@@ -1,12 +1,12 @@
 @charset 'utf-8';
-@use '../../styles/_mixin.scss' as *;
+@use '../../../styles/_mixin.scss' as *;
 
 .container {
 	display: grid;
 	position: relative;
 	width: 100%;
 	min-height: 100dvh;
-	padding-inline: 1rem;
+	padding-inline: 1.5rem;
 	overflow: hidden;
 	background-color: hsl(0, 0%, 7%);
 	color: hsl(0, 0%, 100%);
@@ -56,30 +56,21 @@
 	}
 
 	.title {
-		font-family: 'Inter', sans-serif;
-		font-size: 5.4rem;
+		font-size: clamp(5.3rem, -0.186rem + 8.57vw, 5.6rem);
+		font-weight: 400;
 		line-height: 1.6;
 		text-align-last: justify;
 		text-justify: inter-ideograph; /* Edge */
-
 		@include mq-max(lg) {
-			font-size: clamp(4.1rem, 2.887rem + 5.18vw, 6.2rem);
-			text-align-last: auto;
-			text-justify: auto; /* Edge */
+			font-size: clamp(3.7rem, 2.369rem + 5.68vw, 6rem);
 		}
 	}
 
-	.subtitle {
-		font-size: 2.2rem;
+	.subTitle {
+		font-size: clamp(1.5rem, 1.234rem + 1.13vw, 2rem);
 		line-height: 1;
 		text-align-last: justify;
 		text-justify: inter-ideograph; /* Edge */
-
-		@include mq-max(lg) {
-			font-size: clamp(1.65rem, 1.159rem + 2.1vw, 2.5rem);
-			text-align-last: auto;
-			text-justify: auto; /* Edge */
-		}
 	}
 
 	.textWrapper {

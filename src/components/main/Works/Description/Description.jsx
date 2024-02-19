@@ -1,5 +1,6 @@
 import styles from './Description.module.scss';
 import Data from './clientList.json';
+import { SubTitle } from '../../../Utility/Utility.jsx';
 
 function Description() {
 	function List({ num }) {
@@ -17,9 +18,8 @@ function Description() {
 	return (
 		<>
 			<section className={styles.container}>
-				<div className={styles.subTitleWrapper}>
-					<h2 className={styles.subTitle}>CLIENT LIST</h2>
-				</div>
+				<SubTitle>CLIENT</SubTitle>
+
 				<div className={styles.description}>
 					<List num={0} />
 					<List num={1} />

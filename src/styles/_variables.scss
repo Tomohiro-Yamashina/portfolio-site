@@ -7,20 +7,20 @@
 	--sb-size: 10px;
 
 	/* color 変数*/
-	--colorText: #404040;
-	--color-text-p-secondary: #606060;
-	--color-text-h: #202020;
-	--color-bg: #eff2f5;
-	--color-bg-code: #fff;
-	--color-bg-footer: #f9f9f9;
-	--color-bg-strong: #fff996;
-	--color-bg-btn: #1976d2;
-	--color-btn-secondary: #e0e0e0;
-	--color-text-a: #1976d2;
-	--color-text-a-hover: var(--primary);
-	--color-text-a-visited: var(--color-text-a);
-	--color-border: rgba(0, 0, 0, 0.1);
-	--primary: #3223b3;
+	// --colorText: #404040;
+	// --color-text-p-secondary: #606060;
+	// --color-text-h: #202020;
+	// --color-bg: #eff2f5;
+	// --color-bg-code: #fff;
+	// --color-bg-footer: #f9f9f9;
+	// --color-bg-strong: #fff996;
+	// --color-bg-btn: #1976d2;
+	// --color-btn-secondary: #e0e0e0;
+	// --color-text-a: #1976d2;
+	// --color-text-a-hover: var(--primary);
+	// --color-text-a-visited: var(--color-text-a);
+	// --color-border: rgba(0, 0, 0, 0.1);
+	// --primary: #3223b3;
 	--guideSolidColor: rgba(66, 71, 112, 0.18);
 	--guideDashedColor: rgba(66, 71, 112, 0.15);
 
@@ -35,12 +35,8 @@
 	--font-mono: SFMono-Regular, Menlo, Consolas, Bitstream Vera Sans Mono,
 		Courier New, Courier, BIZ UDGothic, Meiryo, monospace;
 
-	/* font-size 変数*/
+	/* font-size レスポンシブ対応*/
 	--titleFontSize: clamp(4rem, -0.091rem + 11.36vw, 9rem);
 	--subTitleFontSize: clamp(2.5rem, 0.455rem + 5.68vw, 5rem);
 	--textFontSize: clamp(1rem, 0.759rem + 0.67vw, 1.188rem);
 }
-
-// font-family: 'Inter', sans-serif;
-// font-family: 'M PLUS 1p', sans-serif;
-// font-family: 'Noto Sans JP', sans-serif;

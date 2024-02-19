@@ -1,0 +1,30 @@
+@charset 'utf-8';
+@use '../../../styles/mixin.scss' as *;
+
+.container {
+	width: 100%;
+	margin-block-end: 20rem;
+	padding-inline: 1.5rem;
+	overflow: hidden;
+
+	@include mq-max(lg) {
+		margin-block-end: 16rem;
+	}
+	@include mq-max(md) {
+		margin-block-end: 12rem;
+	}
+	@include mq-max(sm) {
+		margin-block-end: 8rem;
+	}
+}
+
+.information {
+	width: min(100%, 1080px);
+	margin-inline: auto;
+	container: company / inline-size;
+}
+.access {
+	width: min(100%, 1080px);
+	margin-inline: auto;
+	container: company / inline-size;
+}

@@ -27,6 +27,7 @@
 .svg_01 {
 	position: absolute;
 	z-index: -1;
+	rotate: 5deg;
 }
 
 .svg_02 {
@@ -43,7 +44,7 @@
 	z-index: -3;
 	fill: hsl(0, 0%, 100%);
 	scale: 1.4;
-	rotate: -30deg;
+	rotate: -35deg;
 }
 
 .loopTextContainer {

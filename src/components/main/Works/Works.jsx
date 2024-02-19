@@ -1,6 +1,6 @@
-import Graphic from './works/Graphic';
-import Website from './works/Website';
-import Description from './works/Description';
+import Graphic from './Graphic/Graphic.jsx';
+import Website from './Website/Website.jsx';
+import Description from './Description/Description.jsx';
 import styles from './Works.module.scss';
 
 export default function Works() {

@@ -1,18 +1,17 @@
 import { useRef } from 'react';
-import styles from './Graphic.module.scss';
+import styles from './Website.module.scss';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { SubTitle } from '../../../Utility/Utility.jsx';
 
-function Graphic() {
-	// 画像を取得
+function Website() {
 	const images = Object.values(
-		import.meta.glob('../../../assets/img/works/graphic/*', {
+		import.meta.glob('../../../../assets/img/works/website/*', {
 			eager: true,
 			as: 'url',
 		}),
 	);
 
-	// 画像を仕分け
 	const resultImages = images.reduce((accumulator, current, index, array) => {
 		if (index % 2 === 0) {
 			accumulator.push([current, array[index + 1]]);
@@ -51,30 +50,23 @@ function Graphic() {
 	return (
 		<>
 			<section className={styles.container} ref={container}>
-				<div className={styles.titleWrapper}>
-					<div className={styles.titleWrapper}>
-						<h2 className={styles.title}>WORKS</h2>
-					</div>
-					<div className={styles.wrapper}>
-						<div className={styles.subTitleWrapper}>
-							<h2 className={styles.subTitle}>GRAPHIC</h2>
-						</div>
+				<div className={styles.wrapper}>
+					<SubTitle>WEBSITE</SubTitle>
 
-						<div className={styles.imageContainer}>
-							<div className={styles.flex}>
-								{resultImages.map((image, index) => (
-									<figure className={styles.figure} key={index}>
-										<picture className={styles.show}>
-											<source />
-											<img src={image[0]} alt="Graphic Work" />
-										</picture>
-										<picture className={styles.hidden}>
-											<source />
-											<img src={image[1]} alt="Graphic Work" />
-										</picture>
-									</figure>
-								))}
-							</div>
+					<div className={styles.imageContainer}>
+						<div className={styles.flex}>
+							{resultImages.map((image, index) => (
+								<figure className={styles.figure} key={index}>
+									<picture className={styles.show}>
+										<source />
+										<img src={image[0]} alt="" />
+									</picture>
+									<picture className={styles.hidden}>
+										<source />
+										<img src={image[1]} alt="" />
+									</picture>
+								</figure>
+							))}
 						</div>
 					</div>
 				</div>
@@ -83,4 +75,4 @@ function Graphic() {
 	);
 }
 
-export default Graphic;
+export default Website;

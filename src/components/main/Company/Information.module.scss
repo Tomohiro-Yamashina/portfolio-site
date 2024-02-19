@@ -1,0 +1,55 @@
+@charset 'utf-8';
+@use '../../../styles/mixin.scss' as *;
+
+.container {
+	width: min(100%, 1080px);
+	margin-inline: auto;
+}
+
+.info {
+	height: fit-content;
+	border-spacing: 0;
+	border-collapse: separate;
+	border: 1px solid var(--guideSolidColor);
+	border-radius: 8px;
+	background-color: hsl(0, 0%, 100%, 0.5);
+	font-size: 1rem;
+
+	tbody {
+		border-radius: 1rem;
+	}
+
+	tr {
+		border: 1px solid var(--guideSolidColor);
+		text-align: left;
+	}
+
+	th {
+		position: relative;
+		box-sizing: border-box;
+		width: calc(100% / 4);
+		min-width: 113px;
+		padding: 1rem;
+		border-right: 1px solid var(--guideSolidColor);
+		border-bottom: 1px solid var(--guideSolidColor);
+	}
+
+	td {
+		padding: 1rem;
+		border-bottom: 1px solid var(--guideSolidColor);
+
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			padding-inline-start: 1rem;
+			& li:not(:last-child) {
+				margin-inline-end: 2rem;
+				line-height: 1.7;
+			}
+		}
+	}
+	tr:last-child th,
+	tr:last-child td {
+		border-bottom-style: none;
+	}
+}

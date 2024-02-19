@@ -1,29 +1,16 @@
 @charset 'utf-8';
-@use '../../styles/mixin' as *;
+@use '../../../styles/mixin' as *;
 
 .container {
 	width: 100%;
 	min-height: 100dvh;
-	padding-inline: 1rem;
+	padding-inline: 1.5rem;
 	color: hsl(0, 0%, 10%);
 }
 .outer {
 	width: min(100%, 1080px);
 	margin-inline: auto;
-	border-top: 1px solid hsl(0, 0%, 70%);
-}
-
-.titleWrapper {
-	width: min(100%, 1080px);
-	margin-block: 2rem;
-}
-
-.title {
-	width: fit-content;
-	margin-inline: auto;
-	border-radius: 4px;
-	font-size: var(--titleFontSize);
-	line-height: 1;
+	// border-top: 1px solid hsl(0, 0%, 70%);
 }
 
 .inner {

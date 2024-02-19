@@ -4,6 +4,22 @@
 footer {
 	width: 100%;
 	height: fit-content;
-	background: hsl(0, 0%, 0%);
+	padding-block: 1rem;
+	background: hsl(0, 0%, 10%);
 	color: hsl(0, 0%, 100%);
+
+	p {
+		width: fit-content;
+		margin-inline: auto;
+
+		a {
+			margin-inline: 0.5rem;
+			color: white;
+			text-decoration: none;
+
+			&:hover {
+				color: rgb(169, 255, 255);
+			}
+		}
+	}
 }
