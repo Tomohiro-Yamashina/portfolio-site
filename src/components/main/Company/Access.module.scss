@@ -3,8 +3,16 @@
 
 .container {
 	width: min(100%, 1080px);
+	margin-block: 8rem;
 	margin-inline: auto;
 	container: company / inline-size;
+
+	@include mq-max(md) {
+		margin-block: 6rem;
+	}
+	@include mq-max(sm) {
+		margin-block: 4rem;
+	}
 }
 
 .access {
@@ -14,7 +22,7 @@
 	overflow: hidden;
 	border: 1px solid var(--guideSolidColor);
 	border-radius: 8px;
-	background-color: hsl(0, 0%, 100%, 0.5);
+	background-color: hsla(0, 0%, 100%, 0.95);
 }
 .location {
 	display: flex;
@@ -45,6 +53,9 @@
 		width: 100%;
 		padding-block-start: 1rem;
 		padding-inline: 1rem;
+		@include mq-max(sm) {
+			font-size: 0.9rem;
+		}
 
 		& > span {
 			display: inline-flex;
@@ -105,9 +116,9 @@
 	}
 	.text {
 		width: 100%;
-		& > span {
-			// display: block;
-		}
+		// & > span {
+		// 	// display: block;
+		// }
 	}
 
 	.map {

@@ -1,16 +1,22 @@
 import styles from './Utility.module.scss';
+import { forwardRef } from 'react';
 
-export function Title({ children }) {
+const Title = forwardRef(function Title({ children }, ref) {
 	return (
-		<div className={styles.titleContainer}>
-			<h2 className={styles.title}>{children}</h2>
-		</div>
+		<h2 className={styles.title} ref={ref}>
+			{children}
+		</h2>
 	);
-}
-export function SubTitle({ children }) {
+});
+
+const SubTitle = forwardRef(function SubTitle({ children, colorChange }, ref) {
 	return (
 		<div className={styles.subTitleContainer}>
-			<h2 className={styles.subTitle}>{children}</h2>
+			<h2 className={styles.subTitle} ref={ref} style={{ color: colorChange }}>
+				{children}
+			</h2>
 		</div>
 	);
-}
+});
+
+export { Title, SubTitle };

@@ -1,6 +1,9 @@
+import { useRef } from 'react';
 import styles from './Top.module.scss';
 import wheatField from '../../../assets/img/wheat_field.jpg';
 import { LoopText } from './LoopText/LoopText.jsx';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 function Top() {
 	const svgValues =
@@ -11,7 +14,7 @@ function Top() {
 			<path>
 				<animate
 					attributeName="d"
-					dur="15s"
+					dur="17s"
 					repeatCount="indefinite"
 					values={svgValues}
 				></animate>
@@ -19,9 +22,32 @@ function Top() {
 		);
 	}
 
+	const container = useRef(null);
+
+	useGSAP(
+		() => {
+			gsap.from(`.${styles.svg_01}`, {
+				alpha: '0',
+				ease: 'power4.out',
+				duration: 8,
+			});
+			gsap.from(`.${styles.svg_02}`, {
+				alpha: '0',
+				ease: 'power4.out',
+				duration: 4,
+			});
+			gsap.from(`.${styles.svg_03}`, {
+				alpha: '0',
+				ease: 'power4.out',
+				duration: 2,
+			});
+		},
+		{ scope: container },
+	);
+
 	return (
 		<>
-			<div className={styles.top}>
+			<div className={styles.top} ref={container}>
 				<div className={styles.svg}>
 					<div className={styles.container}>
 						<svg viewBox="0 0 500 500" className={styles.svg_01}>

@@ -17,8 +17,7 @@ const From = () => {
 	const methods = useForm();
 	const [success, setSuccess] = useState(false);
 
-	const onSubmit = methods.handleSubmit((data) => {
-		// console.log(data);
+	const onSubmit = methods.handleSubmit(() => {
 		methods.reset();
 		setSuccess(true);
 	});

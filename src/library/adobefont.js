@@ -25,9 +25,11 @@
 		if (f || (a && a != 'complete' && a != 'loaded')) return;
 		f = true;
 		clearTimeout(t);
-		/* 		try {
-			Typekit.load(config) */
-		// } catch (e) {}
+		try {
+			// eslint-disable-next-line no-undef
+			Typekit.load(config);
+			// eslint-disable-next-line no-empty
+		} catch (e) {}
 	};
 	s.parentNode.insertBefore(tk, s);
 })(document);

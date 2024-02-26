@@ -87,9 +87,9 @@ $breakpoints: (
 	}
 }
 
-// 画面幅 ○○px未満
+// 画面幅 ○○px以下
 @mixin mq-max($breakpoint) {
-	@media (width < #{map-get($breakpoints, $breakpoint)} ) {
+	@media (width <= #{map-get($breakpoints, $breakpoint)} ) {
 		@content;
 	}
 }

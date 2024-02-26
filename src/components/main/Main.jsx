@@ -9,10 +9,10 @@ function Main() {
 	return (
 		<main>
 			<Top />
-			<AboutUs />
-			<Works />
-			<Company />
-			<Contact />
+			<AboutUs id="about" />
+			<Works id="works" />
+			<Company id="company" />
+			<Contact id="contact" />
 		</main>
 	);
 }

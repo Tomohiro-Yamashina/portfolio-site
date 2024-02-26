@@ -3,9 +3,12 @@ import Main from '@/components/Main/Main.jsx';
 import Footer from '@/components/Footer/Footer.jsx';
 import './App.module.scss';
 import { useRef, useEffect } from 'react';
+// スムーススクロール
 import { ReactLenis } from '@studio-freight/react-lenis';
+// アニメーション
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TextPlugin } from 'gsap/TextPlugin';
 
 import './library/adobefont.js';
 
@@ -14,6 +17,7 @@ import './library/adobefont.js';
 
 // 使用する gsapプラグイン を登録する
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 
 // ****************************************************************
 

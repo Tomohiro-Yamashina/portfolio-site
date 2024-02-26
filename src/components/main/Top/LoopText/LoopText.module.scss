@@ -1,40 +1,30 @@
 .loopTextTop {
 	position: absolute;
-	// z-index: -4;
 	top: -8rem;
 	width: fit-content;
 	height: fit-content;
 	color: hsl(0, 0%, 0%);
-	font-family: 'ltc-goudy-oldstyle-pro', serif;
-	// font-size: clamp(2rem, 1.273rem + 13.64vw, 8rem);
 	font-weight: 400;
 	letter-spacing: -0.045em;
 	mix-blend-mode: overlay;
 }
 .loopTextMiddle {
 	position: absolute;
-	// z-index: 10;
 	width: fit-content;
 	height: fit-content;
 	margin: auto;
-	color: hsl(0, 0%, 100%);
-	font-family: 'ltc-goudy-oldstyle-pro', serif;
-	// font-size: clamp(2rem, 1.273rem + 13.64vw, 8rem);
+	color: hsl(0, 0%, 0%);
 	font-weight: 400;
 	letter-spacing: -0.045em;
 	inset: 0;
 	mix-blend-mode: overlay;
-	// rotate: -1deg;
 }
 .loopTextBottom {
 	position: absolute;
-	// z-index: -5;
 	bottom: -8rem;
 	width: fit-content;
 	height: fit-content;
 	color: hsl(0, 0%, 0%);
-	font-family: 'ltc-goudy-oldstyle-pro', serif;
-	// font-size: clamp(2rem, 1.273rem + 13.64vw, 8rem);
 	font-weight: 400;
 	letter-spacing: -0.045em;
 	mix-blend-mode: overlay;

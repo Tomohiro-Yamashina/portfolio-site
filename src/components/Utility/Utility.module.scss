@@ -1,45 +1,42 @@
 @charset 'utf-8';
 @use '../../styles/mixin.scss' as *;
 
-.titleContainer {
-	width: min(100%, 1080px);
-	margin-block: 1.5rem;
-	margin-inline: auto;
-	// padding-block-start: 10rem;
-	// border-top: 1px solid hsl(0, 0%, 70%);
-}
+// .titleContainer {
+// 	width: min(100%, 1080px);
+// 	margin-inline: auto;
+// }
 
 .title {
 	width: fit-content;
 	margin-inline: auto;
-	font-size: var(--titleFontSize);
+	font-family: 'Inter', sans-serif;
+	// font-size: var(--titleFontSize);
+
+	font-size: 11vw;
 	font-weight: 400;
 	line-height: 1;
 }
 
 .subTitleContainer {
+	width: min(100%, 1080px);
 	margin-block: 2rem;
+	margin-inline: auto;
 	overflow: hidden;
-	font-family: ltc-goudy-oldstyle-pro, serif;
+	font-family: 'Inter', sans-serif;
 	font-weight: 600;
-	letter-spacing: -0.2em;
 
 	@include mq-max(lg) {
 		margin-block: 1.5rem;
 	}
-	// @include mq-max(md) {
-	// 	margin-block: 1.5rem;
-	// }
-	// @include mq-max(sm) {
-	// 	margin-block: 1.5rem;
-	// }
 }
 
 .subTitle {
-	// position: relative;
 	width: fit-content;
-	margin-inline: auto;
 	font-size: var(--subTitleFontSize);
 	font-weight: lighter;
 	line-height: 1;
+
+	@include mq-max(md) {
+		margin-inline: auto;
+	}
 }

@@ -1,0 +1,142 @@
+@charset 'utf-8';
+@use '@/styles/_mixin.scss' as *;
+
+/* 回転アニメーションのためのカスタム定義 */
+@property --gradient-angle {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}
+
+.container {
+	position: relative;
+	flex: 1;
+	aspect-ratio: 1 / 1;
+
+	@include mq-max(lg) {
+		flex: none;
+		scale: 0.8;
+	}
+
+	.logoMotion01 {
+		position: absolute;
+		z-index: 3;
+		width: 100%;
+
+		background-color: hsl(0, 0%, 10%);
+		// background-color: transparent;
+		aspect-ratio: 1 / 1;
+	}
+
+	.outer {
+		display: grid;
+		position: absolute;
+		width: 87%;
+		margin: auto;
+		background-color: hsl(0, 0%, 10%);
+		inset: 0;
+		aspect-ratio: 1 / 1;
+		place-items: center;
+
+		&::before,
+		&::after {
+			/* グラデーション枠線のための色変数 */
+			--clr-1: hsl(0, 0%, 100%);
+			--clr-2: hsla(0, 0%, 100%, 0.9);
+			--clr-3: hsla(0, 0%, 100%, 0.8);
+			--clr-4: hsla(0, 0%, 100%, 0.7);
+			--clr-5: hsla(0, 0%, 100%, 0.6);
+			--clr-6: hsla(0, 0%, 100%, 0.5);
+			--clr-7: hsla(0, 0%, 100%, 0.4);
+			--clr-8: hsla(0, 0%, 100%, 0.3);
+			--clr-9: hsla(0, 0%, 100%, 0.2);
+			--clr-10: hsla(0, 0%, 100%, 0.1);
+			--transparent: transparent;
+
+			/* 疑似要素を使用したグラデーションの枠線 */
+			content: '';
+			position: absolute;
+			z-index: -1;
+			animation: rotation 15s linear infinite;
+			border-radius: inherit;
+			background: conic-gradient(
+				from var(--gradient-angle),
+				var(--clr-1),
+				var(--clr-2),
+				var(--clr-3),
+				var(--clr-4),
+				var(--clr-5),
+				var(--clr-6),
+				var(--clr-7),
+				var(--clr-8),
+				var(--clr-9),
+				var(--clr-10),
+				var(--transparent),
+				var(--transparent),
+				var(--transparent),
+				var(--clr-10),
+				var(--clr-9),
+				var(--clr-8),
+				var(--clr-7),
+				var(--clr-6),
+				var(--clr-5),
+				var(--clr-4),
+				var(--clr-3),
+				var(--clr-2),
+				var(--clr-1)
+			);
+			inset: -1.25%;
+		}
+
+		&::after {
+			filter: blur(8px);
+		}
+
+		@keyframes rotation {
+			0% {
+				--gradient-angle: 0deg;
+			}
+			100% {
+				--gradient-angle: 360deg;
+			}
+		}
+	}
+
+	.inner {
+		width: 65%;
+	}
+
+	.logoMotion02 {
+		position: absolute;
+		z-index: 2;
+		width: 100%;
+		// background-color: hsl(26, 25%, 75%);
+		background-color: hsl(0, 0%, 10%);
+		aspect-ratio: 1 / 1;
+
+		& .outer {
+			background-color: inherit;
+		}
+		& .inner {
+			width: 87%;
+			filter: grayscale(1);
+		}
+	}
+
+	.logoMotion03 {
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		// background-color: hsl(11, 24%, 83%);
+		background-color: hsl(0, 0%, 10%);
+		aspect-ratio: 1 / 1;
+
+		& .outer {
+			background-color: inherit;
+		}
+		& .inner {
+			width: 87%;
+			filter: grayscale(1);
+		}
+	}
+}

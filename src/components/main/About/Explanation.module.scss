@@ -1,0 +1,75 @@
+@charset 'utf-8';
+@use '@/styles/_mixin.scss' as *;
+
+.container {
+	position: relative;
+	flex: 1;
+
+	@include mq-max(lg) {
+		flex: none;
+	}
+	@include mq-max(sm) {
+		padding-inline: 1rem;
+	}
+
+	.inner {
+		position: absolute;
+
+		@include mq-max(lg) {
+			position: relative;
+		}
+	}
+
+	.titleWrapper {
+		display: grid;
+		align-items: center;
+		width: 100%;
+		aspect-ratio: 1 / 1;
+
+		@include mq-max(lg) {
+			aspect-ratio: auto;
+		}
+	}
+
+	.title {
+		font-size: clamp(3.5rem, 2.383rem + 4.77vw, 5.6rem);
+		font-weight: 400;
+
+		@include mq-max(lg) {
+			// font-size: clamp(3.7rem, 2.369rem + 5.68vw, 6rem);
+		}
+	}
+
+	.subTitle {
+		font-size: clamp(1.4rem, 0.974rem + 1.82vw, 2.2rem);
+		line-height: 1;
+	}
+
+	.textWrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 40dvh;
+		@include mq-max(lg) {
+			gap: 20vh;
+		}
+	}
+
+	.text {
+		font-family: var(--font-sans);
+		font-size: var(--textFontSize);
+		line-height: 2.5;
+		text-align: justify;
+		text-justify: inter-ideograph; /* Edge */
+		word-wrap: break-word;
+		word-break: break-word;
+		line-break: strict;
+		overflow-wrap: break-word;
+
+		&:first-child {
+			margin-block-start: 20vh;
+		}
+		&:last-child {
+			margin-block-end: 10vh;
+		}
+	}
+}

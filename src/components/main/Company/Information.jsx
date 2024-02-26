@@ -4,7 +4,7 @@ import { SubTitle } from '../../Utility/Utility.jsx';
 export default function Information() {
 	return (
 		<section className={styles.container}>
-			<SubTitle>INFORMATION</SubTitle>
+			<SubTitle colorChange={'#fff'}>INFORMATION</SubTitle>
 			<table className={styles.info} aria-label="会社概要">
 				<tbody>
 					<tr>

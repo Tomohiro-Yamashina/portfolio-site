@@ -1,21 +1,51 @@
 @charset 'utf-8';
-@use '../../../styles/mixin.scss' as *;
+@use '@/styles/_mixin.scss' as *;
 
 .container {
 	width: 100%;
-	margin-block-end: 20rem;
+	// scroll-padding-top: -12rem;
+
 	padding-inline: 1.5rem;
 	overflow: hidden;
+	scroll-margin-block-start: -12rem;
 
 	@include mq-max(lg) {
-		margin-block-end: 16rem;
+		scroll-margin-block-start: -8rem;
 	}
 	@include mq-max(md) {
-		margin-block-end: 12rem;
+		scroll-margin-block-start: -6rem;
 	}
 	@include mq-max(sm) {
-		margin-block-end: 8rem;
+		scroll-margin-block-start: -4rem;
 	}
+}
+
+.titleWrapper {
+	display: grid;
+	position: relative;
+	width: 100%;
+	height: 100dvh;
+	place-items: center;
+	margin-block: 12rem;
+
+	@include mq-max(lg) {
+		margin-block: 8rem;
+	}
+	@include mq-max(md) {
+		margin-block: 6rem;
+	}
+	@include mq-max(sm) {
+		margin-block: 4rem;
+	}
+}
+
+.title {
+	width: fit-content;
+	margin-inline: auto;
+	font-family: 'Inter', sans-serif;
+	font-size: var(--titleFontSize);
+	font-weight: 600;
+	line-height: 1;
 }
 
 .information {

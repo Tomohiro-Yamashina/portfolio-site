@@ -3,7 +3,7 @@ import { SubTitle } from '../../Utility/Utility.jsx';
 export default function Access() {
 	return (
 		<section className={styles.container}>
-			<SubTitle>ACCESS</SubTitle>
+			<SubTitle colorChange={'#fff'}>ACCESS</SubTitle>
 			<div className={styles.access}>
 				<div className={styles.location}>
 					<div className={styles.textarea}>

@@ -6,21 +6,13 @@
 	--sb-thumb-color: hsl(0, 0%, 37%);
 	--sb-size: 10px;
 
-	/* color 変数*/
-	// --colorText: #404040;
-	// --color-text-p-secondary: #606060;
-	// --color-text-h: #202020;
-	// --color-bg: #eff2f5;
-	// --color-bg-code: #fff;
-	// --color-bg-footer: #f9f9f9;
-	// --color-bg-strong: #fff996;
-	// --color-bg-btn: #1976d2;
-	// --color-btn-secondary: #e0e0e0;
-	// --color-text-a: #1976d2;
-	// --color-text-a-hover: var(--primary);
-	// --color-text-a-visited: var(--color-text-a);
-	// --color-border: rgba(0, 0, 0, 0.1);
-	// --primary: #3223b3;
+	/* colorText 変数*/
+	--colorDarkText: hsl(0, 0%, 10%);
+	--colorLightText: hsl(0, 0%, 100%);
+	/* colorBg 変数*/
+	--colorDarkBg: hsl(0, 0%, 8%);
+	--colorLightBg: hsl(15, 20%, 98%);
+
 	--guideSolidColor: rgba(66, 71, 112, 0.18);
 	--guideDashedColor: rgba(66, 71, 112, 0.15);
 
@@ -36,7 +28,7 @@
 		Courier New, Courier, BIZ UDGothic, Meiryo, monospace;
 
 	/* font-size レスポンシブ対応*/
-	--titleFontSize: clamp(4rem, -0.091rem + 11.36vw, 9rem);
-	--subTitleFontSize: clamp(2.5rem, 0.455rem + 5.68vw, 5rem);
+	--titleFontSize: clamp(4rem, -0.482rem + 19.12vw, 13rem);
+	--subTitleFontSize: clamp(2.5rem, 0.757rem + 7.44vw, 6rem);
 	--textFontSize: clamp(1rem, 0.759rem + 0.67vw, 1.188rem);
 }

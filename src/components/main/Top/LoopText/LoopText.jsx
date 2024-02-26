@@ -1,7 +1,7 @@
 import styles from './LoopText.module.scss';
 
 export function LoopText({ position }) {
-	console.log(position === 'Top');
+	// console.log(position === 'Top');
 
 	if (position === 'Top') {
 		return (
@@ -60,7 +60,7 @@ export function LoopText({ position }) {
 				&ensp;
 				<span>FARM</span>
 				&ensp;
-				<span className={styles.harajuku}>HARAJUKU</span>
+				{/* <span className={styles.harajuku}>HARAJUKU</span> */}
 			</p>
 			<p className={styles.postText}>
 				<span className={styles.malts}>MALTS</span>
@@ -69,7 +69,7 @@ export function LoopText({ position }) {
 				&ensp;
 				<span>FARM</span>
 				&ensp;
-				<span className={styles.harajuku}>HARAJUKU</span>
+				{/* <span className={styles.harajuku}>HARAJUKU</span> */}
 			</p>
 		</div>
 	);

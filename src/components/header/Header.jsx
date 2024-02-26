@@ -1,9 +1,15 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useLenis } from '@studio-freight/react-lenis';
 import styles from './Header.module.scss';
 
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+// SplitType
+import SplitType from 'split-type';
+
 function Header() {
 	const [active, setActive] = useState(false);
+	const [titleHover, setTitleHover] = useState(false);
 	const menuItems = ['top', 'about', 'works', 'company', 'contact'];
 
 	const refs = {
@@ -17,7 +23,6 @@ function Header() {
 
 	// Lenisのインスタンス化
 	const lenis = useLenis();
-
 	// ナビ開閉時のスクロール挙動
 	const handleHamburger = () => {
 		setActive(!active);
@@ -29,6 +34,35 @@ function Header() {
 		}
 	};
 
+	// GSAPから提供されているReact専用のHook
+	useGSAP(
+		() => {
+			// アニメーション対象のテキストを文字毎に分割
+			const text = new SplitType(`.${styles.title}`, { types: 'chars' });
+
+			// 取得した配列にアニメーションを実装
+			const hoverAnimation = () => {
+				text.chars.forEach((target, i) => {
+					gsap.to(target, {
+						y: '-100%',
+						delay: i * 0.02,
+						duration: 0.4,
+						ease: 'power4.out',
+					});
+				});
+			};
+
+			// 横幅768px以上での適用制限
+			let mm = gsap.matchMedia();
+			mm.add('(min-width: 768px)', () => {
+				if (titleHover) {
+					hoverAnimation();
+				}
+			});
+		},
+		{ dependencies: [titleHover], scope: refs.logo },
+	);
+
 	return (
 		<header>
 			<div className={`${styles.header} ${active ? 'active' : ''}`}>
@@ -36,8 +70,15 @@ function Header() {
 					<h1
 						className={`${styles.logo} ${active ? 'active' : ''}`}
 						ref={refs.logo}
+						onMouseEnter={() => setTitleHover(true)}
+						onMouseLeave={() => setTitleHover(false)}
 					>
-						<a href="*/">MALTS</a>
+						<a href="./" className={styles.title}>
+							MALTS
+						</a>
+						<a href="./" className={styles.title}>
+							MALTS
+						</a>
 					</h1>
 					<div
 						className={`${styles.hamburger} ${active ? 'active' : ''}`}
@@ -68,7 +109,6 @@ function Header() {
 					{menuItems.map((item, index) => (
 						<li key={index} className={styles.item}>
 							<a href={`#${item}`}>{item.toUpperCase()}</a>
-							<span className={styles.underLine}></span>
 						</li>
 					))}
 				</ul>

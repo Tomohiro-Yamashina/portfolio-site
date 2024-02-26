@@ -11,6 +11,7 @@ footer {
 	p {
 		width: fit-content;
 		margin-inline: auto;
+		font-size: clamp(0.75rem, 0.511rem + 1.02vw, 1rem);
 
 		a {
 			margin-inline: 0.5rem;

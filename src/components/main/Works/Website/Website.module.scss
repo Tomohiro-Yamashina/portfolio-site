@@ -1,57 +1,61 @@
 @charset 'utf-8';
-@use '../../../../styles/mixin' as *;
+@use '@/styles/mixin' as *;
 
 .container {
 	display: grid;
-	position: relative;
 	width: 100%;
 	min-height: 100dvh;
 	color: hsl(0, 0%, 10%);
 	place-items: center;
 
-	@include mq-max(lg) {
-		height: fit-content;
+	@include mq-max(md) {
+		margin-block-start: 8rem;
+	}
+	@include mq-max(sm) {
+		margin-block-start: 5rem;
 	}
 }
 
 .wrapper {
-	width: min(100%, 1080px);
+	position: relative;
+	width: 100%;
 	height: fit-content;
-	margin-inline: auto;
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: -1.5rem;
+		width: calc(100% + 3rem);
+		height: 85%;
+		background-color: rgb(228, 227, 227);
+		background-image: url('https://www.transparenttextures.com/patterns/otis-redding.png');
+	}
+
+	@include mq-max(md) {
+		&::before {
+			content: '';
+			display: none;
+		}
+	}
 }
 
 .imageContainer {
-	flex-grow: 1;
 	width: min(100%, 1080px);
 	margin-inline: auto;
 	cursor: pointer;
 
-	&:active {
-		cursor: grabbing;
-	}
-
 	@include mq-max(lg) {
 		bottom: 0%;
 		cursor: auto;
-		&:active {
-			cursor: auto;
-		}
 	}
 }
 
 .flex {
 	display: flex;
 	flex-direction: row;
+	flex-grow: 1;
 	column-gap: 2rem;
-	scroll-snap-type: x proximity;
-	/*スクロールバー非表示（IE・Edge）*/
-	-ms-overflow-style: none;
-	/*スクロールバー非表示（Firefox）*/
-	scrollbar-width: none;
-	/*スクロールバー非表示（Chrome・Safari）*/
-	&::-webkit-scrollbar {
-		display: none;
-	}
 
 	@include mq-max(md) {
 		flex-direction: column;
@@ -69,16 +73,16 @@
 	flex-basis: 600px;
 	flex-shrink: 0;
 	overflow: hidden;
-	border-radius: 5px;
+	border-radius: 4px;
 	aspect-ratio: 4/3;
+
+	@include mq-max(lg) {
+		flex-basis: 500px;
+	}
 
 	@include mq-max(md) {
 		flex-basis: 100%;
 		width: 100%;
-		margin-inline: auto;
-	}
-
-	@include mq-max(sm) {
 		margin-inline: auto;
 	}
 

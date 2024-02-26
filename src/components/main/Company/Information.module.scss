@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@use '../../../styles/mixin.scss' as *;
+@use '@/styles/mixin.scss' as *;
 
 .container {
 	width: min(100%, 1080px);
@@ -12,8 +12,11 @@
 	border-collapse: separate;
 	border: 1px solid var(--guideSolidColor);
 	border-radius: 8px;
-	background-color: hsl(0, 0%, 100%, 0.5);
+	background-color: hsla(0, 0%, 100%, 0.95);
 	font-size: 1rem;
+	@include mq-max(sm) {
+		font-size: 0.9rem;
+	}
 
 	tbody {
 		border-radius: 1rem;
