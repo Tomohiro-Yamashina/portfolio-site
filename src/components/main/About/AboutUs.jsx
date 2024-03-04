@@ -11,77 +11,66 @@ import { useGSAP } from '@gsap/react';
 
 function AboutUs({ id }) {
 	// DOM要素を取得
-	const aboutUs = useRef(null);
 	const container = useRef(null);
+	const aboutUs = useRef(null);
 	const aboutUsText = useRef(null);
 	const image01 = useRef(null);
 	const image02 = useRef(null);
 
-	// アニメーション
+	// Animation
 	useGSAP(
 		() => {
-			const target = aboutUs.current;
-			const containerHeight = container.current.offsetHeight;
-			const aboutUsTextHeight = aboutUsText.current.offsetHeight;
+			const aboutUsTextScroll = () => {
+				const containerHeight = aboutUs.current.offsetHeight;
+				const aboutUsTextHeight = aboutUsText.current.offsetHeight;
 
-			const aboutUsTextScroll = () =>
 				gsap.to(aboutUsText.current, {
 					y: -aboutUsTextHeight + containerHeight,
 					ease: 'none',
 					scrollTrigger: {
-						trigger: target,
+						// markers: true,
+						trigger: container.current,
 						pin: true,
-						scrub: true,
-						start: 'top top',
-						end: aboutUsTextHeight,
 						anticipatePin: 1,
+						end: `+=${aboutUsTextHeight}`,
+						scrub: 0.5,
 						invalidateOnRefresh: true,
 					},
 				});
+			};
 
-			const aboutUsLogoScrollAlpha01 = () =>
-				gsap.to(image01.current, {
-					scrollTrigger: {
-						trigger: aboutUsText.current,
-						start: '5% top',
-						anticipatePin: 1,
-						invalidateOnRefresh: true,
-						toggleActions: 'play none none reverse ',
-					},
+			const aboutUsLogoScrollAlpha = (target, num) =>
+				gsap.to(target, {
 					autoAlpha: 0,
 					duration: 0.4,
 					ease: 'power4.Out',
-				});
-
-			const aboutUsLogoScrollAlpha02 = () =>
-				gsap.to(image02.current, {
 					scrollTrigger: {
+						// markers: true,
 						trigger: aboutUsText.current,
-						start: '35% top',
-						anticipatePin: 1,
-						invalidateOnRefresh: true,
 						toggleActions: 'play none none reverse ',
+						start: `${num}% top`,
+						invalidateOnRefresh: true,
+						fastScrollEnd: true,
 					},
-					autoAlpha: 0,
-					duration: 0.4,
-					ease: 'power4.Out',
 				});
 
 			let mm = gsap.matchMedia();
-			mm.add('(min-width: 1024px)', () => {
+			mm.add('(1024px <= width)', () => {
 				aboutUsTextScroll();
-				aboutUsLogoScrollAlpha01();
-				aboutUsLogoScrollAlpha02();
+				aboutUsLogoScrollAlpha(image01.current, 5);
+				aboutUsLogoScrollAlpha(image02.current, 35);
 			});
 		},
-		{ scope: aboutUs },
+		{ scope: container },
 	);
 
 	return (
-		<article className={styles.container} id={id} ref={aboutUs}>
-			<div className={styles.outer} ref={container}>
-				<Explanation ref={aboutUsText} />
-				<Logo image01Ref={image01} image02Ref={image02} />
+		<article className={styles.container} id={id} ref={container}>
+			<div className={styles.outer}>
+				<div className={styles.inner} ref={aboutUs}>
+					<Explanation ref={aboutUsText} />
+					<Logo image01Ref={image01} image02Ref={image02} />
+				</div>
 			</div>
 		</article>
 	);

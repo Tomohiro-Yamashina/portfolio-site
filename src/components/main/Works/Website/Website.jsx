@@ -29,19 +29,19 @@ function Website() {
 
 	useGSAP(
 		() => {
-			const subTitleMotion = (num) => {
+			const subTitleMotion = (start, end) => {
 				gsap.from(subTitle.current, {
 					alpha: 0,
-					xPercent: -100,
+					xPercent: -50,
+					duration: 0.4,
 					ease: 'power3.out',
 					scrollTrigger: {
-						trigger: container.current,
-						start: `top ${num}%`,
-						end: '90% bottom',
-						scrub: 2,
-						invalidateOnRefresh: true,
-						toggleActions: 'play none none reverse',
 						// markers: true,
+						trigger: subTitle.current,
+						scrub: 1,
+						start: `top ${start}}%`,
+						end: `bottom ${end}%`,
+						invalidateOnRefresh: true,
 					},
 				});
 			};
@@ -49,23 +49,19 @@ function Website() {
 			const imgHorizontalMotion = () => {
 				const imageContainerWidth = imgContainer.current.offsetWidth;
 				const slides = gsap.utils.toArray(`.${styles.figure}`);
-				gsap.to(
-					slides,
-					{
-						xPercent: -100 * (slides.length - 1),
-						scrollTrigger: {
-							trigger: container.current,
-							pin: true,
-							scrub: 3,
-							start: 'bottom bottom',
-							end: `+=${imageContainerWidth}`,
-							snap: 1 / (slides.length - 1),
-							anticipatePin: 1,
-							invalidateOnRefresh: true,
-						},
+				gsap.to(slides, {
+					xPercent: -100 * (slides.length - 1),
+					ease: 'none',
+					scrollTrigger: {
+						// markers: true,
+						trigger: container.current,
+						pin: true,
+						anticipatePin: 1,
+						scrub: 0.5,
+						end: `+=${imageContainerWidth}`,
+						invalidateOnRefresh: true,
 					},
-					container,
-				);
+				});
 			};
 
 			const imgMotion = () => {
@@ -77,27 +73,27 @@ function Website() {
 						duration: 0.4,
 						ease: 'power4.out',
 						scrollTrigger: {
+							// markers: true,
 							trigger: target,
 							scrub: 1,
-							start: 'top 80%',
-							end: 'bottom bottom',
+							start: 'top 90%',
 							invalidateOnRefresh: true,
-							// markers: true,
 						},
 					});
 				});
 			};
 
 			let mm = gsap.matchMedia();
-			mm.add('(min-width: 769px)', () => {
-				subTitleMotion(40);
+			mm.add('(width > 768px)', () => {
+				subTitleMotion(50, 20);
 				imgHorizontalMotion();
 			});
-			mm.add('(max-width: 768px)', () => {
+			mm.add('(width <= 768px)', () => {
+				subTitleMotion(80, 50);
 				imgMotion();
 			});
 		},
-		{ dependencies: [subTitle], scope: container },
+		{ scope: container },
 	);
 
 	return (
@@ -110,11 +106,11 @@ function Website() {
 							<figure className={styles.figure} key={index}>
 								<picture className={styles.show}>
 									<source />
-									<img src={image[0]} alt="website" />
+									<img src={image[0]} alt="website Works" />
 								</picture>
 								<picture className={styles.hidden}>
 									<source />
-									<img src={image[1]} alt="website" />
+									<img src={image[1]} alt="website Works" />
 								</picture>
 							</figure>
 						))}

@@ -5,21 +5,14 @@
 	display: grid;
 	width: 100%;
 	min-height: 100dvh;
-	color: hsl(0, 0%, 10%);
+	color: var(--textColorDark);
 	place-items: center;
-
-	@include mq-max(md) {
-		margin-block-start: 8rem;
-	}
-	@include mq-max(sm) {
-		margin-block-start: 5rem;
-	}
+	@include responsive-margin-block-md(8rem, 'end');
 }
 
 .wrapper {
 	position: relative;
 	width: 100%;
-	height: fit-content;
 
 	&::before {
 		content: '';
@@ -28,7 +21,7 @@
 		left: -1.5rem;
 		width: calc(100% + 3rem);
 		height: 85%;
-		background-color: rgb(228, 227, 227);
+		background-color: var(--accentColorLight);
 		background-image: url('https://www.transparenttextures.com/patterns/otis-redding.png');
 	}
 
@@ -55,7 +48,11 @@
 	display: flex;
 	flex-direction: row;
 	flex-grow: 1;
-	column-gap: 2rem;
+	column-gap: 2.5rem;
+
+	@include mq-max(lg) {
+		column-gap: 2rem;
+	}
 
 	@include mq-max(md) {
 		flex-direction: column;
@@ -105,12 +102,19 @@
 	.hidden {
 		position: absolute;
 		top: 0;
-		transition: opacity 0.4s ease 0.1s;
+		transition: opacity 400ms ease 100ms;
 		opacity: 0;
 	}
 
-	&:hover > .hidden {
-		transition: opacity 0.4s ease 0.1s;
-		opacity: 1;
+	@media (hover: hover) {
+		&:hover > .hidden {
+			opacity: 1;
+		}
+	}
+
+	@media (hover: none) {
+		&:active > .hidden {
+			opacity: 1;
+		}
 	}
 }

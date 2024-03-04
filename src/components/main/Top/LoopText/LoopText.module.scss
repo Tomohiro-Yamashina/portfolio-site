@@ -3,28 +3,37 @@
 	top: -8rem;
 	width: fit-content;
 	height: fit-content;
-	color: hsl(0, 0%, 0%);
+	color: var(--textColorDark);
 	font-weight: 400;
 	letter-spacing: -0.045em;
 	mix-blend-mode: overlay;
 }
 .loopTextMiddle {
 	position: absolute;
-	width: fit-content;
+	width: 100vw;
 	height: fit-content;
 	margin: auto;
-	color: hsl(0, 0%, 0%);
+	overflow: hidden;
+	color: var(--textColorDark);
+
 	font-weight: 400;
 	letter-spacing: -0.045em;
 	inset: 0;
 	mix-blend-mode: overlay;
+	mask: 90deg
+		linear-gradient(
+			transparent,
+			hsl(0, 0%, 100%) 30%,
+			hsl(0, 0%, 100%) 70%,
+			transparent
+		);
 }
 .loopTextBottom {
 	position: absolute;
 	bottom: -8rem;
 	width: fit-content;
 	height: fit-content;
-	color: hsl(0, 0%, 0%);
+	color: var(--textColorDark);
 	font-weight: 400;
 	letter-spacing: -0.045em;
 	mix-blend-mode: overlay;
@@ -43,14 +52,6 @@
 	animation: loop 100s -50s linear infinite;
 	white-space: nowrap;
 }
-// .malts {
-// 	// font-family: sans-serif;
-// 	font-size: clamp(4rem, -0.364rem + 21.82vw, 16rem);
-// }
-// .harajuku {
-// 	font-family: sans-serif;
-// 	font-size: clamp(1rem, -0.091rem + 5.45vw, 4rem);
-// }
 
 @keyframes loop {
 	from {

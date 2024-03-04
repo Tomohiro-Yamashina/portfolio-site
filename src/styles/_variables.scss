@@ -1,28 +1,33 @@
 @charset "utf-8";
 
 :root {
+	/* mainColor 変数*/
+	--mainColorDark: hsl(0, 0%, 8%);
+	--mainColorLight: hsl(15, 20%, 98%);
+
+	/* accentColor 変数*/
+	--accentColorDark: hsl(0, 0%, 10%);
+	--accentColorLight: hsl(0, 0%, 92%);
+
+	/* borderColor 変数*/
+	--borderSolidColor: hsla(233, 26%, 35%, 0.2);
+
+	/* colorText 変数*/
+	--textColorDark: hsl(0, 0%, 20%);
+	--textColorLight: hsl(0, 0%, 100%);
+
 	/* scrollbar 変数*/
 	--sb-track-color: hsl(0, 0%, 87%);
 	--sb-thumb-color: hsl(0, 0%, 37%);
 	--sb-size: 10px;
 
-	/* colorText 変数*/
-	--colorDarkText: hsl(0, 0%, 10%);
-	--colorLightText: hsl(0, 0%, 100%);
-	/* colorBg 変数*/
-	--colorDarkBg: hsl(0, 0%, 8%);
-	--colorLightBg: hsl(15, 20%, 98%);
-
-	--guideSolidColor: rgba(66, 71, 112, 0.18);
-	--guideDashedColor: rgba(66, 71, 112, 0.15);
-
 	/* font-family 変数*/
-	/* --font-sans: サンセリフ体のフォントファミリーを指定。サンセリフ体は、セリフ（小さな装飾がある文字の末尾）がないフォントスタイル。これは通常、本文テキストに使用。*/
+	/* font-sans サンセリフ体のフォントファミリーを指定。サンセリフ体は、セリフ（小さな装飾がある文字の末尾）がないフォントスタイル。これは通常、本文テキストに使用。*/
 
 	--font-sans: Helvetica Neue, Arial, Hiragino Sans, Hiragino Kaku Gothic ProN,
 		BIZ UDPGothic, Meiryo, sans-serif;
 
-	/*--font-mono: モノスペース（等幅）のフォントファミリーを指定。モノスペースのフォントは、各文字が同じ幅を占めるため、コードやテキストアートの表示に適している。*/
+	/*font-mono モノスペース（等幅）のフォントファミリーを指定。モノスペースのフォントは、各文字が同じ幅を占めるため、コードやテキストアートの表示に適している。*/
 
 	--font-mono: SFMono-Regular, Menlo, Consolas, Bitstream Vera Sans Mono,
 		Courier New, Courier, BIZ UDGothic, Meiryo, monospace;

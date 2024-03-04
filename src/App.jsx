@@ -2,9 +2,9 @@ import Header from '@/components/Header/Header.jsx';
 import Main from '@/components/Main/Main.jsx';
 import Footer from '@/components/Footer/Footer.jsx';
 import './App.module.scss';
-import { useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 // スムーススクロール
-import { ReactLenis } from '@studio-freight/react-lenis';
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
 // アニメーション
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -22,26 +22,31 @@ gsap.registerPlugin(TextPlugin);
 // ****************************************************************
 
 function App() {
+	// Lenisを統合
+	const lenis = useLenis();
+
 	// GSAPとLenisを統合
 	const lenisRef = useRef();
+
 	useEffect(() => {
 		function update(time) {
 			lenisRef.current?.lenis?.raf(time * 1000);
 		}
 		gsap.ticker.add(update);
+
 		return () => {
 			gsap.ticker.remove(update);
 		};
 	});
 
+	console.log(gsap.globalTimeline);
+	// gsap.globalTimeline.pause();
 	return (
 		<ReactLenis
 			root
 			options={{
 				lerp: 0.1,
 				duration: 1.2,
-				smoothTouch: true,
-				easing: 'easeOutQuart',
 			}}
 			ref={lenisRef}
 			autoRaf={false}
@@ -50,6 +55,12 @@ function App() {
 			<Main />
 			<Footer />
 		</ReactLenis>
+
+		// <div>
+		// 	<Header />
+		// 	<Main />
+		// 	<Footer />
+		// </div>
 	);
 }
 

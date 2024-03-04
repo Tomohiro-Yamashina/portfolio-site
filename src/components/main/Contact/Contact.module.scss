@@ -5,14 +5,21 @@
 	width: 100%;
 	min-height: 100dvh;
 	padding-inline: 1.5rem;
-	color: hsl(0, 0%, 10%);
+	color: var(--textColorDark);
+	@include responsive-margin-block-md(8rem, 'end');
 }
+.outer {
+	width: min(100%, 1080px);
+	margin-inline: auto;
+}
+
 .titleWrapper {
 	display: grid;
 	position: relative;
 	width: 100%;
 	height: 100dvh;
 	place-items: center;
+	@include responsive-margin-block-md(8rem, 'end');
 }
 
 .title {
@@ -24,26 +31,11 @@
 	line-height: 1;
 }
 
-.outer {
-	width: min(100%, 1080px);
-	margin-block: 8rem;
-	margin-inline: auto;
-
-	@include mq-max(md) {
-		margin-block: 6rem;
-	}
-	@include mq-max(sm) {
-		margin-block: 4rem;
-	}
-	// border-top: 1px solid hsl(0, 0%, 70%);
-}
-
 .inner {
 	width: min(100%, 1080px);
-	// margin-block-start: 3rem;
 	margin-inline: auto;
 	overflow: hidden;
-	border: 1px solid var(--guideSolidColor);
+	border: 1px solid var(--borderSolidColor);
 	border-radius: 0.5rem;
 	background-color: hsla(0, 0%, 100%, 0.5);
 }
@@ -91,7 +83,7 @@ form {
 		display: block;
 		width: 100%;
 		height: 2.5rem;
-		border: 1px solid var(--guideSolidColor);
+		border: 1px solid var(--borderSolidColor);
 		border-radius: 6px;
 
 		&:focus {
@@ -108,7 +100,7 @@ form {
 		display: block;
 		width: 100%;
 		padding-block: 0.5rem;
-		border: 1px solid var(--guideSolidColor);
+		border: 1px solid var(--borderSolidColor);
 		border-radius: 6px;
 		resize: vertical;
 
@@ -147,7 +139,7 @@ form {
 	border: none;
 	border-radius: 6px;
 	background-color: rgb(80, 104, 238);
-	color: rgb(255, 255, 255);
+	color: var(--textColorLight);
 	cursor: pointer;
 }
 .cancel {
@@ -156,7 +148,7 @@ form {
 	padding-block: 0.5rem;
 	border: 1px solid;
 	border-radius: 6px;
-	background-color: rgb(236, 236, 236);
-	color: rgb(0, 0, 0);
+	background-color: var(--accentColorLight);
+	color: var(--textColorDark);
 	cursor: pointer;
 }

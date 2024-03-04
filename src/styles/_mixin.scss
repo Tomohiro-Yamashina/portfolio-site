@@ -100,29 +100,164 @@ $breakpoints: (
 	}
 }
 
-$pclg: 1200px; // PC
-$pc: 1024px; // PC
-$tab: 768px; // タブレット
-$sp: 480px; // スマホ
+// Responsive margin / padding
 
-@mixin pclg {
-	@media (max-width: ($pclg)) {
-		@content;
+@mixin responsive-margin-block-lg($value, $property: 'block') {
+	@if $property == 'block' {
+		margin-block: $value;
+	} @else if $property == 'end' {
+		margin-block-end: $value;
+	} @else {
+		margin-block-start: $value;
+	}
+
+	@include mq-max(xl) {
+		@if $property == 'block' {
+			margin-block: $value - 2rem;
+		} @else if $property == 'end' {
+			margin-block-end: $value - 2rem;
+		} @else {
+			margin-block-start: $value - 2rem;
+		}
+	}
+
+	@include mq-max(lg) {
+		@if $property == 'block' {
+			margin-block: $value - 4rem;
+		} @else if $property == 'end' {
+			margin-block-end: $value - 4rem;
+		} @else {
+			margin-block-start: $value - 4rem;
+		}
+	}
+
+	@include mq-max(md) {
+		@if $property == 'block' {
+			margin-block: $value - 6rem;
+		} @else if $property == 'end' {
+			margin-block-end: $value - 6rem;
+		} @else {
+			margin-block-start: $value - 6rem;
+		}
+	}
+
+	@include mq-max(sm) {
+		@if $property == 'block' {
+			margin-block: $value - 8rem;
+		} @else if $property == 'end' {
+			margin-block-end: $value - 8rem;
+		} @else {
+			margin-block-start: $value - 8rem;
+		}
 	}
 }
 
-@mixin pc {
-	@media (max-width: ($pc)) {
-		@content;
+@mixin responsive-margin-block-md($value, $property: 'block') {
+	@if $property == 'block' {
+		margin-block: $value;
+	} @else if $property == 'end' {
+		margin-block-end: $value;
+	} @else {
+		margin-block-start: $value;
+	}
+
+	@include mq-max(md) {
+		@if $property == 'block' {
+			margin-block: $value - 2rem;
+		} @else if $property == 'end' {
+			margin-block-end: $value - 2rem;
+		} @else {
+			margin-block-start: $value - 2rem;
+		}
+	}
+
+	@include mq-max(sm) {
+		@if $property == 'block' {
+			margin-block: $value - 4rem;
+		} @else if $property == 'end' {
+			margin-block-end: $value - 4rem;
+		} @else {
+			margin-block-start: $value - 4rem;
+		}
 	}
 }
-@mixin tab {
-	@media (max-width: ($tab)) {
-		@content;
+
+@mixin responsive-padding-block-lg($value, $property: 'block') {
+	@if $property == 'block' {
+		padding-block: $value;
+	} @else if $property == 'end' {
+		padding-block-end: $value;
+	} @else {
+		padding-block-start: $value;
+	}
+
+	@include mq-max(xl) {
+		@if $property == 'block' {
+			padding-block: $value - 2rem;
+		} @else if $property == 'end' {
+			padding-block-end: $value - 2rem;
+		} @else {
+			padding-block-start: $value - 2rem;
+		}
+	}
+
+	@include mq-max(lg) {
+		@if $property == 'block' {
+			padding-block: $value - 4rem;
+		} @else if $property == 'end' {
+			padding-block-end: $value - 4rem;
+		} @else {
+			padding-block-start: $value - 4rem;
+		}
+	}
+
+	@include mq-max(md) {
+		@if $property == 'block' {
+			padding-block: $value - 6rem;
+		} @else if $property == 'end' {
+			padding-block-end: $value - 6rem;
+		} @else {
+			padding-block-start: $value - 6rem;
+		}
+	}
+
+	@include mq-max(sm) {
+		@if $property == 'block' {
+			padding-block: $value - 8rem;
+		} @else if $property == 'end' {
+			padding-block-end: $value - 8rem;
+		} @else {
+			padding-block-start: $value - 8rem;
+		}
 	}
 }
-@mixin sp {
-	@media (max-width: ($sp)) {
-		@content;
+
+@mixin responsive-padding-block-md($value, $property: 'block') {
+	@if $property == 'block' {
+		padding-block: $value;
+	} @else if $property == 'end' {
+		padding-block-end: $value;
+	} @else {
+		padding-block-start: $value;
+	}
+
+	@include mq-max(md) {
+		@if $property == 'block' {
+			padding-block: $value - 2rem;
+		} @else if $property == 'end' {
+			padding-block-end: $value - 2rem;
+		} @else {
+			padding-block-start: $value - 2rem;
+		}
+	}
+
+	@include mq-max(sm) {
+		@if $property == 'block' {
+			padding-block: $value - 4rem;
+		} @else if $property == 'end' {
+			padding-block-end: $value - 4rem;
+		} @else {
+			padding-block-start: $value - 4rem;
+		}
 	}
 }

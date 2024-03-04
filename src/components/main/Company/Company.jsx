@@ -1,26 +1,36 @@
 // React
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 // Component
 import Information from './Information.jsx';
 import Access from './Access';
+// Lottie
 import ScrollLottie from '@/components/Utility/ScrollLottie.jsx';
 // SCSS
 import styles from './Company.module.scss';
 // GSAP
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+// image
+// import company from '@/assets/img/company.jpg';
+import malts from '@/assets/img/wheat_field.jpg';
+import harajuku from '@/assets/img/harajuku.jpg';
 
 function Company({ id }) {
 	const container = useRef(null);
 	const title = useRef(null);
+	const lottieRef = useRef(null);
+
+	useEffect(() => {
+		lottieRef.current.setSpeed(1.5);
+	});
 
 	useGSAP(
 		() => {
 			gsap.set(`.${styles.title}`, {
-				color: '#fff',
+				color: 'hsl(0, 0%, 100%)',
 			});
 			gsap.to(container.current, {
-				backgroundColor: '#151515',
+				backgroundColor: 'hsl(0, 0%, 8%)',
 				duration: 0.4,
 				ease: 'power4.Out',
 				scrollTrigger: {
@@ -31,16 +41,15 @@ function Company({ id }) {
 					// markers: true,
 				},
 			});
-			gsap.from(`.${styles.title}`, {
+			gsap.from(title.current, {
 				alpha: 0,
 				y: '50%',
-				duration: 0.4,
-				ease: 'power4.Out',
+				ease: 'power4.out',
 				scrollTrigger: {
 					trigger: `.${styles.titleWrapper}`,
 					start: 'top 25%',
+					end: 'center center',
 					scrub: 1,
-					end: 'bottom bottom',
 					invalidateOnRefresh: true,
 					toggleActions: 'play none none reverse ',
 					// markers: true,
@@ -51,14 +60,17 @@ function Company({ id }) {
 	);
 	return (
 		<article className={styles.container} id={id} ref={container}>
-			<div className={styles.titleWrapper}>
-				<h2 className={styles.title} ref={title}>
-					COMPANY
-				</h2>
-				<ScrollLottie colorChange={'#fff'} />
+			<div className={styles.inner}>
+				<div className={styles.titleWrapper}>
+					<h2 className={styles.title} ref={title}>
+						COMPANY
+					</h2>
+					<ScrollLottie ref={lottieRef} colorChange={'#fff'} />
+				</div>
+				<Information />
+				<Access />
 			</div>
-			<Information />
-			<Access />
+			<img className={styles.img} src={harajuku} alt="company-image" />
 		</article>
 	);
 }

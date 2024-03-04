@@ -27,11 +27,6 @@ ol[role='list'] {
 	list-style: none;
 }
 
-/* Set core root defaults */
-html:focus-within {
-	scroll-behavior: smooth;
-}
-
 /* Set core body defaults */
 body {
 	min-height: 100vh;
@@ -61,9 +56,6 @@ select {
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
 	*,
 	*::before,
 	*::after {

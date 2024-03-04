@@ -1,0 +1,72 @@
+.accordionWrapper {
+	container: accordion / inline-size;
+}
+
+.title {
+	position: relative;
+	height: fit-content;
+	border: 1px solid var(--borderSolidColor);
+	font-size: 1rem;
+}
+
+.button {
+	width: 100%;
+	padding-left: 1.5rem;
+	padding-block: 1rem;
+	border: none;
+	background-color: var(--accentColorLight);
+	background-image: url('https://www.transparenttextures.com/patterns/otis-redding.png');
+	text-align: left;
+	&[aria-expanded='true'] + .arrow {
+		translate: 0 -50%;
+		rotate: 315deg;
+	}
+}
+
+.arrow {
+	position: absolute;
+	top: 50%;
+	right: 2rem;
+	width: 12px;
+	height: 12px;
+	translate: 0 -100%;
+	rotate: 135deg;
+	transition: translate rotate 0.3s ease-out;
+	border-top: solid 2.5px hsl(0, 0%, 10%);
+	border-right: solid 2.5px hsl(0, 0%, 10%);
+}
+
+.accordionItem {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.4s ease-out;
+
+	&[aria-hidden='false'] {
+		grid-template-rows: 1fr;
+	}
+
+	div {
+		grid-row: 1 / span2;
+		overflow: hidden;
+	}
+
+	ul {
+		margin-inline-start: max(113px, calc(100% / 4));
+		padding-block: 1rem;
+		padding-inline-end: 2rem;
+		border-left: 1px solid var(--borderSolidColor);
+
+		li {
+			padding: 2px;
+		}
+	}
+}
+
+@container accordion (width <= 400px) {
+	.accordionItem {
+		ul {
+			margin-inline-start: 0px;
+			padding-inline: 3rem;
+		}
+	}
+}

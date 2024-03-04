@@ -2,25 +2,48 @@
 @use '@/styles/mixin.scss' as *;
 
 .container {
-	display: grid;
-	position: relative;
 	width: 100%;
 	min-height: 100dvh;
 	padding-inline: 1.5rem;
-	overflow: hidden;
-	background-color: var(--colorDarkBg);
-	color: var(--colorLightText);
-	place-items: center;
+	background-color: var(--mainColorDark);
+	color: var(--textColorLight);
+
+	@include mq-max(lg) {
+		padding-block: 10rem;
+	}
+	@include mq-max(md) {
+		padding-block: 8rem;
+	}
+	@include mq-max(sm) {
+		padding-block: 6rem;
+	}
 }
 
 .outer {
+	display: grid;
+	width: 100%;
+	min-height: 100dvh;
+	overflow: hidden;
+	place-items: center;
+	mask: linear-gradient(
+		transparent,
+		hsl(0, 0%, 100%) 30%,
+		hsl(0, 0%, 100%) 70%,
+		transparent
+	);
+
+	@include mq-max(lg) {
+		mask: none;
+	}
+}
+
+.inner {
 	display: flex;
+	position: relative;
 	width: min(100%, 1080px);
 	column-gap: 8vw;
-
 	@include mq-max(lg) {
 		display: block;
 		width: min(100%, 1024px / 2);
-		margin-block: 10vh;
 	}
 }

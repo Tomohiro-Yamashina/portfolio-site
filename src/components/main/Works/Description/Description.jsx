@@ -1,35 +1,96 @@
-import styles from './Description.module.scss';
-import Data from './clientList.json';
+// React
+import { useRef } from 'react';
+// Component
 import { SubTitle } from '../../../Utility/Utility.jsx';
+// SCSS
+import styles from './Description.module.scss';
+// JSON
+import Data from './clientList.json';
+// GSAP
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 function Description() {
-	function List({ num }) {
+	const container = useRef(null);
+	const subTitle = useRef(null);
+
+	useGSAP(
+		() => {
+			const subTitleMotion = (start, end) => {
+				gsap.from(subTitle.current, {
+					alpha: 0,
+					xPercent: -50,
+					duration: 0.4,
+					ease: 'power3.out',
+					scrollTrigger: {
+						// markers: true,
+						trigger: subTitle.current,
+						scrub: 1,
+						start: `top ${start}}%`,
+						end: `bottom ${end}%`,
+						invalidateOnRefresh: true,
+					},
+				});
+			};
+
+			const contentsMotion = (end) => {
+				gsap.from(`.${styles.description}`, {
+					scale: 0.95,
+					alpha: 0,
+					yPercent: 10,
+					duration: 0.4,
+					ease: 'power3.out',
+					scrollTrigger: {
+						// markers: true,
+						trigger: `.${styles.description}`,
+						scrub: 1,
+						start: 'top 90%',
+						end: `${end}% bottom`,
+						invalidateOnRefresh: true,
+					},
+				});
+			};
+
+			subTitleMotion(80, 50);
+			let mm = gsap.matchMedia();
+			mm.add('(width > 768px)', () => {
+				contentsMotion(25);
+			});
+			mm.add('(width <= 768px)', () => {
+				contentsMotion(10);
+			});
+		},
+		{ scope: container },
+	);
+
+	function List() {
 		return (
-			<div className={styles.details}>
-				<h3 className={styles.subHeading}>{Data[num].title}</h3>
-				<ul className={styles.list}>
-					{Data[num].list.map((item, index) => (
-						<li key={index}>{item}</li>
-					))}
-				</ul>
-			</div>
+			<>
+				{Data.map((item) => {
+					return (
+						<div key={item.id} className={styles.details}>
+							<h3 className={styles.subHeading}>{item.title}</h3>
+							<div className={styles.listContainer}>
+								<ul className={styles.list}>
+									{item.list.map((i, index) => {
+										return <li key={index}>{i}</li>;
+									})}
+								</ul>
+							</div>
+						</div>
+					);
+				})}
+			</>
 		);
 	}
-	return (
-		<>
-			<section className={styles.container}>
-				<SubTitle>CLIENT</SubTitle>
 
-				<div className={styles.description}>
-					<List num={0} />
-					<List num={1} />
-					<List num={2} />
-					<List num={3} />
-					<List num={4} />
-					<List num={5} />
-				</div>
-			</section>
-		</>
+	return (
+		<section className={styles.container} ref={container}>
+			<SubTitle ref={subTitle}>CLIENT</SubTitle>
+			<div className={styles.description}>
+				<List />
+			</div>
+		</section>
 	);
 }
 

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { useLenis } from '@studio-freight/react-lenis';
 import styles from './Header.module.scss';
 
@@ -62,6 +62,8 @@ function Header() {
 		},
 		{ dependencies: [titleHover], scope: refs.logo },
 	);
+
+	// document.querySelector('header').setAttribute('ontouchstart', ' ');
 
 	return (
 		<header>

@@ -23,7 +23,7 @@
 		z-index: 3;
 		width: 100%;
 
-		background-color: hsl(0, 0%, 10%);
+		background-color: var(--accentColorDark);
 		// background-color: transparent;
 		aspect-ratio: 1 / 1;
 	}
@@ -33,7 +33,7 @@
 		position: absolute;
 		width: 87%;
 		margin: auto;
-		background-color: hsl(0, 0%, 10%);
+		background-color: var(--accentColorDark);
 		inset: 0;
 		aspect-ratio: 1 / 1;
 		place-items: center;
@@ -110,8 +110,7 @@
 		position: absolute;
 		z-index: 2;
 		width: 100%;
-		// background-color: hsl(26, 25%, 75%);
-		background-color: hsl(0, 0%, 10%);
+		background-color: var(--accentColorDark);
 		aspect-ratio: 1 / 1;
 
 		& .outer {
@@ -127,8 +126,7 @@
 		position: absolute;
 		z-index: 1;
 		width: 100%;
-		// background-color: hsl(11, 24%, 83%);
-		background-color: hsl(0, 0%, 10%);
+		background-color: var(--accentColorDark);
 		aspect-ratio: 1 / 1;
 
 		& .outer {

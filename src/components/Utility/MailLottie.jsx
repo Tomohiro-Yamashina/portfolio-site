@@ -42,9 +42,9 @@ const MailLottie = () => {
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);
 
-	const { View } = useLottie(options, style);
-
-	return View;
+	const Lottie = useLottie(options, style);
+	Lottie.setSpeed(2);
+	return Lottie.View;
 };
 
 export default MailLottie;

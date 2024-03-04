@@ -14,6 +14,7 @@
 
 	.inner {
 		position: absolute;
+		width: 100%;
 
 		@include mq-max(lg) {
 			position: relative;
@@ -34,14 +35,10 @@
 	.title {
 		font-size: clamp(3.5rem, 2.383rem + 4.77vw, 5.6rem);
 		font-weight: 400;
-
-		@include mq-max(lg) {
-			// font-size: clamp(3.7rem, 2.369rem + 5.68vw, 6rem);
-		}
 	}
 
 	.subTitle {
-		font-size: clamp(1.4rem, 0.974rem + 1.82vw, 2.2rem);
+		font-size: clamp(1.38rem, 0.944rem + 1.86vw, 2.2rem);
 		line-height: 1;
 	}
 
