@@ -499,12 +499,12 @@ var jsxRuntimeExports = jsxRuntime.exports,
  * LICENSE file in the root directory of this source tree.
  */ (function (i) {
 	function s(ht, mt) {
-		var _t = ht.length;
+		var vt = ht.length;
 		ht.push(mt);
-		e: for (; 0 < _t; ) {
-			var Et = (_t - 1) >>> 1,
+		e: for (; 0 < vt; ) {
+			var Et = (vt - 1) >>> 1,
 				Mt = ht[Et];
-			if (0 < g(Mt, mt)) (ht[Et] = mt), (ht[_t] = Mt), (_t = Et);
+			if (0 < g(Mt, mt)) (ht[Et] = mt), (ht[vt] = Mt), (vt = Et);
 			else break e;
 		}
 	}
@@ -514,28 +514,28 @@ var jsxRuntimeExports = jsxRuntime.exports,
 	function c(ht) {
 		if (ht.length === 0) return null;
 		var mt = ht[0],
-			_t = ht.pop();
-		if (_t !== mt) {
-			ht[0] = _t;
+			vt = ht.pop();
+		if (vt !== mt) {
+			ht[0] = vt;
 			e: for (var Et = 0, Mt = ht.length, jt = Mt >>> 1; Et < jt; ) {
 				var $t = 2 * (Et + 1) - 1,
 					Bt = ht[$t],
 					Gt = $t + 1,
 					qt = ht[Gt];
-				if (0 > g(Bt, _t))
+				if (0 > g(Bt, vt))
 					Gt < Mt && 0 > g(qt, Bt)
-						? ((ht[Et] = qt), (ht[Gt] = _t), (Et = Gt))
-						: ((ht[Et] = Bt), (ht[$t] = _t), (Et = $t));
-				else if (Gt < Mt && 0 > g(qt, _t))
-					(ht[Et] = qt), (ht[Gt] = _t), (Et = Gt);
+						? ((ht[Et] = qt), (ht[Gt] = vt), (Et = Gt))
+						: ((ht[Et] = Bt), (ht[$t] = vt), (Et = $t));
+				else if (Gt < Mt && 0 > g(qt, vt))
+					(ht[Et] = qt), (ht[Gt] = vt), (Et = Gt);
 				else break e;
 			}
 		}
 		return mt;
 	}
 	function g(ht, mt) {
-		var _t = ht.sortIndex - mt.sortIndex;
-		return _t !== 0 ? _t : ht.id - mt.id;
+		var vt = ht.sortIndex - mt.sortIndex;
+		return vt !== 0 ? vt : ht.id - mt.id;
 	}
 	if (typeof performance == 'object' && typeof performance.now == 'function') {
 		var _ = performance;
@@ -582,8 +582,8 @@ var jsxRuntimeExports = jsxRuntime.exports,
 			}
 	}
 	function ft(ht, mt) {
-		(ut = !1), at && ((at = !1), st(vt), (vt = -1)), (ot = !0);
-		var _t = rt;
+		(ut = !1), at && ((at = !1), st(_t), (_t = -1)), (ot = !0);
+		var vt = rt;
 		try {
 			for (
 				nt(mt), lt = o(_e);
@@ -609,12 +609,12 @@ var jsxRuntimeExports = jsxRuntime.exports,
 			}
 			return jt;
 		} finally {
-			(lt = null), (rt = _t), (ot = !1);
+			(lt = null), (rt = vt), (ot = !1);
 		}
 	}
 	var pt = !1,
 		gt = null,
-		vt = -1,
+		_t = -1,
 		St = 5,
 		Pt = -1;
 	function Ct() {
@@ -652,7 +652,7 @@ var jsxRuntimeExports = jsxRuntime.exports,
 		(gt = ht), pt || ((pt = !0), At());
 	}
 	function xt(ht, mt) {
-		vt = dt(function () {
+		_t = dt(function () {
 			ht(i.unstable_now());
 		}, mt);
 	}
@@ -691,12 +691,12 @@ var jsxRuntimeExports = jsxRuntime.exports,
 				default:
 					mt = rt;
 			}
-			var _t = rt;
+			var vt = rt;
 			rt = mt;
 			try {
 				return ht();
 			} finally {
-				rt = _t;
+				rt = vt;
 			}
 		}),
 		(i.unstable_pauseExecution = function () {}),
@@ -712,21 +712,21 @@ var jsxRuntimeExports = jsxRuntime.exports,
 				default:
 					ht = 3;
 			}
-			var _t = rt;
+			var vt = rt;
 			rt = ht;
 			try {
 				return mt();
 			} finally {
-				rt = _t;
+				rt = vt;
 			}
 		}),
-		(i.unstable_scheduleCallback = function (ht, mt, _t) {
+		(i.unstable_scheduleCallback = function (ht, mt, vt) {
 			var Et = i.unstable_now();
 			switch (
-				(typeof _t == 'object' && _t !== null
-					? ((_t = _t.delay),
-						(_t = typeof _t == 'number' && 0 < _t ? Et + _t : Et))
-					: (_t = Et),
+				(typeof vt == 'object' && vt !== null
+					? ((vt = vt.delay),
+						(vt = typeof vt == 'number' && 0 < vt ? Et + vt : Et))
+					: (vt = Et),
 				ht)
 			) {
 				case 1:
@@ -745,21 +745,21 @@ var jsxRuntimeExports = jsxRuntime.exports,
 					Mt = 5e3;
 			}
 			return (
-				(Mt = _t + Mt),
+				(Mt = vt + Mt),
 				(ht = {
 					id: tt++,
 					callback: mt,
 					priorityLevel: ht,
-					startTime: _t,
+					startTime: vt,
 					expirationTime: Mt,
 					sortIndex: -1,
 				}),
-				_t > Et
-					? ((ht.sortIndex = _t),
+				vt > Et
+					? ((ht.sortIndex = vt),
 						s(et, ht),
 						o(_e) === null &&
 							ht === o(et) &&
-							(at ? (st(vt), (vt = -1)) : (at = !0), xt(ct, _t - Et)))
+							(at ? (st(_t), (_t = -1)) : (at = !0), xt(ct, vt - Et)))
 					: ((ht.sortIndex = Mt), s(_e, ht), ut || ot || ((ut = !0), yt(ft))),
 				ht
 			);
@@ -768,12 +768,12 @@ var jsxRuntimeExports = jsxRuntime.exports,
 		(i.unstable_wrapCallback = function (ht) {
 			var mt = rt;
 			return function () {
-				var _t = rt;
+				var vt = rt;
 				rt = mt;
 				try {
 					return ht.apply(this, arguments);
 				} finally {
-					rt = _t;
+					rt = vt;
 				}
 			};
 		});
@@ -3335,34 +3335,34 @@ function hd(i, s, o, c, g) {
 				e: {
 					switch (i) {
 						case 'compositionstart':
-							var vt = 'onCompositionStart';
+							var _t = 'onCompositionStart';
 							break e;
 						case 'compositionend':
-							vt = 'onCompositionEnd';
+							_t = 'onCompositionEnd';
 							break e;
 						case 'compositionupdate':
-							vt = 'onCompositionUpdate';
+							_t = 'onCompositionUpdate';
 							break e;
 					}
-					vt = void 0;
+					_t = void 0;
 				}
 			else
 				ie
-					? ge(i, o) && (vt = 'onCompositionEnd')
-					: i === 'keydown' && o.keyCode === 229 && (vt = 'onCompositionStart');
-			vt &&
+					? ge(i, o) && (_t = 'onCompositionEnd')
+					: i === 'keydown' && o.keyCode === 229 && (_t = 'onCompositionStart');
+			_t &&
 				(de &&
 					o.locale !== 'ko' &&
-					(ie || vt !== 'onCompositionStart'
-						? vt === 'onCompositionEnd' && ie && (gt = nd())
+					(ie || _t !== 'onCompositionStart'
+						? _t === 'onCompositionEnd' && ie && (gt = nd())
 						: ((kd = tt),
 							(ld = 'value' in kd ? kd.value : kd.textContent),
 							(ie = !0))),
-				(pt = oe(et, vt)),
+				(pt = oe(et, _t)),
 				0 < pt.length &&
-					((vt = new Ld(vt, i, null, o, tt)),
-					lt.push({ event: vt, listeners: pt }),
-					gt ? (vt.data = gt) : ((gt = he(o)), gt !== null && (vt.data = gt)))),
+					((_t = new Ld(_t, i, null, o, tt)),
+					lt.push({ event: _t, listeners: pt }),
+					gt ? (_t.data = gt) : ((gt = he(o)), gt !== null && (_t.data = gt)))),
 				(gt = ce ? je(i, o) : ke(i, o)) &&
 					((et = oe(et, 'onBeforeInput')),
 					0 < et.length &&
@@ -4381,39 +4381,39 @@ function vh(i) {
 	}
 	function ut(st, it, nt, ct) {
 		for (
-			var ft = null, pt = null, gt = it, vt = (it = 0), St = null;
-			gt !== null && vt < nt.length;
-			vt++
+			var ft = null, pt = null, gt = it, _t = (it = 0), St = null;
+			gt !== null && _t < nt.length;
+			_t++
 		) {
-			gt.index > vt ? ((St = gt), (gt = null)) : (St = gt.sibling);
-			var Pt = rt(st, gt, nt[vt], ct);
+			gt.index > _t ? ((St = gt), (gt = null)) : (St = gt.sibling);
+			var Pt = rt(st, gt, nt[_t], ct);
 			if (Pt === null) {
 				gt === null && (gt = St);
 				break;
 			}
 			i && gt && Pt.alternate === null && s(st, gt),
-				(it = _(Pt, it, vt)),
+				(it = _(Pt, it, _t)),
 				pt === null ? (ft = Pt) : (pt.sibling = Pt),
 				(pt = Pt),
 				(gt = St);
 		}
-		if (vt === nt.length) return o(st, gt), I && tg(st, vt), ft;
+		if (_t === nt.length) return o(st, gt), I && tg(st, _t), ft;
 		if (gt === null) {
-			for (; vt < nt.length; vt++)
-				(gt = lt(st, nt[vt], ct)),
+			for (; _t < nt.length; _t++)
+				(gt = lt(st, nt[_t], ct)),
 					gt !== null &&
-						((it = _(gt, it, vt)),
+						((it = _(gt, it, _t)),
 						pt === null ? (ft = gt) : (pt.sibling = gt),
 						(pt = gt));
-			return I && tg(st, vt), ft;
+			return I && tg(st, _t), ft;
 		}
-		for (gt = c(st, gt); vt < nt.length; vt++)
-			(St = ot(gt, st, vt, nt[vt], ct)),
+		for (gt = c(st, gt); _t < nt.length; _t++)
+			(St = ot(gt, st, _t, nt[_t], ct)),
 				St !== null &&
 					(i &&
 						St.alternate !== null &&
-						gt.delete(St.key === null ? vt : St.key),
-					(it = _(St, it, vt)),
+						gt.delete(St.key === null ? _t : St.key),
+					(it = _(St, it, _t)),
 					pt === null ? (ft = St) : (pt.sibling = St),
 					(pt = St));
 		return (
@@ -4421,7 +4421,7 @@ function vh(i) {
 				gt.forEach(function (Ct) {
 					return s(st, Ct);
 				}),
-			I && tg(st, vt),
+			I && tg(st, _t),
 			ft
 		);
 	}
@@ -4430,39 +4430,39 @@ function vh(i) {
 		if (typeof ft != 'function') throw Error(p$2(150));
 		if (((nt = ft.call(nt)), nt == null)) throw Error(p$2(151));
 		for (
-			var pt = (ft = null), gt = it, vt = (it = 0), St = null, Pt = nt.next();
+			var pt = (ft = null), gt = it, _t = (it = 0), St = null, Pt = nt.next();
 			gt !== null && !Pt.done;
-			vt++, Pt = nt.next()
+			_t++, Pt = nt.next()
 		) {
-			gt.index > vt ? ((St = gt), (gt = null)) : (St = gt.sibling);
+			gt.index > _t ? ((St = gt), (gt = null)) : (St = gt.sibling);
 			var Ct = rt(st, gt, Pt.value, ct);
 			if (Ct === null) {
 				gt === null && (gt = St);
 				break;
 			}
 			i && gt && Ct.alternate === null && s(st, gt),
-				(it = _(Ct, it, vt)),
+				(it = _(Ct, it, _t)),
 				pt === null ? (ft = Ct) : (pt.sibling = Ct),
 				(pt = Ct),
 				(gt = St);
 		}
-		if (Pt.done) return o(st, gt), I && tg(st, vt), ft;
+		if (Pt.done) return o(st, gt), I && tg(st, _t), ft;
 		if (gt === null) {
-			for (; !Pt.done; vt++, Pt = nt.next())
+			for (; !Pt.done; _t++, Pt = nt.next())
 				(Pt = lt(st, Pt.value, ct)),
 					Pt !== null &&
-						((it = _(Pt, it, vt)),
+						((it = _(Pt, it, _t)),
 						pt === null ? (ft = Pt) : (pt.sibling = Pt),
 						(pt = Pt));
-			return I && tg(st, vt), ft;
+			return I && tg(st, _t), ft;
 		}
-		for (gt = c(st, gt); !Pt.done; vt++, Pt = nt.next())
-			(Pt = ot(gt, st, vt, Pt.value, ct)),
+		for (gt = c(st, gt); !Pt.done; _t++, Pt = nt.next())
+			(Pt = ot(gt, st, _t, Pt.value, ct)),
 				Pt !== null &&
 					(i &&
 						Pt.alternate !== null &&
-						gt.delete(Pt.key === null ? vt : Pt.key),
-					(it = _(Pt, it, vt)),
+						gt.delete(Pt.key === null ? _t : Pt.key),
+					(it = _(Pt, it, _t)),
 					pt === null ? (ft = Pt) : (pt.sibling = Pt),
 					(pt = Pt));
 		return (
@@ -4470,7 +4470,7 @@ function vh(i) {
 				gt.forEach(function (wt) {
 					return s(st, wt);
 				}),
-			I && tg(st, vt),
+			I && tg(st, _t),
 			ft
 		);
 	}
@@ -9566,7 +9566,7 @@ class Lenis {
 			(this.onVirtualScroll = ({ deltaX: ct, deltaY: ft, event: pt }) => {
 				if (pt.ctrlKey) return;
 				const gt = pt.type.includes('touch'),
-					vt = pt.type.includes('wheel');
+					_t = pt.type.includes('wheel');
 				if (this.options.syncTouch && gt && pt.type === 'touchstart')
 					return void this.reset();
 				const St = ct === 0 && ft === 0,
@@ -9578,7 +9578,7 @@ class Lenis {
 				if (
 					((Ct = Ct.slice(0, Ct.indexOf(this.rootElement))),
 					Ct.find((bt) => {
-						var yt, xt, ht, mt, _t;
+						var yt, xt, ht, mt, vt;
 						return (
 							((yt = bt.hasAttribute) === null || yt === void 0
 								? void 0
@@ -9587,7 +9587,7 @@ class Lenis {
 								((xt = bt.hasAttribute) === null || xt === void 0
 									? void 0
 									: xt.call(bt, 'data-lenis-prevent-touch'))) ||
-							(vt &&
+							(_t &&
 								((ht = bt.hasAttribute) === null || ht === void 0
 									? void 0
 									: ht.call(bt, 'data-lenis-prevent-wheel'))) ||
@@ -9595,8 +9595,8 @@ class Lenis {
 								? void 0
 								: mt.contains('lenis')) &&
 								!(
-									!((_t = bt.classList) === null || _t === void 0) &&
-									_t.contains('lenis-stopped')
+									!((vt = bt.classList) === null || vt === void 0) &&
+									vt.contains('lenis-stopped')
 								))
 						);
 					}))
@@ -9605,7 +9605,7 @@ class Lenis {
 				if (this.isStopped || this.isLocked) return void pt.preventDefault();
 				if (
 					((this.isSmooth =
-						(this.options.syncTouch && gt) || (this.options.smoothWheel && vt)),
+						(this.options.syncTouch && gt) || (this.options.smoothWheel && _t)),
 					!this.isSmooth)
 				)
 					return (this.isScrolling = !1), void this.animate.stop();
@@ -10675,7 +10675,7 @@ function _inheritsLoose(i, s) {
 					ft,
 					pt,
 					gt,
-					vt,
+					_t,
 					St;
 				if (!dt) {
 					if (
@@ -10694,7 +10694,7 @@ function _inheritsLoose(i, s) {
 							it =
 								St === _bigNum$1 ? 0 : _e ? (at * lt) / St - 0.5 : (g / St) | 0,
 							gt = 0,
-							vt = _bigNum$1,
+							_t = _bigNum$1,
 							pt = 0;
 						pt < at;
 						pt++
@@ -10704,10 +10704,10 @@ function _inheritsLoose(i, s) {
 							(dt[pt] = ft =
 								et ? Math.abs(et === 'y' ? ct : nt) : _sqrt(nt * nt + ct * ct)),
 							ft > gt && (gt = ft),
-							ft < vt && (vt = ft);
+							ft < _t && (_t = ft);
 					g === 'random' && shuffle(dt),
-						(dt.max = gt - vt),
-						(dt.min = vt),
+						(dt.max = gt - _t),
+						(dt.min = _t),
 						(dt.v = at =
 							(parseFloat(o.amount) ||
 								parseFloat(o.each) *
@@ -11968,11 +11968,11 @@ var Timeline = (function (i) {
 						pt && at & 1 && ((rt = et - rt), (gt = 1)),
 						at !== ft && !this._lock)
 					) {
-						var vt = pt && ft & 1,
-							St = vt === (pt && at & 1);
+						var _t = pt && ft & 1,
+							St = _t === (pt && at & 1);
 						if (
-							(at < ft && (vt = !vt),
-							(j = vt ? 0 : tt % et ? et : tt),
+							(at < ft && (_t = !_t),
+							(j = _t ? 0 : tt % et ? et : tt),
 							(this._lock = 1),
 							(this.render(
 								j || (gt ? 0 : _roundPrecise(at * dt)),
@@ -11992,7 +11992,7 @@ var Timeline = (function (i) {
 							(_e = this._tDur),
 							St &&
 								((this._lock = 2),
-								(j = vt ? et : -1e-4),
+								(j = _t ? et : -1e-4),
 								this.render(j, !0),
 								this.vars.repeatRefresh && !gt && this.invalidate()),
 							(this._lock = 0),
@@ -12533,7 +12533,7 @@ var _addComplexStringPropTween = function (s, o, c, g, _, $, j) {
 			ft,
 			pt,
 			gt,
-			vt,
+			_t,
 			St,
 			Pt,
 			Ct,
@@ -12645,7 +12645,7 @@ var _addComplexStringPropTween = function (s, o, c, g, _, $, j) {
 					(bt = it === dt ? pt : it.indexOf(St)),
 					wt &&
 						(At = new wt()).init(St, yt || ft, s, bt, it) !== !1 &&
-						((s._pt = vt =
+						((s._pt = _t =
 							new PropTween(
 								s._pt,
 								St,
@@ -12658,7 +12658,7 @@ var _addComplexStringPropTween = function (s, o, c, g, _, $, j) {
 								At.priority,
 							)),
 						At._props.forEach(function (ht) {
-							It[ht] = vt;
+							It[ht] = _t;
 						}),
 						At.priority && (Pt = 1)),
 					!wt || yt)
@@ -12666,7 +12666,7 @@ var _addComplexStringPropTween = function (s, o, c, g, _, $, j) {
 					for (gt in ft)
 						_plugins[gt] && (At = _checkPlugin(gt, ft, s, bt, St, it))
 							? At.priority && (Pt = 1)
-							: (It[gt] = vt =
+							: (It[gt] = _t =
 									_addPropTween.call(
 										s,
 										St,
@@ -12794,7 +12794,7 @@ var Tween = (function (i) {
 			ft,
 			pt,
 			gt,
-			vt,
+			_t,
 			St,
 			Pt,
 			Ct;
@@ -12823,9 +12823,9 @@ var Tween = (function (i) {
 				rt || _isFuncOrString(et) || _isFuncOrString(tt))
 			) {
 				if (((gt = nt.length), (Pt = rt && distribute(rt)), _isObject$1(rt)))
-					for (vt in rt)
-						~_staggerTweenProps.indexOf(vt) &&
-							(Ct || (Ct = {}), (Ct[vt] = rt[vt]));
+					for (_t in rt)
+						~_staggerTweenProps.indexOf(_t) &&
+							(Ct || (Ct = {}), (Ct[_t] = rt[_t]));
 				for (ft = 0; ft < gt; ft++)
 					(pt = _copyExcluding(g, _staggerPropsToSkip)),
 						(pt.stagger = 0),
@@ -12863,13 +12863,13 @@ var Tween = (function (i) {
 						ct.duration();
 				else {
 					pt = {};
-					for (vt in ut)
-						vt === 'ease' ||
-							vt === 'easeEach' ||
-							_parseKeyframe(vt, ut[vt], pt, ut.easeEach);
-					for (vt in pt)
+					for (_t in ut)
+						_t === 'ease' ||
+							_t === 'easeEach' ||
+							_parseKeyframe(_t, ut[_t], pt, ut.easeEach);
+					for (_t in pt)
 						for (
-							At = pt[vt].sort(function (yt, xt) {
+							At = pt[_t].sort(function (yt, xt) {
 								return yt.t - xt.t;
 							}),
 								wt = 0,
@@ -12882,7 +12882,7 @@ var Tween = (function (i) {
 									ease: It.e,
 									duration: ((It.t - (ft ? At[ft - 1].t : 0)) / 100) * et,
 								}),
-								(bt[vt] = It.v),
+								(bt[_t] = It.v),
 								ct.to(nt, bt, wt),
 								(wt += bt.duration);
 					ct.duration() < et && ct.to({}, { duration: et - ct.duration() });
@@ -14365,14 +14365,14 @@ _easeMap.Circ;
 			ft = parseFloat(nt[1]) || 0,
 			pt,
 			gt,
-			vt,
+			_t,
 			St;
 		c
 			? _e !== _identity2DMatrix &&
 				(gt = ot * dt - ut * at) &&
-				((vt = ct * (dt / gt) + ft * (-at / gt) + (at * it - dt * st) / gt),
+				((_t = ct * (dt / gt) + ft * (-at / gt) + (at * it - dt * st) / gt),
 				(St = ct * (-ut / gt) + ft * (ot / gt) - (ot * it - ut * st) / gt),
-				(ct = vt),
+				(ct = _t),
 				(ft = St))
 			: ((pt = _getBBox(s)),
 				(ct = pt.x + (~nt[0].indexOf('%') ? (ct / 100) * pt.width : ct)),
@@ -14421,7 +14421,7 @@ _easeMap.Circ;
 			ft,
 			pt,
 			gt,
-			vt,
+			_t,
 			St,
 			Pt,
 			Ct,
@@ -14433,7 +14433,7 @@ _easeMap.Circ;
 			xt,
 			ht,
 			mt,
-			_t,
+			vt,
 			Et,
 			Mt,
 			jt,
@@ -14493,45 +14493,45 @@ _easeMap.Circ;
 							(lt -= pt - (ft * wt + pt * It))))
 					: ((Bt = gt[6]),
 						(jt = gt[7]),
-						(_t = gt[8]),
+						(vt = gt[8]),
 						(Et = gt[9]),
 						(Mt = gt[10]),
 						($t = gt[11]),
 						(tt = gt[12]),
 						(lt = gt[13]),
 						(rt = gt[14]),
-						(vt = _atan2(Bt, Mt)),
-						(dt = vt * _RAD2DEG),
-						vt &&
-							((St = Math.cos(-vt)),
-							(Pt = Math.sin(-vt)),
-							(xt = bt * St + _t * Pt),
+						(_t = _atan2(Bt, Mt)),
+						(dt = _t * _RAD2DEG),
+						_t &&
+							((St = Math.cos(-_t)),
+							(Pt = Math.sin(-_t)),
+							(xt = bt * St + vt * Pt),
 							(ht = yt * St + Et * Pt),
 							(mt = Bt * St + Mt * Pt),
-							(_t = bt * -Pt + _t * St),
+							(vt = bt * -Pt + vt * St),
 							(Et = yt * -Pt + Et * St),
 							(Mt = Bt * -Pt + Mt * St),
 							($t = jt * -Pt + $t * St),
 							(bt = xt),
 							(yt = ht),
 							(Bt = mt)),
-						(vt = _atan2(-At, Mt)),
-						(st = vt * _RAD2DEG),
-						vt &&
-							((St = Math.cos(-vt)),
-							(Pt = Math.sin(-vt)),
-							(xt = Ct * St - _t * Pt),
+						(_t = _atan2(-At, Mt)),
+						(st = _t * _RAD2DEG),
+						_t &&
+							((St = Math.cos(-_t)),
+							(Pt = Math.sin(-_t)),
+							(xt = Ct * St - vt * Pt),
 							(ht = wt * St - Et * Pt),
 							(mt = At * St - Mt * Pt),
 							($t = It * Pt + $t * St),
 							(Ct = xt),
 							(wt = ht),
 							(At = mt)),
-						(vt = _atan2(wt, Ct)),
-						(at = vt * _RAD2DEG),
-						vt &&
-							((St = Math.cos(vt)),
-							(Pt = Math.sin(vt)),
+						(_t = _atan2(wt, Ct)),
+						(at = _t * _RAD2DEG),
+						_t &&
+							((St = Math.cos(_t)),
+							(Pt = Math.sin(_t)),
 							(xt = Ct * St + wt * Pt),
 							(ht = bt * St + yt * Pt),
 							(wt = wt * St - Ct * Pt),
@@ -14543,8 +14543,8 @@ _easeMap.Circ;
 							((dt = at = 0), (st = 180 - st)),
 						(ot = _round$1(Math.sqrt(Ct * Ct + wt * wt + At * At))),
 						(ut = _round$1(Math.sqrt(yt * yt + Bt * Bt))),
-						(vt = _atan2(bt, yt)),
-						(it = Math.abs(vt) > 2e-4 ? vt * _RAD2DEG : 0),
+						(_t = _atan2(bt, yt)),
+						(it = Math.abs(_t) > 2e-4 ? _t * _RAD2DEG : 0),
 						(ct = $t ? 1 / ($t < 0 ? -$t : $t) : 0)),
 				c.svg &&
 					((xt = s.getAttribute('transform')),
@@ -14643,13 +14643,13 @@ _easeMap.Circ;
 		if (nt && (lt !== _zeroDeg || tt !== _zeroDeg)) {
 			var pt = parseFloat(tt) * _DEG2RAD,
 				gt = Math.sin(pt),
-				vt = Math.cos(pt),
+				_t = Math.cos(pt),
 				St;
 			(pt = parseFloat(lt) * _DEG2RAD),
 				(St = Math.cos(pt)),
 				($ = _addPxTranslate(it, $, gt * St * -nt)),
 				(j = _addPxTranslate(it, j, -Math.sin(pt) * -nt)),
-				(_e = _addPxTranslate(it, _e, vt * St * -nt + nt));
+				(_e = _addPxTranslate(it, _e, _t * St * -nt + nt));
 		}
 		dt !== _zeroPx && (ct += 'perspective(' + dt + _endParenthesis),
 			(g || _) && (ct += 'translate(' + g + '%, ' + _ + '%) '),
@@ -14689,7 +14689,7 @@ _easeMap.Circ;
 			ft,
 			pt,
 			gt,
-			vt,
+			_t,
 			St;
 		(_e = parseFloat(_e)),
 			(et = parseFloat(et)),
@@ -14701,13 +14701,13 @@ _easeMap.Circ;
 					(ft = Math.cos(_e) * lt),
 					(pt = Math.sin(_e) * lt),
 					(gt = Math.sin(_e - et) * -rt),
-					(vt = Math.cos(_e - et) * rt),
+					(_t = Math.cos(_e - et) * rt),
 					et &&
 						((tt *= _DEG2RAD),
 						(St = Math.tan(et - tt)),
 						(St = Math.sqrt(1 + St * St)),
 						(gt *= St),
-						(vt *= St),
+						(_t *= St),
 						tt &&
 							((St = Math.tan(tt)),
 							(St = Math.sqrt(1 + St * St)),
@@ -14716,14 +14716,14 @@ _easeMap.Circ;
 					(ft = _round$1(ft)),
 					(pt = _round$1(pt)),
 					(gt = _round$1(gt)),
-					(vt = _round$1(vt)))
-				: ((ft = lt), (vt = rt), (pt = gt = 0)),
+					(_t = _round$1(_t)))
+				: ((ft = lt), (_t = rt), (pt = gt = 0)),
 			((nt && !~($ + '').indexOf('px')) || (ct && !~(j + '').indexOf('px'))) &&
 				((nt = _convertToUnit(ot, 'x', $, 'px')),
 				(ct = _convertToUnit(ot, 'y', j, 'px'))),
 			(ut || at || dt || st) &&
 				((nt = _round$1(nt + ut - (ut * ft + at * gt) + dt)),
-				(ct = _round$1(ct + at - (ut * pt + at * vt) + st))),
+				(ct = _round$1(ct + at - (ut * pt + at * _t) + st))),
 			(g || _) &&
 				((St = ot.getBBox()),
 				(nt = _round$1(nt + (g / 100) * St.width)),
@@ -14736,7 +14736,7 @@ _easeMap.Circ;
 				',' +
 				gt +
 				',' +
-				vt +
+				_t +
 				',' +
 				nt +
 				',' +
@@ -14862,10 +14862,10 @@ var CSSPlugin = {
 			ft,
 			pt,
 			gt,
-			vt;
+			_t;
 		_pluginInitted || _initCore$1(),
 			(this.styles = this.styles || _getStyleSaver(s)),
-			(vt = this.styles.props),
+			(_t = this.styles.props),
 			(this.tween = c);
 		for (at in o)
 			if (
@@ -14892,7 +14892,7 @@ var CSSPlugin = {
 							: dt && (tt += dt),
 						this.add(j, 'setProperty', et, tt, g, _, 0, 0, at),
 						$.push(at),
-						vt.push(at, 0, j[at]);
+						_t.push(at, 0, j[at]);
 				else if (ot !== 'undefined') {
 					if (
 						(_e && at in _e
@@ -14918,7 +14918,7 @@ var CSSPlugin = {
 									_get(s, 'visibility') === 'hidden' &&
 									lt &&
 									(rt = 0),
-								vt.push('visibility', 0, j.visibility),
+								_t.push('visibility', 0, j.visibility),
 								_addNonTweeningPT(
 									this,
 									j,
@@ -14968,7 +14968,7 @@ var CSSPlugin = {
 								$.push('scaleY', at),
 								(at += 'X');
 						else if (at === 'transformOrigin') {
-							vt.push(_transformOriginProp, 0, j[_transformOriginProp]),
+							_t.push(_transformOriginProp, 0, j[_transformOriginProp]),
 								(tt = _convertKeywordsToPercentages(tt)),
 								ft.svg
 									? _applySVGOrigin(s, tt, 0, pt, 0, this)
@@ -15040,7 +15040,7 @@ var CSSPlugin = {
 						_missingPlugin(at, tt);
 						continue;
 					}
-					nt || (at in j ? vt.push(at, 0, j[at]) : vt.push(at, 1, et || s[at])),
+					nt || (at in j ? _t.push(at, 0, j[at]) : _t.push(at, 1, et || s[at])),
 						$.push(at);
 				}
 			}
@@ -15682,7 +15682,7 @@ function repositionAfterSplit(i, s, o) {
 			var ft = ct.parentElement === i,
 				pt = getPosition(ct, ft, s, o),
 				gt = pt.width,
-				vt = pt.height,
+				_t = pt.height,
 				St = pt.top,
 				Pt = pt.left;
 			/^br$/i.test(ct.nodeName) ||
@@ -15690,7 +15690,7 @@ function repositionAfterSplit(i, s, o) {
 					ft &&
 					((_e === null || St - _e >= nt) && ((_e = St), $.push((j = []))),
 					j.push(ct)),
-				s.absolute && set$1(ct, { top: St, left: Pt, width: gt, height: vt }));
+				s.absolute && set$1(ct, { top: St, left: Pt, width: gt, height: _t }));
 		}),
 		ot && ot.removeChild(i),
 		c.lines &&
@@ -15703,12 +15703,12 @@ function repositionAfterSplit(i, s, o) {
 				var pt = { height: 0, top: 1e4 };
 				return (
 					at.appendChild(ft),
-					ct.forEach(function (gt, vt, St) {
+					ct.forEach(function (gt, _t, St) {
 						var Pt = get$1(gt),
 							Ct = Pt.isWordEnd,
 							wt = Pt.top,
 							At = Pt.height,
-							It = St[vt + 1];
+							It = St[_t + 1];
 						(pt.height = Math.max(pt.height, At)),
 							(pt.top = Math.min(pt.top, wt)),
 							ft.appendChild(gt),
@@ -15727,7 +15727,7 @@ function repositionAfterSplit(i, s, o) {
 				var ft = get$1(ct),
 					pt = ft.isLine,
 					gt = ft.top,
-					vt = ft.left,
+					_t = ft.left,
 					St = ft.width,
 					Pt = ft.height,
 					Ct = get$1(ct.parentElement),
@@ -15735,7 +15735,7 @@ function repositionAfterSplit(i, s, o) {
 				(ct.style.top = ''.concat(wt ? gt - Ct.top : gt, 'px')),
 					(ct.style.left = pt
 						? ''.concat(lt.left, 'px')
-						: ''.concat(vt - (wt ? lt.left : 0), 'px')),
+						: ''.concat(_t - (wt ? lt.left : 0), 'px')),
 					(ct.style.height = ''.concat(Pt, 'px')),
 					(ct.style.width = pt
 						? ''.concat(lt.width, 'px')
@@ -16123,10 +16123,7 @@ function LoadingAnimation() {
 }
 const __vite_glob_0_0$2 = '/sample-site/assets/001-Wq5hE7z3.jpg',
 	__vite_glob_0_1$2 = '/sample-site/assets/002-w0tC0NFC.jpg',
-	__vite_glob_1_0 = '/sample-site/assets/003-BLWPlsRi.jpg',
-	__vite_glob_1_1 =
-		'/sample-site/assets/Vincent_van_Gogh_-_The_Sower_-_c._17-28_June_1888-e-bpTC7O.jpg',
-	__vite_glob_1_2 = '/sample-site/assets/publicdomainq-0048588ziv-jO9WQtFx.jpg',
+	__vite_glob_1_0 = '/sample-site/assets/101-e-bpTC7O.jpg',
 	__vite_glob_2_0 =
 		'/sample-site/assets/Jean-François_Millet_-_Gleaners_-_Google_Art_Project_2-3bx4Dgf1.jpg',
 	__vite_glob_2_1 = '/sample-site/assets/bruegelharvesters-M0WlMdD0.jpg',
@@ -16152,12 +16149,8 @@ const __vite_glob_0_0$2 = '/sample-site/assets/001-Wq5hE7z3.jpg',
 					: 16 <= _ && _ < 18
 						? ($ = Object.values(
 								Object.assign({
-									'../../../../assets/img/hero/evening/003.jpg':
+									'../../../../assets/img/hero/evening/101.jpg':
 										__vite_glob_1_0,
-									'../../../../assets/img/hero/evening/Vincent_van_Gogh_-_The_Sower_-_c._17-28_June_1888.jpg':
-										__vite_glob_1_1,
-									'../../../../assets/img/hero/evening/publicdomainq-0048588ziv.jpg':
-										__vite_glob_1_2,
 								}),
 							))
 						: ($ = Object.values(
@@ -16820,7 +16813,7 @@ var lottie$1 = { exports: {} };
 										var xt,
 											ht,
 											mt = bt.length,
-											_t,
+											vt,
 											Et,
 											Mt,
 											jt;
@@ -16828,16 +16821,16 @@ var lottie$1 = { exports: {} };
 											if (((xt = bt[ht]), 'ks' in xt && !xt.completed)) {
 												if (((xt.completed = !0), xt.hasMask)) {
 													var $t = xt.masksProperties;
-													for (Et = $t.length, _t = 0; _t < Et; _t += 1)
-														if ($t[_t].pt.k.i) ft($t[_t].pt.k);
+													for (Et = $t.length, vt = 0; vt < Et; vt += 1)
+														if ($t[vt].pt.k.i) ft($t[vt].pt.k);
 														else
 															for (
-																jt = $t[_t].pt.k.length, Mt = 0;
+																jt = $t[vt].pt.k.length, Mt = 0;
 																Mt < jt;
 																Mt += 1
 															)
-																$t[_t].pt.k[Mt].s && ft($t[_t].pt.k[Mt].s[0]),
-																	$t[_t].pt.k[Mt].e && ft($t[_t].pt.k[Mt].e[0]);
+																$t[vt].pt.k[Mt].s && ft($t[vt].pt.k[Mt].s[0]),
+																	$t[vt].pt.k[Mt].e && ft($t[vt].pt.k[Mt].e[0]);
 												}
 												xt.ty === 0
 													? ((xt.layers = nt(xt.refId, yt)), dt(xt.layers, yt))
@@ -16922,20 +16915,20 @@ var lottie$1 = { exports: {} };
 											}
 											function xt(ht) {
 												var mt,
-													_t = ht.length;
-												for (mt = 0; mt < _t; mt += 1)
+													vt = ht.length;
+												for (mt = 0; mt < vt; mt += 1)
 													ht[mt].ty === 5 && yt(ht[mt]);
 											}
 											return function (ht) {
 												if (pt(bt, ht.v) && (xt(ht.layers), ht.assets)) {
 													var mt,
-														_t = ht.assets.length;
-													for (mt = 0; mt < _t; mt += 1)
+														vt = ht.assets.length;
+													for (mt = 0; mt < vt; mt += 1)
 														ht.assets[mt].layers && xt(ht.assets[mt].layers);
 												}
 											};
 										})(),
-										vt = (function () {
+										_t = (function () {
 											var bt = [4, 7, 99];
 											return function (yt) {
 												if (yt.chars && !pt(bt, yt.v)) {
@@ -16983,15 +16976,15 @@ var lottie$1 = { exports: {} };
 											}
 											function xt(ht) {
 												var mt,
-													_t = ht.length;
-												for (mt = 0; mt < _t; mt += 1)
+													vt = ht.length;
+												for (mt = 0; mt < vt; mt += 1)
 													ht[mt].ty === 5 && yt(ht[mt]);
 											}
 											return function (ht) {
 												if (pt(bt, ht.v) && (xt(ht.layers), ht.assets)) {
 													var mt,
-														_t = ht.assets.length;
-													for (mt = 0; mt < _t; mt += 1)
+														vt = ht.assets.length;
+													for (mt = 0; mt < vt; mt += 1)
 														ht.assets[mt].layers && xt(ht.assets[mt].layers);
 												}
 											};
@@ -17000,10 +16993,10 @@ var lottie$1 = { exports: {} };
 											var bt = [4, 1, 9];
 											function yt(ht) {
 												var mt,
-													_t = ht.length,
+													vt = ht.length,
 													Et,
 													Mt;
-												for (mt = 0; mt < _t; mt += 1)
+												for (mt = 0; mt < vt; mt += 1)
 													if (ht[mt].ty === 'gr') yt(ht[mt].it);
 													else if (ht[mt].ty === 'fl' || ht[mt].ty === 'st')
 														if (ht[mt].c.k && ht[mt].c.k[0].i)
@@ -17030,15 +17023,15 @@ var lottie$1 = { exports: {} };
 											}
 											function xt(ht) {
 												var mt,
-													_t = ht.length;
-												for (mt = 0; mt < _t; mt += 1)
+													vt = ht.length;
+												for (mt = 0; mt < vt; mt += 1)
 													ht[mt].ty === 4 && yt(ht[mt].shapes);
 											}
 											return function (ht) {
 												if (pt(bt, ht.v) && (xt(ht.layers), ht.assets)) {
 													var mt,
-														_t = ht.assets.length;
-													for (mt = 0; mt < _t; mt += 1)
+														vt = ht.assets.length;
+													for (mt = 0; mt < vt; mt += 1)
 														ht.assets[mt].layers && xt(ht.assets[mt].layers);
 												}
 											};
@@ -17047,10 +17040,10 @@ var lottie$1 = { exports: {} };
 											var bt = [4, 4, 18];
 											function yt(ht) {
 												var mt,
-													_t = ht.length,
+													vt = ht.length,
 													Et,
 													Mt;
-												for (mt = _t - 1; mt >= 0; mt -= 1)
+												for (mt = vt - 1; mt >= 0; mt -= 1)
 													if (ht[mt].ty === 'sh')
 														if (ht[mt].ks.k.i) ht[mt].ks.k.c = ht[mt].closed;
 														else
@@ -17067,14 +17060,14 @@ var lottie$1 = { exports: {} };
 											}
 											function xt(ht) {
 												var mt,
-													_t,
+													vt,
 													Et = ht.length,
 													Mt,
 													jt,
 													$t,
 													Bt;
-												for (_t = 0; _t < Et; _t += 1) {
-													if (((mt = ht[_t]), mt.hasMask)) {
+												for (vt = 0; vt < Et; vt += 1) {
+													if (((mt = ht[vt]), mt.hasMask)) {
 														var Gt = mt.masksProperties;
 														for (jt = Gt.length, Mt = 0; Mt < jt; Mt += 1)
 															if (Gt[Mt].pt.k.i) Gt[Mt].pt.k.c = Gt[Mt].cl;
@@ -17095,8 +17088,8 @@ var lottie$1 = { exports: {} };
 											return function (ht) {
 												if (pt(bt, ht.v) && (xt(ht.layers), ht.assets)) {
 													var mt,
-														_t = ht.assets.length;
-													for (mt = 0; mt < _t; mt += 1)
+														vt = ht.assets.length;
+													for (mt = 0; mt < vt; mt += 1)
 														ht.assets[mt].layers && xt(ht.assets[mt].layers);
 												}
 											};
@@ -17105,7 +17098,7 @@ var lottie$1 = { exports: {} };
 										bt.__complete ||
 											(Pt(bt),
 											gt(bt),
-											vt(bt),
+											_t(bt),
 											St(bt),
 											Ct(bt),
 											dt(bt.layers, bt.assets),
@@ -17119,7 +17112,7 @@ var lottie$1 = { exports: {} };
 									return (
 										(It.completeData = wt),
 										(It.checkColors = Pt),
-										(It.checkChars = vt),
+										(It.checkChars = _t),
 										(It.checkPathProperties = St),
 										(It.checkShapes = Ct),
 										(It.completeLayers = dt),
@@ -17155,8 +17148,8 @@ var lottie$1 = { exports: {} };
 														else
 															try {
 																(pt = dt(gt)), ct(pt);
-															} catch (vt) {
-																ft && ft(vt);
+															} catch (_t) {
+																ft && ft(_t);
 															}
 												};
 												try {
@@ -18264,15 +18257,15 @@ var lottie$1 = { exports: {} };
 						var xt;
 						for (xt = c - 1; xt >= 0; xt -= 1) s[xt].animation.destroy(yt);
 					}
-					function vt(yt, xt, ht) {
+					function _t(yt, xt, ht) {
 						var mt = [].concat(
 								[].slice.call(document.getElementsByClassName('lottie')),
 								[].slice.call(document.getElementsByClassName('bodymovin')),
 							),
-							_t,
+							vt,
 							Et = mt.length;
-						for (_t = 0; _t < Et; _t += 1)
-							ht && mt[_t].setAttribute('data-bm-type', ht), _e(mt[_t], yt);
+						for (vt = 0; vt < Et; vt += 1)
+							ht && mt[vt].setAttribute('data-bm-type', ht), _e(mt[vt], yt);
 						if (xt && Et === 0) {
 							ht || (ht = 'svg');
 							var Mt = document.getElementsByTagName('body')[0];
@@ -18319,7 +18312,7 @@ var lottie$1 = { exports: {} };
 						(i.pause = nt),
 						(i.stop = ft),
 						(i.togglePause = pt),
-						(i.searchAnimations = vt),
+						(i.searchAnimations = _t),
 						(i.resize = St),
 						(i.goToAndStop = ct),
 						(i.destroy = gt),
@@ -18344,8 +18337,8 @@ var lottie$1 = { exports: {} };
 								'p',
 							);
 						if (s[gt]) return s[gt];
-						var vt = new st([it, nt, ct, ft]);
-						return (s[gt] = vt), vt;
+						var _t = new st([it, nt, ct, ft]);
+						return (s[gt] = _t), _t;
 					}
 					var c = 4,
 						g = 0.001,
@@ -18371,21 +18364,21 @@ var lottie$1 = { exports: {} };
 					}
 					function at(it, nt, ct, ft, pt) {
 						var gt,
-							vt,
+							_t,
 							St = 0;
 						do
-							(vt = nt + (ct - nt) / 2),
-								(gt = ot(vt, ft, pt) - it),
-								gt > 0 ? (ct = vt) : (nt = vt);
+							(_t = nt + (ct - nt) / 2),
+								(gt = ot(_t, ft, pt) - it),
+								gt > 0 ? (ct = _t) : (nt = _t);
 						while (Math.abs(gt) > _ && ++St < $);
-						return vt;
+						return _t;
 					}
 					function dt(it, nt, ct, ft) {
 						for (var pt = 0; pt < c; ++pt) {
 							var gt = ut(nt, ct, ft);
 							if (gt === 0) return nt;
-							var vt = ot(nt, ct, ft) - it;
-							nt -= vt / gt;
+							var _t = ot(nt, ct, ft) - it;
+							nt -= _t / gt;
 						}
 						return nt;
 					}
@@ -18431,14 +18424,14 @@ var lottie$1 = { exports: {} };
 										ft = this._p[2],
 										pt = this._mSampleValues,
 										gt = 0,
-										vt = 1,
+										_t = 1,
 										St = j - 1;
-									vt !== St && pt[vt] <= nt;
-									++vt
+									_t !== St && pt[_t] <= nt;
+									++_t
 								)
 									gt += _e;
-								--vt;
-								var Pt = (nt - pt[vt]) / (pt[vt + 1] - pt[vt]),
+								--_t;
+								var Pt = (nt - pt[_t]) / (pt[_t + 1] - pt[_t]),
 									Ct = gt + Pt * _e,
 									wt = ut(Ct, ct, ft);
 								return wt >= g
@@ -18516,16 +18509,16 @@ var lottie$1 = { exports: {} };
 						gt = i.sqrt(
 							i.pow(it - at, 2) + i.pow(nt - dt, 2) + i.pow(ct - st, 2),
 						),
-						vt;
+						_t;
 					return (
 						ft > pt
 							? ft > gt
-								? (vt = ft - pt - gt)
-								: (vt = gt - pt - ft)
+								? (_t = ft - pt - gt)
+								: (_t = gt - pt - ft)
 							: gt > pt
-								? (vt = gt - pt - ft)
-								: (vt = pt - ft - gt),
-						vt > -1e-4 && vt < 1e-4
+								? (_t = gt - pt - ft)
+								: (_t = pt - ft - gt),
+						_t > -1e-4 && _t < 1e-4
 					);
 				}
 				var c = (function () {
@@ -18538,7 +18531,7 @@ var lottie$1 = { exports: {} };
 							ft,
 							pt = 0,
 							gt,
-							vt = [],
+							_t = [],
 							St = [],
 							Pt = bezierLengthPool.newElement();
 						for (nt = ut.length, st = 0; st < dt; st += 1) {
@@ -18548,9 +18541,9 @@ var lottie$1 = { exports: {} };
 									3 * bmPow(1 - ft, 2) * ft * ut[it] +
 									3 * (1 - ft) * bmPow(ft, 2) * at[it] +
 									bmPow(ft, 3) * ot[it]),
-									(vt[it] = ct),
-									St[it] !== null && (gt += bmPow(vt[it] - St[it], 2)),
-									(St[it] = vt[it]);
+									(_t[it] = ct),
+									St[it] !== null && (gt += bmPow(_t[it] - St[it], 2)),
+									(St[it] = _t[it]);
 							gt && ((gt = bmSqrt(gt)), (pt += gt)),
 								(Pt.percents[st] = ft),
 								(Pt.lengths[st] = pt);
@@ -18613,7 +18606,7 @@ var lottie$1 = { exports: {} };
 								ft,
 								pt,
 								gt,
-								vt = 0,
+								_t = 0,
 								St,
 								Pt,
 								Ct = null;
@@ -18637,11 +18630,11 @@ var lottie$1 = { exports: {} };
 										(Pt[ct] = pt),
 										Ct !== null && (St += bmPow(Pt[ct] - Ct[ct], 2));
 								(St = bmSqrt(St)),
-									(vt += St),
+									(_t += St),
 									(wt.points[nt] = new $(St, Pt)),
 									(Ct = Pt);
 							}
-							(wt.segmentLength = vt), (rt[st] = wt);
+							(wt.segmentLength = _t), (rt[st] = wt);
 						}
 						return rt[st];
 					};
@@ -18696,22 +18689,22 @@ var lottie$1 = { exports: {} };
 						ft,
 						pt = rt.length,
 						gt = 1 - nt,
-						vt = 1 - ct,
+						_t = 1 - ct,
 						St = gt * gt * gt,
 						Pt = nt * gt * gt * 3,
 						Ct = nt * nt * gt * 3,
 						wt = nt * nt * nt,
-						At = gt * gt * vt,
-						It = nt * gt * vt + gt * nt * vt + gt * gt * ct,
-						bt = nt * nt * vt + gt * nt * ct + nt * gt * ct,
+						At = gt * gt * _t,
+						It = nt * gt * _t + gt * nt * _t + gt * gt * ct,
+						bt = nt * nt * _t + gt * nt * ct + nt * gt * ct,
 						yt = nt * nt * ct,
-						xt = gt * vt * vt,
-						ht = nt * vt * vt + gt * ct * vt + gt * vt * ct,
-						mt = nt * ct * vt + gt * ct * ct + nt * vt * ct,
-						_t = nt * ct * ct,
-						Et = vt * vt * vt,
-						Mt = ct * vt * vt + vt * ct * vt + vt * vt * ct,
-						jt = ct * ct * vt + vt * ct * ct + ct * vt * ct,
+						xt = gt * _t * _t,
+						ht = nt * _t * _t + gt * ct * _t + gt * _t * ct,
+						mt = nt * ct * _t + gt * ct * ct + nt * _t * ct,
+						vt = nt * ct * ct,
+						Et = _t * _t * _t,
+						Mt = ct * _t * _t + _t * ct * _t + _t * _t * ct,
+						jt = ct * ct * _t + _t * ct * ct + ct * _t * ct,
 						$t = ct * ct * ct;
 					for (ft = 0; ft < pt; ft += 1)
 						(tt[ft * 4] =
@@ -18724,7 +18717,7 @@ var lottie$1 = { exports: {} };
 								) / 1e3),
 							(tt[ft * 4 + 2] =
 								i.round(
-									(xt * rt[ft] + ht * ut[ft] + mt * at[ft] + _t * ot[ft]) * 1e3,
+									(xt * rt[ft] + ht * ut[ft] + mt * at[ft] + vt * ot[ft]) * 1e3,
 								) / 1e3),
 							(tt[ft * 4 + 3] =
 								i.round(
@@ -18811,7 +18804,7 @@ var lottie$1 = { exports: {} };
 							(ot = dt((i - it) / (st - it)));
 						var pt = ct.segmentLength * ot,
 							gt,
-							vt =
+							_t =
 								s.lastFrame < i && s._lastKeyframeIndex === _
 									? s._lastAddedLength
 									: 0;
@@ -18826,18 +18819,18 @@ var lottie$1 = { exports: {} };
 
 						) {
 							if (
-								((vt += ct.points[at].partialLength),
+								((_t += ct.points[at].partialLength),
 								pt === 0 || ot === 0 || at === ct.points.length - 1)
 							) {
 								for (rt = ct.points[at].point.length, lt = 0; lt < rt; lt += 1)
 									c[lt] = ct.points[at].point[lt];
 								break;
 							} else if (
-								pt >= vt &&
-								pt < vt + ct.points[at + 1].partialLength
+								pt >= _t &&
+								pt < _t + ct.points[at + 1].partialLength
 							) {
 								for (
-									gt = (pt - vt) / ct.points[at + 1].partialLength,
+									gt = (pt - _t) / ct.points[at + 1].partialLength,
 										rt = ct.points[at].point.length,
 										lt = 0;
 									lt < rt;
@@ -18852,7 +18845,7 @@ var lottie$1 = { exports: {} };
 							at < ut - 1 ? (at += 1) : (j = !1);
 						}
 						(s._lastPoint = at),
-							(s._lastAddedLength = vt - ct.points[at].partialLength),
+							(s._lastAddedLength = _t - ct.points[at].partialLength),
 							(s._lastKeyframeIndex = _);
 					}
 				} else {
@@ -19430,7 +19423,7 @@ var lottie$1 = { exports: {} };
 							ft,
 							pt,
 							gt,
-							vt,
+							_t,
 							St,
 							Pt,
 							Ct,
@@ -19446,7 +19439,7 @@ var lottie$1 = { exports: {} };
 								(gt = !0);
 						else {
 							for (
-								var bt = ct, yt = It.length - 1, xt = !0, ht, mt, _t;
+								var bt = ct, yt = It.length - 1, xt = !0, ht, mt, vt;
 								xt &&
 								((ht = It[bt]),
 								(mt = It[bt + 1]),
@@ -19455,7 +19448,7 @@ var lottie$1 = { exports: {} };
 							)
 								bt < yt - 1 ? (bt += 1) : (xt = !1);
 							if (
-								((_t = this.keyframesMetadata[bt] || {}),
+								((vt = this.keyframesMetadata[bt] || {}),
 								(gt = ht.h === 1),
 								(ct = bt),
 								!gt)
@@ -19464,15 +19457,15 @@ var lottie$1 = { exports: {} };
 								else if (st < ht.t - this.offsetTime) wt = 0;
 								else {
 									var Et;
-									_t.__fnct
-										? (Et = _t.__fnct)
+									vt.__fnct
+										? (Et = vt.__fnct)
 										: ((Et = BezierFactory.getBezierEasing(
 												ht.o.x,
 												ht.o.y,
 												ht.i.x,
 												ht.i.y,
 											).get),
-											(_t.__fnct = Et)),
+											(vt.__fnct = Et)),
 										(wt = Et(
 											(st - (ht.t - this.offsetTime)) /
 												(mt.t - this.offsetTime - (ht.t - this.offsetTime)),
@@ -19483,23 +19476,23 @@ var lottie$1 = { exports: {} };
 							ft = ht.s[0];
 						}
 						for (
-							Pt = it._length, Ct = ft.i[0].length, nt.lastIndex = ct, vt = 0;
-							vt < Pt;
-							vt += 1
+							Pt = it._length, Ct = ft.i[0].length, nt.lastIndex = ct, _t = 0;
+							_t < Pt;
+							_t += 1
 						)
 							for (St = 0; St < Ct; St += 1)
 								(At = gt
-									? ft.i[vt][St]
-									: ft.i[vt][St] + (pt.i[vt][St] - ft.i[vt][St]) * wt),
-									(it.i[vt][St] = At),
+									? ft.i[_t][St]
+									: ft.i[_t][St] + (pt.i[_t][St] - ft.i[_t][St]) * wt),
+									(it.i[_t][St] = At),
 									(At = gt
-										? ft.o[vt][St]
-										: ft.o[vt][St] + (pt.o[vt][St] - ft.o[vt][St]) * wt),
-									(it.o[vt][St] = At),
+										? ft.o[_t][St]
+										: ft.o[_t][St] + (pt.o[_t][St] - ft.o[_t][St]) * wt),
+									(it.o[_t][St] = At),
 									(At = gt
-										? ft.v[vt][St]
-										: ft.v[vt][St] + (pt.v[vt][St] - ft.v[vt][St]) * wt),
-									(it.v[vt][St] = At);
+										? ft.v[_t][St]
+										: ft.v[_t][St] + (pt.v[_t][St] - ft.v[_t][St]) * wt),
+									(it.v[_t][St] = At);
 					}
 					function o() {
 						var st = this.comp.renderedFrame - this.offsetTime,
@@ -19656,31 +19649,31 @@ var lottie$1 = { exports: {} };
 											ft = this.p.v[1],
 											pt = this.s.v[0] / 2,
 											gt = this.s.v[1] / 2,
-											vt = this.d !== 3,
+											_t = this.d !== 3,
 											St = this.v;
 										(St.v[0][0] = ct),
 											(St.v[0][1] = ft - gt),
-											(St.v[1][0] = vt ? ct + pt : ct - pt),
+											(St.v[1][0] = _t ? ct + pt : ct - pt),
 											(St.v[1][1] = ft),
 											(St.v[2][0] = ct),
 											(St.v[2][1] = ft + gt),
-											(St.v[3][0] = vt ? ct - pt : ct + pt),
+											(St.v[3][0] = _t ? ct - pt : ct + pt),
 											(St.v[3][1] = ft),
-											(St.i[0][0] = vt ? ct - pt * st : ct + pt * st),
+											(St.i[0][0] = _t ? ct - pt * st : ct + pt * st),
 											(St.i[0][1] = ft - gt),
-											(St.i[1][0] = vt ? ct + pt : ct - pt),
+											(St.i[1][0] = _t ? ct + pt : ct - pt),
 											(St.i[1][1] = ft - gt * st),
-											(St.i[2][0] = vt ? ct + pt * st : ct - pt * st),
+											(St.i[2][0] = _t ? ct + pt * st : ct - pt * st),
 											(St.i[2][1] = ft + gt),
-											(St.i[3][0] = vt ? ct - pt : ct + pt),
+											(St.i[3][0] = _t ? ct - pt : ct + pt),
 											(St.i[3][1] = ft + gt * st),
-											(St.o[0][0] = vt ? ct + pt * st : ct - pt * st),
+											(St.o[0][0] = _t ? ct + pt * st : ct - pt * st),
 											(St.o[0][1] = ft - gt),
-											(St.o[1][0] = vt ? ct + pt : ct - pt),
+											(St.o[1][0] = _t ? ct + pt : ct - pt),
 											(St.o[1][1] = ft + gt * st),
-											(St.o[2][0] = vt ? ct - pt * st : ct + pt * st),
+											(St.o[2][0] = _t ? ct - pt * st : ct + pt * st),
 											(St.o[2][1] = ft + gt),
-											(St.o[3][0] = vt ? ct - pt : ct + pt),
+											(St.o[3][0] = _t ? ct - pt : ct + pt),
 											(St.o[3][1] = ft - gt * st);
 									},
 								}),
@@ -19749,7 +19742,7 @@ var lottie$1 = { exports: {} };
 											ft = !0,
 											pt = this.or.v,
 											gt = this.ir.v,
-											vt = this.os.v,
+											_t = this.os.v,
 											St = this.is.v,
 											Pt = (2 * Math.PI * pt) / (nt * 2),
 											Ct = (2 * Math.PI * gt) / (nt * 2),
@@ -19762,11 +19755,11 @@ var lottie$1 = { exports: {} };
 										var xt = this.data.d === 3 ? -1 : 1;
 										for (this.v._length = 0, wt = 0; wt < nt; wt += 1) {
 											(At = ft ? pt : gt),
-												(It = ft ? vt : St),
+												(It = ft ? _t : St),
 												(bt = ft ? Pt : Ct);
 											var ht = At * Math.cos(yt),
 												mt = At * Math.sin(yt),
-												_t =
+												vt =
 													ht === 0 && mt === 0
 														? 0
 														: mt / Math.sqrt(ht * ht + mt * mt),
@@ -19779,9 +19772,9 @@ var lottie$1 = { exports: {} };
 												this.v.setTripleAt(
 													ht,
 													mt,
-													ht - _t * bt * It * xt,
+													ht - vt * bt * It * xt,
 													mt - Et * bt * It * xt,
-													ht + _t * bt * It * xt,
+													ht + vt * bt * It * xt,
 													mt + Et * bt * It * xt,
 													wt,
 													!0,
@@ -19796,13 +19789,13 @@ var lottie$1 = { exports: {} };
 											ft = this.or.v,
 											pt = this.os.v,
 											gt = (2 * Math.PI * ft) / (nt * 4),
-											vt,
+											_t,
 											St = -Math.PI * 0.5,
 											Pt = this.data.d === 3 ? -1 : 1;
 										for (
-											St += this.r.v, this.v._length = 0, vt = 0;
-											vt < nt;
-											vt += 1
+											St += this.r.v, this.v._length = 0, _t = 0;
+											_t < nt;
+											_t += 1
 										) {
 											var Ct = ft * Math.cos(St),
 												wt = ft * Math.sin(St),
@@ -19823,7 +19816,7 @@ var lottie$1 = { exports: {} };
 													wt - It * gt * pt * Pt,
 													Ct + At * gt * pt * Pt,
 													wt + It * gt * pt * Pt,
-													vt,
+													_t,
 													!0,
 												),
 												(St += ct * Pt);
@@ -19863,7 +19856,7 @@ var lottie$1 = { exports: {} };
 											ft = this.s.v[0] / 2,
 											pt = this.s.v[1] / 2,
 											gt = bmMin(ft, pt, this.r.v),
-											vt = gt * (1 - roundCorner);
+											_t = gt * (1 - roundCorner);
 										(this.v._length = 0),
 											this.d === 2 || this.d === 1
 												? (this.v.setTripleAt(
@@ -19872,7 +19865,7 @@ var lottie$1 = { exports: {} };
 														nt + ft,
 														ct - pt + gt,
 														nt + ft,
-														ct - pt + vt,
+														ct - pt + _t,
 														0,
 														!0,
 													),
@@ -19880,7 +19873,7 @@ var lottie$1 = { exports: {} };
 														nt + ft,
 														ct + pt - gt,
 														nt + ft,
-														ct + pt - vt,
+														ct + pt - _t,
 														nt + ft,
 														ct + pt - gt,
 														1,
@@ -19892,7 +19885,7 @@ var lottie$1 = { exports: {} };
 																ct + pt,
 																nt + ft - gt,
 																ct + pt,
-																nt + ft - vt,
+																nt + ft - _t,
 																ct + pt,
 																2,
 																!0,
@@ -19900,7 +19893,7 @@ var lottie$1 = { exports: {} };
 															this.v.setTripleAt(
 																nt - ft + gt,
 																ct + pt,
-																nt - ft + vt,
+																nt - ft + _t,
 																ct + pt,
 																nt - ft + gt,
 																ct + pt,
@@ -19913,7 +19906,7 @@ var lottie$1 = { exports: {} };
 																nt - ft,
 																ct + pt - gt,
 																nt - ft,
-																ct + pt - vt,
+																ct + pt - _t,
 																4,
 																!0,
 															),
@@ -19921,7 +19914,7 @@ var lottie$1 = { exports: {} };
 																nt - ft,
 																ct - pt + gt,
 																nt - ft,
-																ct - pt + vt,
+																ct - pt + _t,
 																nt - ft,
 																ct - pt + gt,
 																5,
@@ -19932,7 +19925,7 @@ var lottie$1 = { exports: {} };
 																ct - pt,
 																nt - ft + gt,
 																ct - pt,
-																nt - ft + vt,
+																nt - ft + _t,
 																ct - pt,
 																6,
 																!0,
@@ -19940,7 +19933,7 @@ var lottie$1 = { exports: {} };
 															this.v.setTripleAt(
 																nt + ft - gt,
 																ct - pt,
-																nt + ft - vt,
+																nt + ft - _t,
 																ct - pt,
 																nt + ft - gt,
 																ct - pt,
@@ -19950,7 +19943,7 @@ var lottie$1 = { exports: {} };
 														: (this.v.setTripleAt(
 																nt - ft,
 																ct + pt,
-																nt - ft + vt,
+																nt - ft + _t,
 																ct + pt,
 																nt - ft,
 																ct + pt,
@@ -19960,7 +19953,7 @@ var lottie$1 = { exports: {} };
 																nt - ft,
 																ct - pt,
 																nt - ft,
-																ct - pt + vt,
+																ct - pt + _t,
 																nt - ft,
 																ct - pt,
 																3,
@@ -19969,7 +19962,7 @@ var lottie$1 = { exports: {} };
 														nt + ft,
 														ct - pt + gt,
 														nt + ft,
-														ct - pt + vt,
+														ct - pt + _t,
 														nt + ft,
 														ct - pt + gt,
 														0,
@@ -19981,7 +19974,7 @@ var lottie$1 = { exports: {} };
 																ct - pt,
 																nt + ft - gt,
 																ct - pt,
-																nt + ft - vt,
+																nt + ft - _t,
 																ct - pt,
 																1,
 																!0,
@@ -19989,7 +19982,7 @@ var lottie$1 = { exports: {} };
 															this.v.setTripleAt(
 																nt - ft + gt,
 																ct - pt,
-																nt - ft + vt,
+																nt - ft + _t,
 																ct - pt,
 																nt - ft + gt,
 																ct - pt,
@@ -20002,7 +19995,7 @@ var lottie$1 = { exports: {} };
 																nt - ft,
 																ct - pt + gt,
 																nt - ft,
-																ct - pt + vt,
+																ct - pt + _t,
 																3,
 																!0,
 															),
@@ -20010,7 +20003,7 @@ var lottie$1 = { exports: {} };
 																nt - ft,
 																ct + pt - gt,
 																nt - ft,
-																ct + pt - vt,
+																ct + pt - _t,
 																nt - ft,
 																ct + pt - gt,
 																4,
@@ -20021,7 +20014,7 @@ var lottie$1 = { exports: {} };
 																ct + pt,
 																nt - ft + gt,
 																ct + pt,
-																nt - ft + vt,
+																nt - ft + _t,
 																ct + pt,
 																5,
 																!0,
@@ -20029,7 +20022,7 @@ var lottie$1 = { exports: {} };
 															this.v.setTripleAt(
 																nt + ft - gt,
 																ct + pt,
-																nt + ft - vt,
+																nt + ft - _t,
 																ct + pt,
 																nt + ft - gt,
 																ct + pt,
@@ -20042,14 +20035,14 @@ var lottie$1 = { exports: {} };
 																nt + ft,
 																ct + pt - gt,
 																nt + ft,
-																ct + pt - vt,
+																ct + pt - _t,
 																7,
 																!0,
 															))
 														: (this.v.setTripleAt(
 																nt - ft,
 																ct - pt,
-																nt - ft + vt,
+																nt - ft + _t,
 																ct - pt,
 																nt - ft,
 																ct - pt,
@@ -20060,7 +20053,7 @@ var lottie$1 = { exports: {} };
 																nt - ft,
 																ct + pt,
 																nt - ft,
-																ct + pt - vt,
+																ct + pt - _t,
 																nt - ft,
 																ct + pt,
 																2,
@@ -20069,7 +20062,7 @@ var lottie$1 = { exports: {} };
 															this.v.setTripleAt(
 																nt + ft,
 																ct + pt,
-																nt + ft - vt,
+																nt + ft - _t,
 																ct + pt,
 																nt + ft,
 																ct + pt,
@@ -20153,26 +20146,26 @@ var lottie$1 = { exports: {} };
 				function _(ht) {
 					if (ht === 0) return this;
 					var mt = i(ht),
-						_t = s(ht);
-					return this._t(mt, -_t, 0, 0, _t, mt, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+						vt = s(ht);
+					return this._t(mt, -vt, 0, 0, vt, mt, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 				}
 				function $(ht) {
 					if (ht === 0) return this;
 					var mt = i(ht),
-						_t = s(ht);
-					return this._t(1, 0, 0, 0, 0, mt, -_t, 0, 0, _t, mt, 0, 0, 0, 0, 1);
+						vt = s(ht);
+					return this._t(1, 0, 0, 0, 0, mt, -vt, 0, 0, vt, mt, 0, 0, 0, 0, 1);
 				}
 				function j(ht) {
 					if (ht === 0) return this;
 					var mt = i(ht),
-						_t = s(ht);
-					return this._t(mt, 0, _t, 0, 0, 1, 0, 0, -_t, 0, mt, 0, 0, 0, 0, 1);
+						vt = s(ht);
+					return this._t(mt, 0, vt, 0, 0, 1, 0, 0, -vt, 0, mt, 0, 0, 0, 0, 1);
 				}
 				function _e(ht) {
 					if (ht === 0) return this;
 					var mt = i(ht),
-						_t = s(ht);
-					return this._t(mt, -_t, 0, 0, _t, mt, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+						vt = s(ht);
+					return this._t(mt, -vt, 0, 0, vt, mt, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 				}
 				function et(ht, mt) {
 					return this._t(1, mt, ht, 1, 0, 0);
@@ -20181,24 +20174,24 @@ var lottie$1 = { exports: {} };
 					return this.shear(o(ht), o(mt));
 				}
 				function lt(ht, mt) {
-					var _t = i(mt),
+					var vt = i(mt),
 						Et = s(mt);
-					return this._t(_t, Et, 0, 0, -Et, _t, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+					return this._t(vt, Et, 0, 0, -Et, vt, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
 						._t(1, 0, 0, 0, o(ht), 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-						._t(_t, -Et, 0, 0, Et, _t, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+						._t(vt, -Et, 0, 0, Et, vt, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 				}
-				function rt(ht, mt, _t) {
+				function rt(ht, mt, vt) {
 					return (
-						!_t && _t !== 0 && (_t = 1),
-						ht === 1 && mt === 1 && _t === 1
+						!vt && vt !== 0 && (vt = 1),
+						ht === 1 && mt === 1 && vt === 1
 							? this
-							: this._t(ht, 0, 0, 0, 0, mt, 0, 0, 0, 0, _t, 0, 0, 0, 0, 1)
+							: this._t(ht, 0, 0, 0, 0, mt, 0, 0, 0, 0, vt, 0, 0, 0, 0, 1)
 					);
 				}
 				function ot(
 					ht,
 					mt,
-					_t,
+					vt,
 					Et,
 					Mt,
 					jt,
@@ -20216,7 +20209,7 @@ var lottie$1 = { exports: {} };
 					return (
 						(this.props[0] = ht),
 						(this.props[1] = mt),
-						(this.props[2] = _t),
+						(this.props[2] = vt),
 						(this.props[3] = Et),
 						(this.props[4] = Mt),
 						(this.props[5] = jt),
@@ -20233,18 +20226,18 @@ var lottie$1 = { exports: {} };
 						this
 					);
 				}
-				function ut(ht, mt, _t) {
+				function ut(ht, mt, vt) {
 					return (
-						(_t = _t || 0),
-						ht !== 0 || mt !== 0 || _t !== 0
-							? this._t(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ht, mt, _t, 1)
+						(vt = vt || 0),
+						ht !== 0 || mt !== 0 || vt !== 0
+							? this._t(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ht, mt, vt, 1)
 							: this
 					);
 				}
 				function at(
 					ht,
 					mt,
-					_t,
+					vt,
 					Et,
 					Mt,
 					jt,
@@ -20263,7 +20256,7 @@ var lottie$1 = { exports: {} };
 					if (
 						ht === 1 &&
 						mt === 0 &&
-						_t === 0 &&
+						vt === 0 &&
 						Et === 0 &&
 						Mt === 0 &&
 						jt === 1 &&
@@ -20296,25 +20289,25 @@ var lottie$1 = { exports: {} };
 						Jt = Vt[11],
 						Xt = Vt[12],
 						pr = Vt[13],
-						vr = Vt[14],
+						_r = Vt[14],
 						xr = Vt[15];
 					return (
 						(Vt[0] = ur * ht + hr * Mt + Ft * Gt + kt * lr),
 						(Vt[1] = ur * mt + hr * jt + Ft * qt + kt * tr),
-						(Vt[2] = ur * _t + hr * $t + Ft * ir + kt * ar),
+						(Vt[2] = ur * vt + hr * $t + Ft * ir + kt * ar),
 						(Vt[3] = ur * Et + hr * Bt + Ft * sr + kt * Wt),
 						(Vt[4] = Tt * ht + Rt * Mt + Dt * Gt + Ot * lr),
 						(Vt[5] = Tt * mt + Rt * jt + Dt * qt + Ot * tr),
-						(Vt[6] = Tt * _t + Rt * $t + Dt * ir + Ot * ar),
+						(Vt[6] = Tt * vt + Rt * $t + Dt * ir + Ot * ar),
 						(Vt[7] = Tt * Et + Rt * Bt + Dt * sr + Ot * Wt),
 						(Vt[8] = Lt * ht + Nt * Mt + Ht * Gt + Jt * lr),
 						(Vt[9] = Lt * mt + Nt * jt + Ht * qt + Jt * tr),
-						(Vt[10] = Lt * _t + Nt * $t + Ht * ir + Jt * ar),
+						(Vt[10] = Lt * vt + Nt * $t + Ht * ir + Jt * ar),
 						(Vt[11] = Lt * Et + Nt * Bt + Ht * sr + Jt * Wt),
-						(Vt[12] = Xt * ht + pr * Mt + vr * Gt + xr * lr),
-						(Vt[13] = Xt * mt + pr * jt + vr * qt + xr * tr),
-						(Vt[14] = Xt * _t + pr * $t + vr * ir + xr * ar),
-						(Vt[15] = Xt * Et + pr * Bt + vr * sr + xr * Wt),
+						(Vt[12] = Xt * ht + pr * Mt + _r * Gt + xr * lr),
+						(Vt[13] = Xt * mt + pr * jt + _r * qt + xr * tr),
+						(Vt[14] = Xt * vt + pr * $t + _r * ir + xr * ar),
+						(Vt[15] = Xt * Et + pr * Bt + _r * sr + xr * Wt),
 						(this._identityCalculated = !1),
 						this
 					);
@@ -20381,46 +20374,46 @@ var lottie$1 = { exports: {} };
 					var mt;
 					for (mt = 0; mt < 16; mt += 1) this.props[mt] = ht[mt];
 				}
-				function ft(ht, mt, _t) {
+				function ft(ht, mt, vt) {
 					return {
 						x:
 							ht * this.props[0] +
 							mt * this.props[4] +
-							_t * this.props[8] +
+							vt * this.props[8] +
 							this.props[12],
 						y:
 							ht * this.props[1] +
 							mt * this.props[5] +
-							_t * this.props[9] +
+							vt * this.props[9] +
 							this.props[13],
 						z:
 							ht * this.props[2] +
 							mt * this.props[6] +
-							_t * this.props[10] +
+							vt * this.props[10] +
 							this.props[14],
 					};
 				}
-				function pt(ht, mt, _t) {
+				function pt(ht, mt, vt) {
 					return (
 						ht * this.props[0] +
 						mt * this.props[4] +
-						_t * this.props[8] +
+						vt * this.props[8] +
 						this.props[12]
 					);
 				}
-				function gt(ht, mt, _t) {
+				function gt(ht, mt, vt) {
 					return (
 						ht * this.props[1] +
 						mt * this.props[5] +
-						_t * this.props[9] +
+						vt * this.props[9] +
 						this.props[13]
 					);
 				}
-				function vt(ht, mt, _t) {
+				function _t(ht, mt, vt) {
 					return (
 						ht * this.props[2] +
 						mt * this.props[6] +
-						_t * this.props[10] +
+						vt * this.props[10] +
 						this.props[14]
 					);
 				}
@@ -20428,7 +20421,7 @@ var lottie$1 = { exports: {} };
 					var ht =
 							this.props[0] * this.props[5] - this.props[1] * this.props[4],
 						mt = this.props[5] / ht,
-						_t = -this.props[1] / ht,
+						vt = -this.props[1] / ht,
 						Et = -this.props[4] / ht,
 						Mt = this.props[0] / ht,
 						jt =
@@ -20443,7 +20436,7 @@ var lottie$1 = { exports: {} };
 						Bt = new Matrix();
 					return (
 						(Bt.props[0] = mt),
-						(Bt.props[1] = _t),
+						(Bt.props[1] = vt),
 						(Bt.props[4] = Et),
 						(Bt.props[5] = Mt),
 						(Bt.props[12] = jt),
@@ -20457,20 +20450,20 @@ var lottie$1 = { exports: {} };
 				}
 				function Ct(ht) {
 					var mt,
-						_t = ht.length,
+						vt = ht.length,
 						Et = [];
-					for (mt = 0; mt < _t; mt += 1) Et[mt] = Pt(ht[mt]);
+					for (mt = 0; mt < vt; mt += 1) Et[mt] = Pt(ht[mt]);
 					return Et;
 				}
-				function wt(ht, mt, _t) {
+				function wt(ht, mt, vt) {
 					var Et = createTypedArray('float32', 6);
 					if (this.isIdentity())
 						(Et[0] = ht[0]),
 							(Et[1] = ht[1]),
 							(Et[2] = mt[0]),
 							(Et[3] = mt[1]),
-							(Et[4] = _t[0]),
-							(Et[5] = _t[1]);
+							(Et[4] = vt[0]),
+							(Et[5] = vt[1]);
 					else {
 						var Mt = this.props[0],
 							jt = this.props[1],
@@ -20482,28 +20475,28 @@ var lottie$1 = { exports: {} };
 							(Et[1] = ht[0] * jt + ht[1] * Bt + qt),
 							(Et[2] = mt[0] * Mt + mt[1] * $t + Gt),
 							(Et[3] = mt[0] * jt + mt[1] * Bt + qt),
-							(Et[4] = _t[0] * Mt + _t[1] * $t + Gt),
-							(Et[5] = _t[0] * jt + _t[1] * Bt + qt);
+							(Et[4] = vt[0] * Mt + vt[1] * $t + Gt),
+							(Et[5] = vt[0] * jt + vt[1] * Bt + qt);
 					}
 					return Et;
 				}
-				function At(ht, mt, _t) {
+				function At(ht, mt, vt) {
 					var Et;
 					return (
 						this.isIdentity()
-							? (Et = [ht, mt, _t])
+							? (Et = [ht, mt, vt])
 							: (Et = [
 									ht * this.props[0] +
 										mt * this.props[4] +
-										_t * this.props[8] +
+										vt * this.props[8] +
 										this.props[12],
 									ht * this.props[1] +
 										mt * this.props[5] +
-										_t * this.props[9] +
+										vt * this.props[9] +
 										this.props[13],
 									ht * this.props[2] +
 										mt * this.props[6] +
-										_t * this.props[10] +
+										vt * this.props[10] +
 										this.props[14],
 								]),
 						Et
@@ -20511,23 +20504,23 @@ var lottie$1 = { exports: {} };
 				}
 				function It(ht, mt) {
 					if (this.isIdentity()) return ht + ',' + mt;
-					var _t = this.props;
+					var vt = this.props;
 					return (
-						Math.round((ht * _t[0] + mt * _t[4] + _t[12]) * 100) / 100 +
+						Math.round((ht * vt[0] + mt * vt[4] + vt[12]) * 100) / 100 +
 						',' +
-						Math.round((ht * _t[1] + mt * _t[5] + _t[13]) * 100) / 100
+						Math.round((ht * vt[1] + mt * vt[5] + vt[13]) * 100) / 100
 					);
 				}
 				function bt() {
 					for (
-						var ht = 0, mt = this.props, _t = 'matrix3d(', Et = 1e4;
+						var ht = 0, mt = this.props, vt = 'matrix3d(', Et = 1e4;
 						ht < 16;
 
 					)
-						(_t += c(mt[ht] * Et) / Et),
-							(_t += ht === 15 ? ')' : ','),
+						(vt += c(mt[ht] * Et) / Et),
+							(vt += ht === 15 ? ')' : ','),
 							(ht += 1);
-					return _t;
+					return vt;
 				}
 				function yt(ht) {
 					var mt = 1e4;
@@ -20538,7 +20531,7 @@ var lottie$1 = { exports: {} };
 				function xt() {
 					var ht = this.props,
 						mt = yt(ht[0]),
-						_t = yt(ht[1]),
+						vt = yt(ht[1]),
 						Et = yt(ht[4]),
 						Mt = yt(ht[5]),
 						jt = yt(ht[12]),
@@ -20547,7 +20540,7 @@ var lottie$1 = { exports: {} };
 						'matrix(' +
 						mt +
 						',' +
-						_t +
+						vt +
 						',' +
 						Et +
 						',' +
@@ -20576,7 +20569,7 @@ var lottie$1 = { exports: {} };
 						(this.applyToPoint = ft),
 						(this.applyToX = pt),
 						(this.applyToY = gt),
-						(this.applyToZ = vt),
+						(this.applyToZ = _t),
 						(this.applyToPointArray = At),
 						(this.applyToTriplePoints = wt),
 						(this.applyToPointStringified = It),
@@ -22442,12 +22435,12 @@ var lottie$1 = { exports: {} };
 					var xt = yt.split(','),
 						ht,
 						mt = xt.length,
-						_t = [];
+						vt = [];
 					for (ht = 0; ht < mt; ht += 1)
 						xt[ht] !== 'sans-serif' &&
 							xt[ht] !== 'monospace' &&
-							_t.push(xt[ht]);
-					return _t.join(',');
+							vt.push(xt[ht]);
+					return vt.join(',');
 				}
 				function ot(yt, xt) {
 					var ht = createTag('span');
@@ -22464,10 +22457,10 @@ var lottie$1 = { exports: {} };
 						(ht.style.letterSpacing = '0'),
 						ht.appendChild(mt),
 						document.body.appendChild(ht);
-					var _t = mt.offsetWidth;
+					var vt = mt.offsetWidth;
 					return (
 						(mt.style.fontFamily = rt(yt) + ', ' + xt),
-						{ node: mt, w: _t, parent: ht }
+						{ node: mt, w: vt, parent: ht }
 					);
 				}
 				function ut() {
@@ -22475,20 +22468,20 @@ var lottie$1 = { exports: {} };
 						xt = this.fonts.length,
 						ht,
 						mt,
-						_t = xt;
+						vt = xt;
 					for (yt = 0; yt < xt; yt += 1)
 						this.fonts[yt].loaded
-							? (_t -= 1)
+							? (vt -= 1)
 							: this.fonts[yt].fOrigin === 'n' || this.fonts[yt].origin === 0
 								? (this.fonts[yt].loaded = !0)
 								: ((ht = this.fonts[yt].monoCase.node),
 									(mt = this.fonts[yt].monoCase.w),
 									ht.offsetWidth !== mt
-										? ((_t -= 1), (this.fonts[yt].loaded = !0))
+										? ((vt -= 1), (this.fonts[yt].loaded = !0))
 										: ((ht = this.fonts[yt].sansCase.node),
 											(mt = this.fonts[yt].sansCase.w),
 											ht.offsetWidth !== mt &&
-												((_t -= 1), (this.fonts[yt].loaded = !0))),
+												((vt -= 1), (this.fonts[yt].loaded = !0))),
 									this.fonts[yt].loaded &&
 										(this.fonts[yt].sansCase.parent.parentNode.removeChild(
 											this.fonts[yt].sansCase.parent,
@@ -22496,20 +22489,20 @@ var lottie$1 = { exports: {} };
 										this.fonts[yt].monoCase.parent.parentNode.removeChild(
 											this.fonts[yt].monoCase.parent,
 										)));
-					_t !== 0 && Date.now() - this.initTime < i
+					vt !== 0 && Date.now() - this.initTime < i
 						? setTimeout(this.checkLoadedFontsBinded, 20)
 						: setTimeout(this.setIsLoadedBinded, 10);
 				}
 				function at(yt, xt) {
 					var ht = document.body && xt ? 'svg' : 'canvas',
 						mt,
-						_t = getFontProperties(yt);
+						vt = getFontProperties(yt);
 					if (ht === 'svg') {
 						var Et = createNS('text');
 						(Et.style.fontSize = '100px'),
 							Et.setAttribute('font-family', yt.fFamily),
-							Et.setAttribute('font-style', _t.style),
-							Et.setAttribute('font-weight', _t.weight),
+							Et.setAttribute('font-style', vt.style),
+							Et.setAttribute('font-weight', vt.weight),
 							(Et.textContent = '1'),
 							yt.fClass
 								? ((Et.style.fontFamily = 'inherit'),
@@ -22519,7 +22512,7 @@ var lottie$1 = { exports: {} };
 							(mt = Et);
 					} else {
 						var Mt = new OffscreenCanvas(500, 500).getContext('2d');
-						(Mt.font = _t.style + ' ' + _t.weight + ' 100px ' + yt.fFamily),
+						(Mt.font = vt.style + ' ' + vt.weight + ' 100px ' + yt.fFamily),
 							(mt = Mt);
 					}
 					function jt($t) {
@@ -22548,9 +22541,9 @@ var lottie$1 = { exports: {} };
 					}
 					var ht = yt.list,
 						mt,
-						_t = ht.length,
-						Et = _t;
-					for (mt = 0; mt < _t; mt += 1) {
+						vt = ht.length,
+						Et = vt;
+					for (mt = 0; mt < vt; mt += 1) {
 						var Mt = !0,
 							jt,
 							$t;
@@ -22638,21 +22631,21 @@ var lottie$1 = { exports: {} };
 						var xt,
 							ht = yt.length,
 							mt,
-							_t = this.chars.length,
+							vt = this.chars.length,
 							Et;
 						for (xt = 0; xt < ht; xt += 1) {
-							for (mt = 0, Et = !1; mt < _t; )
+							for (mt = 0, Et = !1; mt < vt; )
 								this.chars[mt].style === yt[xt].style &&
 									this.chars[mt].fFamily === yt[xt].fFamily &&
 									this.chars[mt].ch === yt[xt].ch &&
 									(Et = !0),
 									(mt += 1);
-							Et || (this.chars.push(yt[xt]), (_t += 1));
+							Et || (this.chars.push(yt[xt]), (vt += 1));
 						}
 					}
 				}
 				function it(yt, xt, ht) {
-					for (var mt = 0, _t = this.chars.length; mt < _t; ) {
+					for (var mt = 0, vt = this.chars.length; mt < vt; ) {
 						if (
 							this.chars[mt].ch === yt &&
 							this.chars[mt].style === xt &&
@@ -22678,16 +22671,16 @@ var lottie$1 = { exports: {} };
 				}
 				function nt(yt, xt, ht) {
 					var mt = this.getFontByName(xt),
-						_t = yt;
-					if (!mt.cache[_t]) {
+						vt = yt;
+					if (!mt.cache[vt]) {
 						var Et = mt.helper;
 						if (yt === ' ') {
 							var Mt = Et.measureText('|' + yt + '|'),
 								jt = Et.measureText('||');
-							mt.cache[_t] = (Mt - jt) / 100;
-						} else mt.cache[_t] = Et.measureText(yt) / 100;
+							mt.cache[vt] = (Mt - jt) / 100;
+						} else mt.cache[vt] = Et.measureText(yt) / 100;
 					}
-					return mt.cache[_t] * ht;
+					return mt.cache[vt] * ht;
 				}
 				function ct(yt) {
 					for (var xt = 0, ht = this.fonts.length; xt < ht; ) {
@@ -22714,7 +22707,7 @@ var lottie$1 = { exports: {} };
 				function gt(yt) {
 					return yt === _e;
 				}
-				function vt(yt) {
+				function _t(yt) {
 					return yt === j;
 				}
 				function St(yt) {
@@ -22756,7 +22749,7 @@ var lottie$1 = { exports: {} };
 					(It.isRegionalCode = St),
 					(It.isCombinedCharacter = Ct),
 					(It.isRegionalFlag = wt),
-					(It.isVariationSelector = vt),
+					(It.isVariationSelector = _t),
 					(It.BLACK_FLAG_CODE_POINT = c);
 				var bt = {
 					addChars: st,
@@ -24471,29 +24464,29 @@ var lottie$1 = { exports: {} };
 							ft = rt.lvl,
 							pt,
 							gt,
-							vt,
+							_t,
 							St;
 						for (nt = 0; nt < ct; nt += 1) {
 							if (((st = rt.sh._mdf || ot), rt.styles[nt].lvl < ft)) {
 								for (
 									gt = s.reset(),
-										vt = ft - rt.styles[nt].lvl,
+										_t = ft - rt.styles[nt].lvl,
 										St = rt.transformers.length - 1;
-									!st && vt > 0;
+									!st && _t > 0;
 
 								)
 									(st = rt.transformers[St].mProps._mdf || st),
-										(vt -= 1),
+										(_t -= 1),
 										(St -= 1);
 								if (st)
 									for (
-										vt = ft - rt.styles[nt].lvl,
+										_t = ft - rt.styles[nt].lvl,
 											St = rt.transformers.length - 1;
-										vt > 0;
+										_t > 0;
 
 									)
 										gt.multiply(rt.transformers[St].mProps.v),
-											(vt -= 1),
+											(_t -= 1),
 											(St -= 1);
 							} else gt = i;
 							if (((pt = rt.sh.paths), (at = pt._length), st)) {
@@ -24546,14 +24539,14 @@ var lottie$1 = { exports: {} };
 									(rt.of.setAttribute(nt, dt[0]),
 									rt.of.setAttribute(ct, dt[1]));
 						}
-						var ft, pt, gt, vt;
+						var ft, pt, gt, _t;
 						if (rt.g._cmdf || ot) {
 							ft = rt.cst;
 							var St = rt.g.c;
 							for (gt = ft.length, pt = 0; pt < gt; pt += 1)
-								(vt = ft[pt]),
-									vt.setAttribute('offset', St[pt * 4] + '%'),
-									vt.setAttribute(
+								(_t = ft[pt]),
+									_t.setAttribute('offset', St[pt * 4] + '%'),
+									_t.setAttribute(
 										'stop-color',
 										'rgb(' +
 											St[pt * 4 + 1] +
@@ -24573,10 +24566,10 @@ var lottie$1 = { exports: {} };
 								pt < gt;
 								pt += 1
 							)
-								(vt = ft[pt]),
+								(_t = ft[pt]),
 									rt.g._collapsable ||
-										vt.setAttribute('offset', Pt[pt * 2] + '%'),
-									vt.setAttribute('stop-opacity', Pt[pt * 2 + 1]);
+										_t.setAttribute('offset', Pt[pt * 2] + '%'),
+									_t.setAttribute('stop-opacity', Pt[pt * 2 + 1]);
 						}
 						if (lt.t === 1)
 							(rt.e._mdf || ot) &&
@@ -25156,7 +25149,7 @@ var lottie$1 = { exports: {} };
 					var pt = (i.tr / 1e3) * i.finalSize,
 						gt;
 					if (i.sz)
-						for (var vt = !0, St = i.sz[0], Pt = i.sz[1], Ct, wt; vt; ) {
+						for (var _t = !0, St = i.sz[0], Pt = i.sz[1], Ct, wt; _t; ) {
 							(wt = this.buildFinalText(i.t)),
 								(Ct = 0),
 								(ut = 0),
@@ -25187,7 +25180,7 @@ var lottie$1 = { exports: {} };
 								this.canResize && i.finalSize > this.minimumFontSize && Pt < Ct
 									? ((i.finalSize -= 1),
 										(i.finalLineHeight = (i.finalSize * i.lh) / i.s))
-									: ((i.finalText = wt), (_ = i.finalText.length), (vt = !1));
+									: ((i.finalText = wt), (_ = i.finalText.length), (_t = !1));
 						}
 					(ut = -pt), (ct = 0);
 					var It = 0,
@@ -25264,7 +25257,7 @@ var lottie$1 = { exports: {} };
 						ht;
 					st = yt.length;
 					var mt,
-						_t,
+						vt,
 						Et = [];
 					for (dt = 0; dt < st; dt += 1) {
 						for (
@@ -25273,20 +25266,20 @@ var lottie$1 = { exports: {} };
 								xt.a.sw && (i.strokeWidthAnim = !0),
 								(xt.a.fc || xt.a.fh || xt.a.fs || xt.a.fb) &&
 									(i.fillColorAnim = !0),
-								_t = 0,
+								vt = 0,
 								mt = xt.s.b,
 								g = 0;
 							g < _;
 							g += 1
 						)
 							(ht = c[g]),
-								(ht.anIndexes[dt] = _t),
+								(ht.anIndexes[dt] = vt),
 								((mt == 1 && ht.val !== '') ||
 									(mt == 2 && ht.val !== '' && ht.val !== ' ') ||
 									(mt == 3 && (ht.n || ht.val == ' ' || g == _ - 1)) ||
 									(mt == 4 && (ht.n || g == _ - 1))) &&
-									(xt.s.rn === 1 && Et.push(_t), (_t += 1));
-						o.a[dt].s.totalChars = _t;
+									(xt.s.rn === 1 && Et.push(vt), (vt += 1));
+						o.a[dt].s.totalChars = vt;
 						var Mt = -1,
 							jt;
 						if (xt.s.rn === 1)
@@ -25564,7 +25557,7 @@ var lottie$1 = { exports: {} };
 							ft,
 							pt,
 							gt,
-							vt,
+							_t,
 							St,
 							Pt,
 							Ct;
@@ -25578,7 +25571,7 @@ var lottie$1 = { exports: {} };
 									(ot = { tLength: 0, segments: [] }),
 									(lt = wt._length - 1);
 								var At;
-								for (vt = 0, tt = 0; tt < lt; tt += 1)
+								for (_t = 0, tt = 0; tt < lt; tt += 1)
 									(At = bez.buildBezierData(
 										wt.v[tt],
 										wt.v[tt + 1],
@@ -25590,7 +25583,7 @@ var lottie$1 = { exports: {} };
 									)),
 										(ot.tLength += At.segmentLength),
 										ot.segments.push(At),
-										(vt += At.segmentLength);
+										(_t += At.segmentLength);
 								(tt = lt),
 									Ct.v.c &&
 										((At = bez.buildBezierData(
@@ -25601,7 +25594,7 @@ var lottie$1 = { exports: {} };
 										)),
 										(ot.tLength += At.segmentLength),
 										ot.segments.push(At),
-										(vt += At.segmentLength)),
+										(_t += At.segmentLength)),
 									(this._pathData.pi = ot);
 							}
 							if (
@@ -25639,7 +25632,7 @@ var lottie$1 = { exports: {} };
 							xt,
 							ht,
 							mt,
-							_t;
+							vt;
 						mt = c.length;
 						var Et,
 							Mt = -1,
@@ -25715,10 +25708,10 @@ var lottie$1 = { exports: {} };
 									if (sr !== rt[tt].line) {
 										switch (i.j) {
 											case 1:
-												ut += vt - i.lineWidths[rt[tt].line];
+												ut += _t - i.lineWidths[rt[tt].line];
 												break;
 											case 2:
-												ut += (vt - i.lineWidths[rt[tt].line]) / 2;
+												ut += (_t - i.lineWidths[rt[tt].line]) / 2;
 												break;
 										}
 										sr = rt[tt].line;
@@ -25754,7 +25747,7 @@ var lottie$1 = { exports: {} };
 											this._pathData.a.v &&
 												((ut =
 													rt[0].an * 0.5 +
-													((vt -
+													((_t -
 														this._pathData.f.v -
 														rt[0].an * 0.5 -
 														rt[rt.length - 1].an * 0.5) *
@@ -26042,13 +26035,13 @@ var lottie$1 = { exports: {} };
 									(Rt = lr);
 							}
 							j <= tt
-								? ((_t = new LetterProps(Rt, ur, hr, Ft, kt, Tt)),
-									this.renderedLetters.push(_t),
+								? ((vt = new LetterProps(Rt, ur, hr, Ft, kt, Tt)),
+									this.renderedLetters.push(vt),
 									(j += 1),
 									(this.lettersChangedFlag = !0))
-								: ((_t = this.renderedLetters[tt]),
+								: ((vt = this.renderedLetters[tt]),
 									(this.lettersChangedFlag =
-										_t.update(Rt, ur, hr, Ft, kt, Tt) ||
+										vt.update(Rt, ur, hr, Ft, kt, Tt) ||
 										this.lettersChangedFlag));
 						}
 					}
@@ -26328,9 +26321,9 @@ var lottie$1 = { exports: {} };
 										(pt = new SVGShapeElement(gt, this.globalData, this));
 								}
 								if (this.textSpans[i].glyph) {
-									var vt = this.textSpans[i].glyph;
-									this.textSpans[i].childSpan.removeChild(vt.layerElement),
-										vt.destroy();
+									var _t = this.textSpans[i].glyph;
+									this.textSpans[i].childSpan.removeChild(_t.layerElement),
+										_t.destroy();
 								}
 								(this.textSpans[i].glyph = pt),
 									(pt._debug = !0),
@@ -27750,7 +27743,7 @@ var lottie$1 = { exports: {} };
 							j.scale(i.finalSize / 100, i.finalSize / 100),
 							it && this.applyTextPropertiesToMatrix(i, j, $[g].line, ct, ft),
 							(dt = createSizedArray(ut - 1));
-						var vt = 0;
+						var _t = 0;
 						for (ot = 0; ot < ut; ot += 1)
 							if (rt[ot].ty === 'sh') {
 								for (
@@ -27779,8 +27772,8 @@ var lottie$1 = { exports: {} };
 									j.applyToX(at.v[0][0], at.v[0][1], 0),
 									j.applyToY(at.v[0][0], at.v[0][1], 0),
 								),
-									(dt[vt] = st),
-									(vt += 1);
+									(dt[_t] = st),
+									(_t += 1);
 							}
 						it && ((ct += $[g].l), (ct += nt)),
 							this.textSpans[gt]
@@ -29785,31 +29778,31 @@ var lottie$1 = { exports: {} };
 							at(ct.entropy ? [nt, it(i)] : nt === null ? st() : nt, 3),
 							pt,
 						),
-						vt = new ot(pt),
+						_t = new ot(pt),
 						St = function () {
-							for (var Ct = vt.g(g), wt = j, At = 0; Ct < _e; )
-								(Ct = (Ct + At) * c), (wt *= c), (At = vt.g(1));
+							for (var Ct = _t.g(g), wt = j, At = 0; Ct < _e; )
+								(Ct = (Ct + At) * c), (wt *= c), (At = _t.g(1));
 							for (; Ct >= et; ) (Ct /= 2), (wt /= 2), (At >>>= 1);
 							return (Ct + At) / wt;
 						};
 					return (
 						(St.int32 = function () {
-							return vt.g(4) | 0;
+							return _t.g(4) | 0;
 						}),
 						(St.quick = function () {
-							return vt.g(4) / 4294967296;
+							return _t.g(4) / 4294967296;
 						}),
 						(St.double = St),
-						dt(it(vt.S), i),
+						dt(it(_t.S), i),
 						(
 							ct.pass ||
 							ft ||
 							function (Pt, Ct, wt, At) {
 								return (
 									At &&
-										(At.S && ut(At, vt),
+										(At.S && ut(At, _t),
 										(Pt.state = function () {
-											return ut(vt, {});
+											return ut(_t, {});
 										})),
 									wt ? ((s[$] = Pt), Ct) : Pt
 								);
@@ -29823,12 +29816,12 @@ var lottie$1 = { exports: {} };
 						ft = nt.length,
 						pt = this,
 						gt = 0,
-						vt = (pt.i = pt.j = 0),
+						_t = (pt.i = pt.j = 0),
 						St = (pt.S = []);
 					for (ft || (nt = [ft++]); gt < c; ) St[gt] = gt++;
 					for (gt = 0; gt < c; gt++)
-						(St[gt] = St[(vt = tt & (vt + nt[gt % ft] + (ct = St[gt])))]),
-							(St[vt] = ct);
+						(St[gt] = St[(_t = tt & (_t + nt[gt % ft] + (ct = St[gt])))]),
+							(St[_t] = ct);
 					pt.g = function (Pt) {
 						for (var Ct, wt = 0, At = pt.i, It = pt.j, bt = pt.S; Pt--; )
 							(Ct = bt[(At = tt & (At + 1))]),
@@ -31280,9 +31273,9 @@ var lottie$1 = { exports: {} };
 					function $(ut, at, dt) {
 						var st = propertyGroupFactory(gt, dt),
 							it = propertyGroupFactory(pt, st);
-						function nt(vt) {
-							Object.defineProperty(pt, ut.d[vt].nm, {
-								get: ExpressionPropertyInterface(at.d.dataProps[vt].p),
+						function nt(_t) {
+							Object.defineProperty(pt, ut.d[_t].nm, {
+								get: ExpressionPropertyInterface(at.d.dataProps[_t].p),
 							});
 						}
 						var ct,
@@ -31290,12 +31283,12 @@ var lottie$1 = { exports: {} };
 							pt = {};
 						for (ct = 0; ct < ft; ct += 1)
 							nt(ct), at.d.dataProps[ct].p.setGroupProperty(it);
-						function gt(vt) {
-							return vt === 'Color' || vt === 'color'
+						function gt(_t) {
+							return _t === 'Color' || _t === 'color'
 								? gt.color
-								: vt === 'Opacity' || vt === 'opacity'
+								: _t === 'Opacity' || _t === 'opacity'
 									? gt.opacity
-									: vt === 'Stroke Width' || vt === 'stroke width'
+									: _t === 'Stroke Width' || _t === 'stroke width'
 										? gt.strokeWidth
 										: null;
 						}
@@ -31777,7 +31770,7 @@ var lottie$1 = { exports: {} };
 								0,
 							);
 					} else if (rt === 'offset') {
-						var vt = this.getValueAtTime(
+						var _t = this.getValueAtTime(
 								nt / this.comp.globalData.frameRate,
 								0,
 							),
@@ -31789,14 +31782,14 @@ var lottie$1 = { exports: {} };
 							Ct = Math.floor((at - nt) / it);
 						if (this.pv.length) {
 							for (
-								pt = new Array(vt.length), ft = pt.length, ct = 0;
+								pt = new Array(_t.length), ft = pt.length, ct = 0;
 								ct < ft;
 								ct += 1
 							)
-								pt[ct] = (St[ct] - vt[ct]) * Ct + Pt[ct];
+								pt[ct] = (St[ct] - _t[ct]) * Ct + Pt[ct];
 							return pt;
 						}
-						return (St - vt) * Ct + Pt;
+						return (St - _t) * Ct + Pt;
 					} else if (rt === 'continue') {
 						var wt = this.getValueAtTime(
 								st / this.comp.globalData.frameRate,
@@ -31851,7 +31844,7 @@ var lottie$1 = { exports: {} };
 								0,
 							);
 					} else if (rt === 'offset') {
-						var vt = this.getValueAtTime(
+						var _t = this.getValueAtTime(
 								st / this.comp.globalData.frameRate,
 								0,
 							),
@@ -31863,14 +31856,14 @@ var lottie$1 = { exports: {} };
 							Ct = Math.floor((st - at) / it) + 1;
 						if (this.pv.length) {
 							for (
-								pt = new Array(vt.length), ft = pt.length, ct = 0;
+								pt = new Array(_t.length), ft = pt.length, ct = 0;
 								ct < ft;
 								ct += 1
 							)
-								pt[ct] = Pt[ct] - (St[ct] - vt[ct]) * Ct;
+								pt[ct] = Pt[ct] - (St[ct] - _t[ct]) * Ct;
 							return pt;
 						}
-						return Pt - (St - vt) * Ct;
+						return Pt - (St - _t) * Ct;
 					} else if (rt === 'continue') {
 						var wt = this.getValueAtTime(
 								st / this.comp.globalData.frameRate,
@@ -31965,15 +31958,15 @@ var lottie$1 = { exports: {} };
 					}
 					if (this.data.p && this.data.p.s) {
 						var gt = this.px.getValueAtTime(rt),
-							vt = this.py.getValueAtTime(rt);
+							_t = this.py.getValueAtTime(rt);
 						if (this.data.p.z) {
 							var St = this.pz.getValueAtTime(rt);
 							ot.translate(
 								gt * this.px.mult,
-								vt * this.py.mult,
+								_t * this.py.mult,
 								-St * this.pz.mult,
 							);
-						} else ot.translate(gt * this.px.mult, vt * this.py.mult, 0);
+						} else ot.translate(gt * this.px.mult, _t * this.py.mult, 0);
 					} else {
 						var Pt = this.p.getValueAtTime(rt);
 						ot.translate(
@@ -32104,13 +32097,13 @@ var lottie$1 = { exports: {} };
 						) {
 							if (ft + st[nt].addedLength > it) {
 								var gt = nt,
-									vt = at.c && nt === ct - 1 ? 0 : nt + 1,
+									_t = at.c && nt === ct - 1 ? 0 : nt + 1,
 									St = (it - ft) / st[nt].addedLength;
 								pt = bez.getPointInSegment(
 									at.v[gt],
-									at.v[vt],
+									at.v[_t],
 									at.o[gt],
-									at.i[vt],
+									at.i[_t],
 									St,
 									st[nt],
 								);
@@ -33111,7 +33104,7 @@ var _excluded$1 = [
 			ft = nt[1],
 			pt = reactExports.useRef(),
 			gt = reactExports.useRef(null),
-			vt = function () {
+			_t = function () {
 				var Mt;
 				(Mt = pt.current) === null || Mt === void 0 || Mt.play();
 			},
@@ -33253,13 +33246,13 @@ var _excluded$1 = [
 				},
 				[j, _e, et, tt, lt, rt, ot, ut, at, dt],
 			);
-		var _t = React.createElement(
+		var vt = React.createElement(
 			'div',
 			_objectSpread2({ style: o, ref: gt }, st),
 		);
 		return {
-			View: _t,
-			play: vt,
+			View: vt,
+			play: _t,
 			stop: St,
 			pause: Pt,
 			setSpeed: Ct,
@@ -35639,7 +35632,7 @@ var Observer = (function () {
 				ft = c.onRight,
 				pt = c.onLeft,
 				gt = c.onUp,
-				vt = c.onDown,
+				_t = c.onDown,
 				St = c.onChangeX,
 				Pt = c.onChangeY,
 				Ct = c.onChange,
@@ -35651,7 +35644,7 @@ var Observer = (function () {
 				xt = c.ignoreCheck,
 				ht = c.isNormalizer,
 				mt = c.onGestureStart,
-				_t = c.onGestureEnd,
+				vt = c.onGestureEnd,
 				Et = c.onWheel,
 				Mt = c.onEnable,
 				jt = c.onDisable,
@@ -35694,7 +35687,7 @@ var Observer = (function () {
 				Jt = _isViewport$1(j),
 				Xt = j.ownerDocument || _doc$1,
 				pr = [0, 0, 0],
-				vr = [0, 0, 0],
+				_r = [0, 0, 0],
 				xr = 0,
 				Lr = function () {
 					return (xr = _getTime$1());
@@ -35711,10 +35704,10 @@ var Observer = (function () {
 				},
 				Rr = function () {
 					var Yt = (Ft.deltaX = _getAbsoluteMax(pr)),
-						nr = (Ft.deltaY = _getAbsoluteMax(vr)),
+						nr = (Ft.deltaY = _getAbsoluteMax(_r)),
 						zt = Math.abs(Yt) >= g,
 						Zt = Math.abs(nr) >= g;
-					Ct && (zt || Zt) && Ct(Ft, Yt, nr, pr, vr),
+					Ct && (zt || Zt) && Ct(Ft, Yt, nr, pr, _r),
 						zt &&
 							(ft && Ft.deltaX > 0 && ft(Ft),
 							pt && Ft.deltaX < 0 && pt(Ft),
@@ -35723,12 +35716,12 @@ var Observer = (function () {
 							(kt = Ft.deltaX),
 							(pr[0] = pr[1] = pr[2] = 0)),
 						Zt &&
-							(vt && Ft.deltaY > 0 && vt(Ft),
+							(_t && Ft.deltaY > 0 && _t(Ft),
 							gt && Ft.deltaY < 0 && gt(Ft),
 							Pt && Pt(Ft),
 							At && Ft.deltaY < 0 != Tt < 0 && At(Ft),
 							(Tt = Ft.deltaY),
-							(vr[0] = vr[1] = vr[2] = 0)),
+							(_r[0] = _r[1] = _r[2] = 0)),
 						(Wt || ar) && (yt && yt(Ft), ar && (it(Ft), (ar = !1)), (Wt = !1)),
 						ur && !(ur = !1) && sr && sr(Ft),
 						Vt && (Et(Ft), (Vt = !1)),
@@ -35736,7 +35729,7 @@ var Observer = (function () {
 				},
 				jr = function (Yt, nr, zt) {
 					(pr[zt] += Yt),
-						(vr[zt] += nr),
+						(_r[zt] += nr),
 						Ft._vx.update(Yt),
 						Ft._vy.update(nr),
 						et ? lr || (lr = requestAnimationFrame(Rr)) : Rr();
@@ -35747,7 +35740,7 @@ var Observer = (function () {
 						((Ft.axis = hr = Math.abs(Yt) > Math.abs(nr) ? 'x' : 'y'),
 						(ur = !0)),
 						hr !== 'y' && ((pr[2] += Yt), Ft._vx.update(Yt, !0)),
-						hr !== 'x' && ((vr[2] += nr), Ft._vy.update(nr, !0)),
+						hr !== 'x' && ((_r[2] += nr), Ft._vy.update(nr, !0)),
 						et ? lr || (lr = requestAnimationFrame(Rr)) : Rr();
 				},
 				Vr = function (Yt) {
@@ -35842,7 +35835,7 @@ var Observer = (function () {
 					);
 				},
 				Cr = function () {
-					return (Ft.isGesturing = !1) || _t(Ft);
+					return (Ft.isGesturing = !1) || vt(Ft);
 				},
 				Ar = function (Yt) {
 					if (!mr(Yt)) {
@@ -35911,7 +35904,7 @@ var Observer = (function () {
 								qt && _addListener$1(j, 'click', Lr, !0, !0),
 								$t && _addListener$1(j, 'click', qr),
 								mt && _addListener$1(Xt, 'gesturestart', Gr),
-								_t && _addListener$1(Xt, 'gestureend', Cr),
+								vt && _addListener$1(Xt, 'gestureend', Cr),
 								It && _addListener$1(j, _pointerType + 'enter', Yr),
 								bt && _addListener$1(j, _pointerType + 'leave', Or),
 								yt && _addListener$1(j, _pointerType + 'move', Wr)),
@@ -36679,17 +36672,17 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 				(c -= c - pt);
 		}
 		if ((ut && ((_e[ut] = s || -0.001), s < 0 && (s = 0)), $)) {
-			var vt = s + c,
+			var _t = s + c,
 				St = $._isStart;
 			(dt = 'scroll' + g.d2),
 				_positionMarker(
 					$,
-					vt,
+					_t,
 					g,
-					(St && vt > 20) ||
+					(St && _t > 20) ||
 						(!St &&
 							(lt ? Math.max(_body[dt], _docEl[dt]) : $.parentNode[dt]) <=
-								vt + 1),
+								_t + 1),
 				),
 				lt &&
 					((et = _getBounds(j)),
@@ -36831,7 +36824,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 					ft = _.pinReparent,
 					pt = _.pinSpacer,
 					gt = _.containerAnimation,
-					vt = _.fastScrollEnd,
+					_t = _.fastScrollEnd,
 					St = _.preventOverlaps,
 					Pt =
 						c.horizontal || (c.containerAnimation && c.horizontal !== !1)
@@ -36851,11 +36844,11 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 					mt = It
 						? 0
 						: parseFloat(_getComputedStyle(wt)['border' + Pt.p2 + _Width]) || 0,
-					_t = this,
+					vt = this,
 					Et =
 						c.onRefreshInit &&
 						function () {
-							return c.onRefreshInit(_t);
+							return c.onRefreshInit(vt);
 						},
 					Mt = _getSizeFunc(wt, It, Pt),
 					jt = _getOffsetsFunc(wt, It),
@@ -36884,7 +36877,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 					Jt,
 					Xt,
 					pr,
-					vr,
+					_r,
 					xr,
 					Lr,
 					mr,
@@ -36903,22 +36896,22 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 					Yr,
 					Or;
 				if (
-					((_t._startClamp = _t._endClamp = !1),
-					(_t._dir = Pt),
+					((vt._startClamp = vt._endClamp = !1),
+					(vt._dir = Pt),
 					(dt *= 45),
-					(_t.scroller = wt),
-					(_t.scroll = gt ? gt.time.bind(gt) : qt),
+					(vt.scroller = wt),
+					(vt.scroll = gt ? gt.time.bind(gt) : qt),
 					(tr = qt()),
-					(_t.vars = c),
+					(vt.vars = c),
 					(g = g || c.animation),
 					'refreshPriority' in c &&
-						((_sort = 1), c.refreshPriority === -9999 && (_primary = _t)),
+						((_sort = 1), c.refreshPriority === -9999 && (_primary = vt)),
 					(At.tweenScroll = At.tweenScroll || {
 						top: _getTweenCreator(wt, _vertical),
 						left: _getTweenCreator(wt, _horizontal),
 					}),
-					(_t.tweenTo = ir = At.tweenScroll[Pt.p]),
-					(_t.scrubDuration = function (zt) {
+					(vt.tweenTo = ir = At.tweenScroll[Pt.p]),
+					(vt.scrubDuration = function (zt) {
 						(Gr = _isNumber(zt) && zt),
 							Gr
 								? er
@@ -36930,21 +36923,21 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 											duration: Gr,
 											paused: !0,
 											onComplete: function () {
-												return st && st(_t);
+												return st && st(vt);
 											},
 										}))
 								: (er && er.progress(1).kill(), (er = 0));
 					}),
 					g &&
 						((g.vars.lazy = !1),
-						(g._initted && !_t.isReverted) ||
+						(g._initted && !vt.isReverted) ||
 							(g.vars.immediateRender !== !1 &&
 								c.immediateRender !== !1 &&
 								g.duration() &&
 								g.render(0, !0, !0)),
-						(_t.animation = g.pause()),
-						(g.scrollTrigger = _t),
-						_t.scrubDuration(lt),
+						(vt.animation = g.pause()),
+						(g.scrollTrigger = vt),
+						vt.scrubDuration(lt),
 						(Vr = 0),
 						_e || (_e = g.vars.id)),
 					ct &&
@@ -36980,7 +36973,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 									Zt = _getTime() - Bt < 500,
 									Ut = ir.tween;
 								if (
-									(Zt || Math.abs(_t.getVelocity()) < 10) &&
+									(Zt || Math.abs(vt.getVelocity()) < 10) &&
 									!Ut &&
 									!_pointerIsDown &&
 									$t !== zt
@@ -36990,12 +36983,12 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 										rr = Zt
 											? 0
 											: ((Sr - Br) / (_getTime() - _time2)) * 1e3 || 0,
-										_r = gsap.utils.clamp(
+										vr = gsap.utils.clamp(
 											-Kt,
 											1 - Kt,
 											(_abs(rr / 2) * rr) / 0.185,
 										),
-										kr = Kt + (ct.inertia === !1 ? 0 : _r),
+										kr = Kt + (ct.inertia === !1 ? 0 : vr),
 										gr,
 										cr,
 										or = ct,
@@ -37003,13 +36996,13 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 										dr = or.onInterrupt,
 										Tr = or.onComplete;
 									if (
-										((gr = lr(kr, _t)),
+										((gr = lr(kr, vt)),
 										_isNumber(gr) || (gr = kr),
 										(cr = Math.round(Wt + gr * Dt)),
 										zt <= Vt && zt >= Wt && cr !== zt)
 									) {
 										if (Ut && !Ut._initted && Ut.data <= _abs(cr - zt)) return;
-										ct.inertia === !1 && (_r = gr - Kt),
+										ct.inertia === !1 && (vr = gr - Kt),
 											ir(
 												cr,
 												{
@@ -37023,10 +37016,10 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 													ease: ct.ease || 'power3',
 													data: _abs(cr - zt),
 													onInterrupt: function () {
-														return Ar.restart(!0) && dr && dr(_t);
+														return Ar.restart(!0) && dr && dr(vt);
 													},
 													onComplete: function () {
-														_t.update(),
+														vt.update(),
 															($t = qt()),
 															g &&
 																(er
@@ -37037,24 +37030,24 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 																		)
 																	: g.progress(gr)),
 															(Vr = Br =
-																g && !Ct ? g.totalProgress() : _t.progress),
-															it && it(_t),
-															Tr && Tr(_t);
+																g && !Ct ? g.totalProgress() : vt.progress),
+															it && it(vt),
+															Tr && Tr(vt);
 													},
 												},
 												zt,
-												_r * Dt,
-												cr - zt - _r * Dt,
+												vr * Dt,
+												cr - zt - vr * Dt,
 											),
-											Fr && Fr(_t, ir.tween);
+											Fr && Fr(vt, ir.tween);
 									}
-								} else _t.isActive && $t !== zt && Ar.restart(!0);
+								} else vt.isActive && $t !== zt && Ar.restart(!0);
 							})
 							.pause())),
-					_e && (_ids[_e] = _t),
-					(rt = _t.trigger = _getTarget(rt || (ot !== !0 && ot))),
+					_e && (_ids[_e] = vt),
+					(rt = vt.trigger = _getTarget(rt || (ot !== !0 && ot))),
 					(Or = rt && rt._gsap && rt._gsap.stRevert),
-					Or && (Or = Or(_t)),
+					Or && (Or = Or(vt)),
 					(ot = ot === !0 ? rt : _getTarget(ot)),
 					_isString(j) && (j = { targets: rt, className: j }),
 					ot &&
@@ -37067,7 +37060,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 								_getComputedStyle(ot.parentNode).display === 'flex'
 									? !1
 									: _padding),
-						(_t.pin = ot),
+						(vt.pin = ot),
 						(sr = gsap.core.getCache(ot)),
 						sr.spacer
 							? (Ot = sr.pinState)
@@ -37081,7 +37074,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 								_e && Ht.classList.add('pin-spacer-' + _e),
 								(sr.pinState = Ot = _getState(ot))),
 						c.force3D !== !1 && gsap.set(ot, { force3D: !0 }),
-						(_t.spacer = Ht = sr.spacer),
+						(vt.spacer = Ht = sr.spacer),
 						(Ur = _getComputedStyle(ot)),
 						(Lr = Ur[ut + Pt.os2]),
 						(Xt = gsap.getProperty(ot)),
@@ -37113,55 +37106,55 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 					var Qt = gt.vars.onUpdate,
 						Yt = gt.vars.onUpdateParams;
 					gt.eventCallback('onUpdate', function () {
-						_t.update(0, 0, 1), Qt && Qt.apply(gt, Yt || []);
+						vt.update(0, 0, 1), Qt && Qt.apply(gt, Yt || []);
 					});
 				}
 				if (
-					((_t.previous = function () {
-						return _triggers[_triggers.indexOf(_t) - 1];
+					((vt.previous = function () {
+						return _triggers[_triggers.indexOf(vt) - 1];
 					}),
-					(_t.next = function () {
-						return _triggers[_triggers.indexOf(_t) + 1];
+					(vt.next = function () {
+						return _triggers[_triggers.indexOf(vt) + 1];
 					}),
-					(_t.revert = function (zt, Zt) {
-						if (!Zt) return _t.kill(!0);
-						var Ut = zt !== !1 || !_t.enabled,
+					(vt.revert = function (zt, Zt) {
+						if (!Zt) return vt.kill(!0);
+						var Ut = zt !== !1 || !vt.enabled,
 							Kt = _refreshing;
-						Ut !== _t.isReverted &&
+						Ut !== vt.isReverted &&
 							(Ut &&
-								((Mr = Math.max(qt(), _t.scroll.rec || 0)),
-								(Gt = _t.progress),
+								((Mr = Math.max(qt(), vt.scroll.rec || 0)),
+								(Gt = vt.progress),
 								(Wr = g && g.progress())),
 							ur &&
 								[ur, hr, Ft, kt].forEach(function (Sr) {
 									return (Sr.style.display = Ut ? 'none' : 'block');
 								}),
-							Ut && ((_refreshing = _t), _t.update(Ut)),
+							Ut && ((_refreshing = vt), vt.update(Ut)),
 							ot &&
-								(!ft || !_t.isActive) &&
+								(!ft || !vt.isActive) &&
 								(Ut
 									? _swapPinOut(ot, Ht, Ot)
 									: _swapPinIn(ot, Ht, _getComputedStyle(ot), mr)),
-							Ut || _t.update(Ut),
+							Ut || vt.update(Ut),
 							(_refreshing = Kt),
-							(_t.isReverted = Ut));
+							(vt.isReverted = Ut));
 					}),
-					(_t.refresh = function (zt, Zt, Ut, Kt) {
-						if (!((_refreshing || !_t.enabled) && !Zt)) {
+					(vt.refresh = function (zt, Zt, Ut, Kt) {
+						if (!((_refreshing || !vt.enabled) && !Zt)) {
 							if (ot && zt && _lastScrollTime) {
 								_addListener(i, 'scrollEnd', _softRefresh);
 								return;
 							}
-							!_refreshingAll && Et && Et(_t),
-								(_refreshing = _t),
+							!_refreshingAll && Et && Et(vt),
+								(_refreshing = vt),
 								ir.tween && !Ut && (ir.tween.kill(), (ir.tween = 0)),
 								er && er.pause(),
 								at && g && g.revert({ kill: !1 }).invalidate(),
-								_t.isReverted || _t.revert(!0, !0),
-								(_t._subPinOffset = !1);
+								vt.isReverted || vt.revert(!0, !0),
+								(vt._subPinOffset = !1);
 							var Sr = Mt(),
 								rr = jt(),
-								_r = gt ? gt.duration() : _maxScroll(wt, Pt),
+								vr = gt ? gt.duration() : _maxScroll(wt, Pt),
 								kr = Dt <= 0.01,
 								gr = 0,
 								cr = Kt || 0,
@@ -37171,9 +37164,9 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 									? Ut.start
 									: c.start ||
 										(c.start === 0 || !rt ? 0 : ot ? '0 0' : '0 100%'),
-								Tr = (_t.pinnedContainer =
-									c.pinnedContainer && _getTarget(c.pinnedContainer, _t)),
-								Ir = (rt && Math.max(0, _triggers.indexOf(_t))) || 0,
+								Tr = (vt.pinnedContainer =
+									c.pinnedContainer && _getTarget(c.pinnedContainer, vt)),
+								Ir = (rt && Math.max(0, _triggers.indexOf(vt))) || 0,
 								Er = Ir,
 								wr,
 								Pr,
@@ -37197,7 +37190,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 
 							)
 								(yr = _triggers[Er]),
-									yr.end || yr.refresh(0, 1) || (_refreshing = _t),
+									yr.end || yr.refresh(0, 1) || (_refreshing = vt),
 									($r = yr.pin),
 									$r &&
 										($r === rt || $r === ot || $r === Tr) &&
@@ -37205,8 +37198,8 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 										(Xr || (Xr = []), Xr.unshift(yr), yr.revert(!0, !0)),
 									yr !== _triggers[Er] && (Ir--, Er--);
 							for (
-								_isFunction(dr) && (dr = dr(_t)),
-									dr = _parseClamp(dr, 'start', _t),
+								_isFunction(dr) && (dr = dr(vt)),
+									dr = _parseClamp(dr, 'start', vt),
 									Wt =
 										_parsePosition(
 											dr,
@@ -37216,15 +37209,15 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 											qt(),
 											ur,
 											Ft,
-											_t,
+											vt,
 											rr,
 											mt,
 											bt,
-											_r,
+											vr,
 											gt,
-											_t._startClamp && '_startClamp',
+											vt._startClamp && '_startClamp',
 										) || (ot ? -0.001 : 0),
-									_isFunction(or) && (or = or(_t)),
+									_isFunction(or) && (or = or(vt)),
 									_isString(or) &&
 										!or.indexOf('+=') &&
 										(~or.indexOf(' ')
@@ -37242,25 +37235,25 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 																)
 															: Wt) + gr),
 												(Fr = rt))),
-									or = _parseClamp(or, 'end', _t),
+									or = _parseClamp(or, 'end', vt),
 									Vt =
 										Math.max(
 											Wt,
 											_parsePosition(
-												or || (Fr ? '100% 0' : _r),
+												or || (Fr ? '100% 0' : vr),
 												Fr,
 												Sr,
 												Pt,
 												qt() + gr,
 												hr,
 												kt,
-												_t,
+												vt,
 												rr,
 												mt,
 												bt,
-												_r,
+												vr,
 												gt,
-												_t._endClamp && '_endClamp',
+												vt._endClamp && '_endClamp',
 											),
 										) || -0.001,
 									gr = 0,
@@ -37276,7 +37269,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 										yr.end > 0 &&
 										((wr =
 											yr.end -
-											(_t._startClamp ? Math.max(0, yr.start) : yr.start)),
+											(vt._startClamp ? Math.max(0, yr.start) : yr.start)),
 										(($r === rt && yr.start - yr._pinPush < Wt) || $r === Tr) &&
 											isNaN(dr) &&
 											(gr += wr * (1 - yr.progress)),
@@ -37284,10 +37277,10 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 							if (
 								((Wt += gr),
 								(Vt += gr),
-								_t._startClamp && (_t._startClamp += gr),
-								_t._endClamp &&
+								vt._startClamp && (vt._startClamp += gr),
+								vt._endClamp &&
 									!_refreshingAll &&
-									((_t._endClamp = Vt || -0.001),
+									((vt._endClamp = Vt || -0.001),
 									(Vt = Math.min(Vt, _maxScroll(wt, Pt)))),
 								(Dt = Vt - Wt || ((Wt -= 0.01) && 0.001)),
 								kr &&
@@ -37296,20 +37289,20 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 										1,
 										gsap.utils.normalize(Wt, Vt, Mr),
 									)),
-								(_t._pinPush = cr),
+								(vt._pinPush = cr),
 								ur &&
 									gr &&
 									((wr = {}),
 									(wr[Pt.a] = '+=' + gr),
 									Tr && (wr[Pt.p] = '-=' + qt()),
 									gsap.set([ur, hr], wr)),
-								ot && !(_clampingMax && _t.end >= _maxScroll(wt, Pt)))
+								ot && !(_clampingMax && vt.end >= _maxScroll(wt, Pt)))
 							)
 								(wr = _getComputedStyle(ot)),
 									(Zr = Pt === _vertical),
 									(Hr = qt()),
-									(vr = parseFloat(Xt(Pt.a)) + cr),
-									!_r &&
+									(_r = parseFloat(Xt(Pt.a)) + cr),
+									!vr &&
 										Vt > 1 &&
 										((Dr = (It ? _doc.scrollingElement || _docEl : wt).style),
 										(Dr = {
@@ -37374,7 +37367,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 										? ((tn = g._initted),
 											_suppressOverwrites(1),
 											g.render(g.duration(), !0, !0),
-											(xr = Xt(Pt.a) - vr + Dt + cr),
+											(xr = Xt(Pt.a) - _r + Dt + cr),
 											(Rr = Math.abs(Dt - xr) > 1),
 											bt && Rr && Lt.splice(Lt.length - 2, 2),
 											g.render(0, !0, !0),
@@ -37395,13 +37388,13 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 								Xr.forEach(function (Qr) {
 									return Qr.revert(!1, !0);
 								}),
-								(_t.start = Wt),
-								(_t.end = Vt),
+								(vt.start = Wt),
+								(vt.end = Vt),
 								(tr = ar = _refreshingAll ? Mr : qt()),
 								!gt &&
 									!_refreshingAll &&
-									(tr < Mr && qt(Mr), (_t.scroll.rec = 0)),
-								_t.revert(!1, !0),
+									(tr < Mr && qt(Mr), (vt.scroll.rec = 0)),
+								vt.revert(!1, !0),
 								(Bt = _getTime()),
 								Ar && (($t = -1), Ar.restart(!0)),
 								(_refreshing = 0),
@@ -37410,7 +37403,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 									(g._initted || Wr) &&
 									g.progress() !== Wr &&
 									g.progress(Wr || 0, !0).render(g.time(), !0, !0),
-								(kr || Gt !== _t.progress || gt || at) &&
+								(kr || Gt !== vt.progress || gt || at) &&
 									(g &&
 										!Ct &&
 										g.totalProgress(
@@ -37419,8 +37412,8 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 												: Gt,
 											!0,
 										),
-									(_t.progress = kr || (tr - Wt) / Dt === Gt ? 0 : Gt)),
-								ot && ut && (Ht._pinOffset = Math.round(_t.progress * xr)),
+									(vt.progress = kr || (tr - Wt) / Dt === Gt ? 0 : Gt)),
+								ot && ut && (Ht._pinOffset = Math.round(vt.progress * xr)),
 								er && er.invalidate(),
 								isNaN(Kr) ||
 									((Kr -= gsap.getProperty(Ft, Pt.p)),
@@ -37429,35 +37422,35 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 									_shiftMarker(ur, Pt, Kr - (Kt || 0)),
 									_shiftMarker(kt, Pt, Jr),
 									_shiftMarker(hr, Pt, Jr - (Kt || 0))),
-								kr && !_refreshingAll && _t.update(),
-								tt && !_refreshingAll && !Rt && ((Rt = !0), tt(_t), (Rt = !1));
+								kr && !_refreshingAll && vt.update(),
+								tt && !_refreshingAll && !Rt && ((Rt = !0), tt(vt), (Rt = !1));
 						}
 					}),
-					(_t.getVelocity = function () {
+					(vt.getVelocity = function () {
 						return ((qt() - ar) / (_getTime() - _time2)) * 1e3 || 0;
 					}),
-					(_t.endAnimation = function () {
-						_endAnimation(_t.callbackAnimation),
+					(vt.endAnimation = function () {
+						_endAnimation(vt.callbackAnimation),
 							g &&
 								(er
 									? er.progress(1)
 									: g.paused()
-										? Ct || _endAnimation(g, _t.direction < 0, 1)
+										? Ct || _endAnimation(g, vt.direction < 0, 1)
 										: _endAnimation(g, g.reversed()));
 					}),
-					(_t.labelToScroll = function (zt) {
+					(vt.labelToScroll = function (zt) {
 						return (
 							(g &&
 								g.labels &&
-								(Wt || _t.refresh() || Wt) +
+								(Wt || vt.refresh() || Wt) +
 									(g.labels[zt] / g.duration()) * Dt) ||
 							0
 						);
 					}),
-					(_t.getTrailing = function (zt) {
-						var Zt = _triggers.indexOf(_t),
+					(vt.getTrailing = function (zt) {
+						var Zt = _triggers.indexOf(vt),
 							Ut =
-								_t.direction > 0
+								vt.direction > 0
 									? _triggers.slice(0, Zt).reverse()
 									: _triggers.slice(Zt + 1);
 						return (
@@ -37467,15 +37460,15 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 									})
 								: Ut
 						).filter(function (Kt) {
-							return _t.direction > 0 ? Kt.end <= Wt : Kt.start >= Vt;
+							return vt.direction > 0 ? Kt.end <= Wt : Kt.start >= Vt;
 						});
 					}),
-					(_t.update = function (zt, Zt, Ut) {
+					(vt.update = function (zt, Zt, Ut) {
 						if (!(gt && !Ut && !zt)) {
-							var Kt = _refreshingAll === !0 ? Mr : _t.scroll(),
+							var Kt = _refreshingAll === !0 ? Mr : vt.scroll(),
 								Sr = zt ? 0 : (Kt - Wt) / Dt,
 								rr = Sr < 0 ? 0 : Sr > 1 ? 1 : Sr || 0,
-								_r = _t.progress,
+								vr = vt.progress,
 								kr,
 								gr,
 								cr,
@@ -37499,18 +37492,18 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 										: rr === 1 &&
 											Vt > Kt + ((Kt - ar) / (_getTime() - _time2)) * dt &&
 											(rr = 0.9999)),
-								rr !== _r && _t.enabled)
+								rr !== vr && vt.enabled)
 							) {
 								if (
-									((kr = _t.isActive = !!rr && rr < 1),
-									(gr = !!_r && _r < 1),
+									((kr = vt.isActive = !!rr && rr < 1),
+									(gr = !!vr && vr < 1),
 									(dr = kr !== gr),
-									(Fr = dr || !!rr != !!_r),
-									(_t.direction = rr > _r ? 1 : -1),
-									(_t.progress = rr),
+									(Fr = dr || !!rr != !!vr),
+									(vt.direction = rr > vr ? 1 : -1),
+									(vt.progress = rr),
 									Fr &&
 										!_refreshing &&
-										((cr = rr && !_r ? 0 : rr === 1 ? 1 : _r === 1 ? 2 : 3),
+										((cr = rr && !vr ? 0 : rr === 1 ? 1 : vr === 1 ? 2 : 3),
 										Ct &&
 											((or =
 												(!dr && xt[cr + 1] !== 'none' && xt[cr + 1]) || xt[cr]),
@@ -37521,8 +37514,8 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 										(dr || Ir) &&
 										(Ir || lt || !g) &&
 										(_isFunction(St)
-											? St(_t)
-											: _t.getTrailing(St).forEach(function (Hr) {
+											? St(vt)
+											: vt.getTrailing(St).forEach(function (Hr) {
 													return Hr.endAnimation();
 												})),
 									Ct ||
@@ -37538,12 +37531,12 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 									ot)
 								) {
 									if ((zt && ut && (Ht.style[ut + Pt.os2] = Lr), !bt))
-										pr(_round(vr + xr * rr));
+										pr(_round(_r + xr * rr));
 									else if (Fr) {
 										if (
 											((Tr =
 												!zt &&
-												rr > _r &&
+												rr > vr &&
 												Vt + 1 > Kt &&
 												Kt + 1 >= _maxScroll(wt, Pt)),
 											ft)
@@ -37560,7 +37553,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 											} else _reparent(ot, Ht);
 										_setState(kr || Tr ? Lt : Nt),
 											(Rr && rr < 1 && kr) ||
-												pr(vr + (rr === 1 && !Tr ? xr : 0));
+												pr(_r + (rr === 1 && !Tr ? xr : 0));
 									}
 								}
 								ct && !ir.tween && !_refreshing && !_startup && Ar.restart(!0),
@@ -37571,7 +37564,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 												j.className,
 											);
 										}),
-									$ && !Ct && !zt && $(_t),
+									$ && !Ct && !zt && $(vt),
 									Fr && !_refreshing
 										? (Ct &&
 												(Ir &&
@@ -37582,23 +37575,23 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 															: or === 'restart'
 																? g.restart(!0)
 																: g[or]()),
-												$ && $(_t)),
+												$ && $(vt)),
 											(dr || !_limitCallbacks) &&
-												(et && dr && _callback(_t, et),
-												yt[cr] && _callback(_t, yt[cr]),
-												nt && (rr === 1 ? _t.kill(!1, 1) : (yt[cr] = 0)),
+												(et && dr && _callback(vt, et),
+												yt[cr] && _callback(vt, yt[cr]),
+												nt && (rr === 1 ? vt.kill(!1, 1) : (yt[cr] = 0)),
 												dr ||
 													((cr = rr === 1 ? 1 : 3),
-													yt[cr] && _callback(_t, yt[cr]))),
-											vt &&
+													yt[cr] && _callback(vt, yt[cr]))),
+											_t &&
 												!kr &&
-												Math.abs(_t.getVelocity()) >
-													(_isNumber(vt) ? vt : 2500) &&
-												(_endAnimation(_t.callbackAnimation),
+												Math.abs(vt.getVelocity()) >
+													(_isNumber(_t) ? _t : 2500) &&
+												(_endAnimation(vt.callbackAnimation),
 												er
 													? er.progress(1)
 													: _endAnimation(g, or === 'reverse' ? 1 : !rr, 1)))
-										: Ct && $ && !_refreshing && $(_t);
+										: Ct && $ && !_refreshing && $(vt);
 							}
 							if (jr) {
 								var Pr = gt
@@ -37609,38 +37602,38 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 							Yr && Yr((-Kt / gt.duration()) * (gt._caScrollDist || 0));
 						}
 					}),
-					(_t.enable = function (zt, Zt) {
-						_t.enabled ||
-							((_t.enabled = !0),
+					(vt.enable = function (zt, Zt) {
+						vt.enabled ||
+							((vt.enabled = !0),
 							_addListener(wt, 'resize', _onResize),
 							It || _addListener(wt, 'scroll', _onScroll),
 							Et && _addListener(i, 'refreshInit', Et),
-							zt !== !1 && ((_t.progress = Gt = 0), (tr = ar = $t = qt())),
-							Zt !== !1 && _t.refresh());
+							zt !== !1 && ((vt.progress = Gt = 0), (tr = ar = $t = qt())),
+							Zt !== !1 && vt.refresh());
 					}),
-					(_t.getTween = function (zt) {
+					(vt.getTween = function (zt) {
 						return zt && ir ? ir.tween : er;
 					}),
-					(_t.setPositions = function (zt, Zt, Ut, Kt) {
+					(vt.setPositions = function (zt, Zt, Ut, Kt) {
 						if (gt) {
 							var Sr = gt.scrollTrigger,
 								rr = gt.duration(),
-								_r = Sr.end - Sr.start;
-							(zt = Sr.start + (_r * zt) / rr),
-								(Zt = Sr.start + (_r * Zt) / rr);
+								vr = Sr.end - Sr.start;
+							(zt = Sr.start + (vr * zt) / rr),
+								(Zt = Sr.start + (vr * Zt) / rr);
 						}
-						_t.refresh(
+						vt.refresh(
 							!1,
 							!1,
 							{
-								start: _keepClamp(zt, Ut && !!_t._startClamp),
-								end: _keepClamp(Zt, Ut && !!_t._endClamp),
+								start: _keepClamp(zt, Ut && !!vt._startClamp),
+								end: _keepClamp(Zt, Ut && !!vt._endClamp),
 							},
 							Kt,
 						),
-							_t.update();
+							vt.update();
 					}),
-					(_t.adjustPinSpacing = function (zt) {
+					(vt.adjustPinSpacing = function (zt) {
 						if (mr && zt) {
 							var Zt = mr.indexOf(Pt.d) + 1;
 							(mr[Zt] = parseFloat(mr[Zt]) + zt + _px),
@@ -37648,11 +37641,11 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 								_setState(mr);
 						}
 					}),
-					(_t.disable = function (zt, Zt) {
+					(vt.disable = function (zt, Zt) {
 						if (
-							_t.enabled &&
-							(zt !== !1 && _t.revert(!0, !0),
-							(_t.enabled = _t.isActive = !1),
+							vt.enabled &&
+							(zt !== !1 && vt.revert(!0, !0),
+							(vt.enabled = vt.isActive = !1),
 							Zt || (er && er.pause()),
 							(Mr = 0),
 							sr && (sr.uncache = 1),
@@ -37661,22 +37654,22 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 							!It)
 						) {
 							for (var Ut = _triggers.length; Ut--; )
-								if (_triggers[Ut].scroller === wt && _triggers[Ut] !== _t)
+								if (_triggers[Ut].scroller === wt && _triggers[Ut] !== vt)
 									return;
 							_removeListener(wt, 'resize', _onResize),
 								It || _removeListener(wt, 'scroll', _onScroll);
 						}
 					}),
-					(_t.kill = function (zt, Zt) {
-						_t.disable(zt, Zt), er && !Zt && er.kill(), _e && delete _ids[_e];
-						var Ut = _triggers.indexOf(_t);
+					(vt.kill = function (zt, Zt) {
+						vt.disable(zt, Zt), er && !Zt && er.kill(), _e && delete _ids[_e];
+						var Ut = _triggers.indexOf(vt);
 						Ut >= 0 && _triggers.splice(Ut, 1),
 							Ut === _i && _direction > 0 && _i--,
 							(Ut = 0),
 							_triggers.forEach(function (Kt) {
-								return Kt.scroller === _t.scroller && (Ut = 1);
+								return Kt.scroller === vt.scroller && (Ut = 1);
 							}),
-							Ut || _refreshingAll || (_t.scroll.rec = 0),
+							Ut || _refreshingAll || (vt.scroll.rec = 0),
 							g &&
 								((g.scrollTrigger = null),
 								zt && g.revert({ kill: !1 }),
@@ -37685,7 +37678,7 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 								[ur, hr, Ft, kt].forEach(function (Kt) {
 									return Kt.parentNode && Kt.parentNode.removeChild(Kt);
 								}),
-							_primary === _t && (_primary = 0),
+							_primary === vt && (_primary = 0),
 							ot &&
 								(sr && (sr.uncache = 1),
 								(Ut = 0),
@@ -37693,21 +37686,21 @@ _getGSAP$1() && gsap$1.registerPlugin(Observer);
 									return Kt.pin === ot && Ut++;
 								}),
 								Ut || (sr.spacer = 0)),
-							c.onKill && c.onKill(_t);
+							c.onKill && c.onKill(vt);
 					}),
-					_triggers.push(_t),
-					_t.enable(!1, !1),
-					Or && Or(_t),
+					_triggers.push(vt),
+					vt.enable(!1, !1),
+					Or && Or(vt),
 					g && g.add && !Dt)
 				) {
-					var nr = _t.update;
-					(_t.update = function () {
-						(_t.update = nr), Wt || Vt || _t.refresh();
+					var nr = vt.update;
+					(vt.update = function () {
+						(vt.update = nr), Wt || Vt || vt.refresh();
 					}),
-						gsap.delayedCall(0.01, _t.update),
+						gsap.delayedCall(0.01, vt.update),
 						(Dt = 0.01),
 						(Wt = Vt = 0);
-				} else _t.refresh();
+				} else vt.refresh();
 				ot && _queueRefreshAll();
 			}),
 			(i.register = function (c) {
@@ -38167,10 +38160,10 @@ var _clampScrollAndGetDurationMultiplier = function i(s, o, c, g) {
 				return (ct = !1);
 			},
 			gt = _passThrough,
-			vt = _passThrough,
+			_t = _passThrough,
 			St = function () {
 				(_e = _maxScroll(et, _vertical)),
-					(vt = _clamp(_fixIOSBug ? 1 : 0, _e)),
+					(_t = _clamp(_fixIOSBug ? 1 : 0, _e)),
 					c && (gt = _clamp(0, _maxScroll(et, _horizontal))),
 					(nt = _refreshID);
 			},
@@ -38186,15 +38179,15 @@ var _clampScrollAndGetDurationMultiplier = function i(s, o, c, g) {
 				if (ct) {
 					requestAnimationFrame(pt);
 					var ht = _round(j.deltaY / 2),
-						mt = vt(ot.v - ht);
+						mt = _t(ot.v - ht);
 					if (rt && mt !== ot.v + ot.offset) {
 						ot.offset = mt - ot.v;
-						var _t = _round((parseFloat(rt && rt._gsap.y) || 0) - ot.offset);
+						var vt = _round((parseFloat(rt && rt._gsap.y) || 0) - ot.offset);
 						(rt.style.transform =
 							'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ' +
-							_t +
+							vt +
 							', 0, 1)'),
-							(rt._gsap.y = _t + 'px'),
+							(rt._gsap.y = vt + 'px'),
 							(ot.cacheID = _scrollers.cache),
 							_updateAll();
 					}
@@ -38241,29 +38234,29 @@ var _clampScrollAndGetDurationMultiplier = function i(s, o, c, g) {
 					else {
 						_scrollers.cache++;
 						var mt = it(),
-							_t,
+							vt,
 							Et;
 						c &&
-							((_t = ut()),
-							(Et = _t + (mt * 0.05 * -xt.velocityX) / 0.227),
+							((vt = ut()),
+							(Et = vt + (mt * 0.05 * -xt.velocityX) / 0.227),
 							(mt *= _clampScrollAndGetDurationMultiplier(
 								ut,
-								_t,
+								vt,
 								Et,
 								_maxScroll(et, _horizontal),
 							)),
 							(wt.vars.scrollX = gt(Et))),
-							(_t = ot()),
-							(Et = _t + (mt * 0.05 * -xt.velocityY) / 0.227),
+							(vt = ot()),
+							(Et = vt + (mt * 0.05 * -xt.velocityY) / 0.227),
 							(mt *= _clampScrollAndGetDurationMultiplier(
 								ot,
-								_t,
+								vt,
 								Et,
 								_maxScroll(et, _vertical),
 							)),
-							(wt.vars.scrollY = vt(Et)),
+							(wt.vars.scrollY = _t(Et)),
 							wt.invalidate().duration(mt).play(0.01),
-							((_fixIOSBug && wt.vars.scrollY >= _e) || _t >= _e - 1) &&
+							((_fixIOSBug && wt.vars.scrollY >= _e) || vt >= _e - 1) &&
 								gsap.to({}, { onUpdate: yt, duration: mt });
 					}
 					$ && $(xt);
@@ -38272,18 +38265,18 @@ var _clampScrollAndGetDurationMultiplier = function i(s, o, c, g) {
 				wt._ts && wt.pause(),
 					_getTime() - st > 1e3 && ((nt = 0), (st = _getTime()));
 			}),
-			(s.onChange = function (xt, ht, mt, _t, Et) {
+			(s.onChange = function (xt, ht, mt, vt, Et) {
 				if (
 					(_refreshID !== nt && St(),
 					ht &&
 						c &&
-						ut(gt(_t[2] === ht ? At + (xt.startX - xt.x) : ut() + ht - _t[1])),
+						ut(gt(vt[2] === ht ? At + (xt.startX - xt.x) : ut() + ht - vt[1])),
 					mt)
 				) {
 					ot.offset && Pt();
 					var Mt = Et[2] === mt,
 						jt = Mt ? It + xt.startY - xt.y : ot() + mt - Et[1],
-						$t = vt(jt);
+						$t = _t(jt);
 					Mt && jt !== $t && (It += $t - jt), ot($t);
 				}
 				(mt || ht) && _updateAll();
@@ -39001,7 +38994,7 @@ var getValueAndMessage = (i) =>
 			ft = {},
 			pt = isRadioInput(_),
 			gt = isCheckBoxInput(_),
-			vt = pt || gt,
+			_t = pt || gt,
 			St =
 				((at || isFileInput(_)) && isUndefined(_.value) && isUndefined(it)) ||
 				(isHTMLElement(_) && _.value === '') ||
@@ -39027,7 +39020,7 @@ var getValueAndMessage = (i) =>
 			g
 				? !Array.isArray(it) || !it.length
 				: j &&
-					((!vt && (St || isNullOrUndefined(it))) ||
+					((!_t && (St || isNullOrUndefined(it))) ||
 						(isBoolean(it) && !it) ||
 						(gt && !getCheckboxValue($).isValid) ||
 						(pt && !getRadioValue($).isValid))
@@ -39057,7 +39050,7 @@ var getValueAndMessage = (i) =>
 					isNullOrUndefined(bt.value) || (At = yt < bt.value);
 			} else {
 				const yt = _.valueAsDate || new Date(it),
-					xt = (_t) => new Date(new Date().toDateString() + ' ' + _t),
+					xt = (vt) => new Date(new Date().toDateString() + ' ' + vt),
 					ht = _.type == 'time',
 					mt = _.type == 'week';
 				isString(It.value) &&
@@ -39388,7 +39381,7 @@ function createFormControl(i = {}) {
 		dt = async (kt) => {
 			if (tt.isValid || kt) {
 				const Tt = s.resolver
-					? isEmptyObject((await vt()).errors)
+					? isEmptyObject((await _t()).errors)
 					: await Pt(c, !0);
 				Tt !== o.isValid && lt.state.next({ isValid: Tt });
 			}
@@ -39493,7 +39486,7 @@ function createFormControl(i = {}) {
 				Object.keys(o.validatingFields).filter((Nt) => Nt === kt),
 			);
 		},
-		vt = async (kt) =>
+		_t = async (kt) =>
 			s.resolver(
 				_,
 				s.context,
@@ -39505,7 +39498,7 @@ function createFormControl(i = {}) {
 				),
 			),
 		St = async (kt) => {
-			const { errors: Tt } = await vt(kt);
+			const { errors: Tt } = await _t(kt);
 			if (kt)
 				for (const Rt of kt) {
 					const Dt = get(Tt, Rt);
@@ -39605,7 +39598,7 @@ function createFormControl(i = {}) {
 			}
 			(Rt.shouldDirty || Rt.shouldTouch) &&
 				pt(kt, Ot, Rt.shouldTouch, Rt.shouldDirty, !0),
-				Rt.shouldValidate && _t(kt);
+				Rt.shouldValidate && vt(kt);
 		},
 		yt = (kt, Tt, Rt) => {
 			for (const Dt in Tt) {
@@ -39651,7 +39644,7 @@ function createFormControl(i = {}) {
 				let Ht, Jt;
 				const Xt = Lt(),
 					pr = kt.type === EVENTS.BLUR || kt.type === EVENTS.FOCUS_OUT,
-					vr =
+					_r =
 						(!hasValidation(Ot._f) &&
 							!s.resolver &&
 							!get(o.errors, Rt) &&
@@ -39666,14 +39659,14 @@ function createFormControl(i = {}) {
 					mr = !isEmptyObject(Lr) || xr;
 				if (
 					(!pr && lt.values.next({ name: Rt, type: kt.type, values: { ..._ } }),
-					vr)
+					_r)
 				)
 					return (
 						tt.isValid && dt(),
 						mr && lt.state.next({ name: Rt, ...(xr ? {} : Lr) })
 					);
 				if ((!pr && xr && lt.state.next({ ...o }), st(!0, [Rt]), s.resolver)) {
-					const { errors: zr } = await vt([Rt]);
+					const { errors: zr } = await _t([Rt]);
 					if ((Nt(Xt), Dt)) {
 						const Rr = schemaErrorLookup(o.errors, c, Rt),
 							jr = schemaErrorLookup(zr, c, Rr.name || Rt);
@@ -39685,13 +39678,13 @@ function createFormControl(i = {}) {
 					]),
 						Nt(Xt),
 						Dt && (Ht ? (Jt = !1) : tt.isValid && (Jt = await Pt(c, !0)));
-				Dt && (Ot._f.deps && _t(Ot._f.deps), gt(Rt, Jt, Ht, Lr));
+				Dt && (Ot._f.deps && vt(Ot._f.deps), gt(Rt, Jt, Ht, Lr));
 			}
 		},
 		mt = (kt, Tt) => {
 			if (get(o.errors, Tt) && kt.focus) return kt.focus(), 1;
 		},
-		_t = async (kt, Tt = {}) => {
+		vt = async (kt, Tt = {}) => {
 			let Rt, Dt;
 			const Ot = convertToArrayPayload(kt);
 			if ((st(!0, Ot), s.resolver)) {
@@ -39869,7 +39862,7 @@ function createFormControl(i = {}) {
 				(Rt.preventDefault && Rt.preventDefault(), Rt.persist && Rt.persist());
 			let Ot = cloneObject(_);
 			if ((lt.state.next({ isSubmitting: !0 }), s.resolver)) {
-				const { errors: Lt, values: Nt } = await vt();
+				const { errors: Lt, values: Nt } = await _t();
 				(o.errors = Lt), (Ot = Nt);
 			} else await Pt(c);
 			if ((unset(o.errors, 'root'), isEmptyObject(o.errors))) {
@@ -39987,7 +39980,7 @@ function createFormControl(i = {}) {
 			getFieldState: Mt,
 			handleSubmit: tr,
 			setError: $t,
-			_executeSchema: vt,
+			_executeSchema: _t,
 			_getWatch: At,
 			_getDirty: wt,
 			_updateValid: dt,
@@ -40042,7 +40035,7 @@ function createFormControl(i = {}) {
 				s = { ...s, ...kt };
 			},
 		},
-		trigger: _t,
+		trigger: vt,
 		register: ir,
 		handleSubmit: tr,
 		watch: Bt,
@@ -40484,8 +40477,10 @@ function App() {
 		})
 	);
 }
-client.createRoot(document.getElementById('root')).render(
-	jsxRuntimeExports.jsx(React.StrictMode, {
-		children: jsxRuntimeExports.jsx(App, {}),
-	}),
-);
+client
+	.createRoot(document.getElementById('root'))
+	.render(
+		jsxRuntimeExports.jsx(React.StrictMode, {
+			children: jsxRuntimeExports.jsx(App, {}),
+		}),
+	);
