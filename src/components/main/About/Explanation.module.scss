@@ -47,6 +47,10 @@
 		filter: grayscale(1) brightness(80%);
 	}
 
+	@include mq-max(sm) {
+		aspect-ratio: 4/3;
+	}
+
 	.title {
 		display: grid;
 		place-items: center;

@@ -16219,17 +16219,17 @@ function Top() {
 		})
 	);
 }
-const container$8 = '_container_7kl0r_29',
-	explanation = '_explanation_7kl0r_38',
-	explanationText = '_explanationText_7kl0r_47',
-	imageFirstWrapper = '_imageFirstWrapper_7kl0r_52',
-	title$3 = '_title_7kl0r_74',
-	subtitle = '_subtitle_7kl0r_99',
-	textWrapper = '_textWrapper_7kl0r_105',
-	text$1 = '_text_7kl0r_105',
-	imageLastWrapper = '_imageLastWrapper_7kl0r_160',
-	star = '_star_7kl0r_1',
-	circle = '_circle_7kl0r_1',
+const container$8 = '_container_1mucl_29',
+	explanation = '_explanation_1mucl_38',
+	explanationText = '_explanationText_1mucl_47',
+	imageFirstWrapper = '_imageFirstWrapper_1mucl_52',
+	title$3 = '_title_1mucl_79',
+	subtitle = '_subtitle_1mucl_104',
+	textWrapper = '_textWrapper_1mucl_110',
+	text$1 = '_text_1mucl_110',
+	imageLastWrapper = '_imageLastWrapper_1mucl_165',
+	star = '_star_1mucl_1',
+	circle = '_circle_1mucl_1',
 	styles$c = {
 		container: container$8,
 		explanation,
@@ -40484,8 +40484,10 @@ function App() {
 		})
 	);
 }
-client.createRoot(document.getElementById('root')).render(
-	jsxRuntimeExports.jsx(React.StrictMode, {
-		children: jsxRuntimeExports.jsx(App, {}),
-	}),
-);
+client
+	.createRoot(document.getElementById('root'))
+	.render(
+		jsxRuntimeExports.jsx(React.StrictMode, {
+			children: jsxRuntimeExports.jsx(App, {}),
+		}),
+	);
