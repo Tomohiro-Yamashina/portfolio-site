@@ -1,5 +1,7 @@
-import styles from './Access.module.scss';
+// Component
 import { SubTitle } from '../../Utility/Utility.jsx';
+// SCSS
+import styles from './Access.module.scss';
 export default function Access() {
 	return (
 		<section className={styles.container}>

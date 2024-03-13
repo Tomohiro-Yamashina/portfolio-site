@@ -1,6 +1,8 @@
+// Component
 import Accordion from '@/components/main/Company/Accordion';
-import styles from './Information.module.scss';
 import { SubTitle } from '../../Utility/Utility.jsx';
+// SCSS
+import styles from './Information.module.scss';
 
 export default function Information({ changeContainerHeight }) {
 	return (

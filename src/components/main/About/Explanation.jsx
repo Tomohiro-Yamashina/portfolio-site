@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 // React
 import { useRef } from 'react';
 // Custom Hook
@@ -14,7 +13,6 @@ import { useGSAP } from '@gsap/react';
 
 // eslint-disable-next-line react/display-name
 function Explanation() {
-	// const isTub = useMediaQuery(mediaQuery.md);
 	const isTub = '';
 	const container = useRef(null);
 	const explanation = useRef(null);

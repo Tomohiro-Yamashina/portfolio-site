@@ -1,4 +1,6 @@
+// React
 import { useState, useEffect, forwardRef } from 'react';
+// SCSS
 import styles from './HeroImage.module.scss';
 
 // eslint-disable-next-line react/display-name

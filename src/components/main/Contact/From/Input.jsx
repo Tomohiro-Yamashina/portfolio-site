@@ -1,5 +1,7 @@
-import { useFormContext } from 'react-hook-form';
+// SCSS
 import styles from '../Contact.module.scss';
+//
+import { useFormContext } from 'react-hook-form';
 
 const Input = ({
 	id,

@@ -1,8 +1,12 @@
+// React
 import { useRef } from 'react';
+// Component
+import { SubTitle } from '../../../Utility/Utility.jsx';
+// SCSS
 import styles from './Graphic.module.scss';
+// GSAP
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { SubTitle } from '../../../Utility/Utility.jsx';
 
 function Graphic() {
 	// 画像を取得

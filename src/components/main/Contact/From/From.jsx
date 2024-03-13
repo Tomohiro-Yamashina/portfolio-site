@@ -1,6 +1,10 @@
+// React
 import { useState } from 'react';
-import { useForm, FormProvider } from 'react-hook-form';
+// Component
 import Input from './Input.jsx';
+// react-hook-form
+import { useForm, FormProvider } from 'react-hook-form';
+// Validation
 import {
 	familyName_validation,
 	firstName_validation,

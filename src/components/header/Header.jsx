@@ -1,9 +1,12 @@
+// React
 import { useState, useRef } from 'react';
-import { useLenis } from '@studio-freight/react-lenis';
+// SCSS
 import styles from './Header.module.scss';
-
+// GSAP
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+// Lenis
+import { useLenis } from '@studio-freight/react-lenis';
 // SplitType
 import SplitType from 'split-type';
 
