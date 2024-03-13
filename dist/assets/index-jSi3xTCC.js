@@ -40484,10 +40484,8 @@ function App() {
 		})
 	);
 }
-client
-	.createRoot(document.getElementById('root'))
-	.render(
-		jsxRuntimeExports.jsx(React.StrictMode, {
-			children: jsxRuntimeExports.jsx(App, {}),
-		}),
-	);
+client.createRoot(document.getElementById('root')).render(
+	jsxRuntimeExports.jsx(React.StrictMode, {
+		children: jsxRuntimeExports.jsx(App, {}),
+	}),
+);
