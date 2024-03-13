@@ -1,0 +1,54 @@
+@charset 'utf-8';
+@use '@/styles/mixin' as *;
+
+.container {
+	display: grid;
+	position: absolute;
+	z-index: 999;
+	width: 100%;
+	min-height: 100dvh;
+	overflow: hidden;
+	background-color: hsl(0, 0%, 100%);
+	place-items: center;
+}
+
+.flex {
+	display: flex;
+	width: 100%;
+	height: 100dvh;
+	@include mq-max(md) {
+		flex-direction: column;
+	}
+}
+
+.flexItems {
+	width: 100%;
+	height: 100dvh;
+	background-color: hsla(0, 0%, 100%, 0.3);
+	background-image: url('https://www.transparenttextures.com/patterns/otis-redding.png');
+	backdrop-filter: blur(12px);
+}
+
+.first {
+	border-inline-end: 1px solid var(--borderSolidColor);
+	@include mq-max(md) {
+		border-inline-end: none;
+		border-block-end: 1px solid var(--borderSolidColor);
+	}
+}
+.second {
+	min-width: 300px;
+	min-height: 300px;
+	border-inline: 1px solid var(--borderSolidColor);
+	@include mq-max(md) {
+		border-inline: none;
+		border-block: 1px solid var(--borderSolidColor);
+	}
+}
+.third {
+	border-inline-start: 1px solid var(--borderSolidColor);
+	@include mq-max(md) {
+		border-inline-start: none;
+		border-block-start: 1px solid var(--borderSolidColor);
+	}
+}

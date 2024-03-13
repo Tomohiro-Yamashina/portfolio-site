@@ -1,0 +1,96 @@
+{
+	"daytime": [
+		{
+			"id": "1",
+			"artist": "",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "2",
+			"artist": "",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "3",
+			"artist": "",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "4",
+			"artist": "",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "5",
+			"artist": "",
+			"title": "title",
+			"url": ""
+		}
+	],
+
+	"evening": [
+		{
+			"id": "1",
+			"artist": "",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "2",
+			"artist": "",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "3",
+			"artist": "",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "4",
+			"artist": "",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "5",
+			"artist": "",
+			"title": "title",
+			"url": ""
+		}
+	],
+
+	"nighttime": [
+		{
+			"id": "1",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "2",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "3",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "4",
+			"title": "title",
+			"url": ""
+		},
+		{
+			"id": "5",
+			"artist": "",
+			"title": "title",
+			"url": ""
+		}
+	]
+}

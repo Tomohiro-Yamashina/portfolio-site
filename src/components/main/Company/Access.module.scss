@@ -4,8 +4,9 @@
 .container {
 	width: min(100%, 1080px);
 	margin-inline: auto;
+	color: var(--textColorLight);
 	container: company / inline-size;
-	@include responsive-margin-block-md(8rem, 'end');
+	@include responsive-margin-block-md(12rem, 'end');
 }
 
 .access {
@@ -13,10 +14,10 @@
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	border: 1px solid var(--borderSolidColor);
+	border: 1px solid hsla(240, 8%, 65%, 0.2);
 	border-radius: 8px;
-	background-color: var(--mainColorLight);
-	background-image: url('https://www.transparenttextures.com/patterns/otis-redding.png');
+	background-color: hsla(0, 0%, 0%, 0.3);
+	backdrop-filter: blur(3px);
 }
 .location {
 	display: flex;
@@ -31,7 +32,7 @@
 	height: 50%;
 
 	&:first-child {
-		border-block-end: 1px solid var(--borderSolidColor);
+		border-block-end: 1px solid hsla(240, 8%, 65%, 0.2);
 	}
 }
 
@@ -76,13 +77,13 @@
 		display: block;
 		width: 100%;
 		transition: all 0.3s ease;
-		filter: grayscale(0.5);
+		filter: grayscale(0.75);
 		aspect-ratio: 16 / 9;
 	}
 
 	&:hover {
 		iframe {
-			filter: grayscale(0);
+			filter: grayscale(0.15);
 		}
 	}
 }

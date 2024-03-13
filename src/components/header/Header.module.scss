@@ -7,7 +7,8 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: fit-content;
+	// height: fit-content;
+	height: 4rem;
 	color: var(--textColorLight);
 	mix-blend-mode: difference;
 }
@@ -210,7 +211,7 @@
 		font-size: clamp(2.5rem, 2.234rem + 1.13vw, 3rem);
 		font-weight: 400;
 		letter-spacing: -0.03em;
-		line-height: 1;
+		line-height: 1.2;
 		text-decoration: none;
 	}
 

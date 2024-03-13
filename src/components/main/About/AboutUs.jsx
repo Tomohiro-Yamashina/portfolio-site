@@ -1,10 +1,10 @@
-// Component
-import Explanation from './Explanation.jsx';
-import Logo from './Logo.jsx';
-// SCSS
-import styles from './AboutUs.module.scss';
 // React
 import { useRef } from 'react';
+// Component
+import Explanation from './Explanation.jsx';
+import Title from '@/components/Utility/Title/Title.jsx';
+// SCSS
+import styles from './AboutUs.module.scss';
 // GSAP
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -12,65 +12,82 @@ import { useGSAP } from '@gsap/react';
 function AboutUs({ id }) {
 	// DOM要素を取得
 	const container = useRef(null);
-	const aboutUs = useRef(null);
-	const aboutUsText = useRef(null);
-	const image01 = useRef(null);
-	const image02 = useRef(null);
+	const title = useRef(null);
 
-	// Animation
 	useGSAP(
 		() => {
-			const aboutUsTextScroll = () => {
-				const containerHeight = aboutUs.current.offsetHeight;
-				const aboutUsTextHeight = aboutUsText.current.offsetHeight;
-
-				gsap.to(aboutUsText.current, {
-					y: -aboutUsTextHeight + containerHeight,
-					ease: 'none',
+			const containerFadeIn = () => {
+				const tl = gsap.timeline({
 					scrollTrigger: {
 						// markers: true,
 						trigger: container.current,
-						pin: true,
-						anticipatePin: 1,
-						end: `+=${aboutUsTextHeight}`,
-						scrub: 0.5,
+						start: 'top center',
+						end: 'top top',
+						scrub: 1,
 						invalidateOnRefresh: true,
 					},
 				});
+
+				tl.fromTo(
+					container.current,
+					{
+						alpha: 0,
+					},
+					{
+						alpha: 1,
+						duration: 0.4,
+						ease: 'power4.out',
+					},
+					'<',
+				);
 			};
 
-			const aboutUsLogoScrollAlpha = (target, num) =>
-				gsap.to(target, {
-					autoAlpha: 0,
-					duration: 0.4,
-					ease: 'power4.Out',
+			const titleFadeIn = () => {
+				const tl = gsap.timeline({
 					scrollTrigger: {
 						// markers: true,
-						trigger: aboutUsText.current,
-						toggleActions: 'play none none reverse ',
-						start: `${num}% top`,
+						trigger: container.current,
+						start: 'top center',
+						end: 'top top',
+						scrub: 1,
 						invalidateOnRefresh: true,
-						fastScrollEnd: true,
 					},
 				});
 
-			let mm = gsap.matchMedia();
-			mm.add('(1024px <= width)', () => {
-				aboutUsTextScroll();
-				aboutUsLogoScrollAlpha(image01.current, 5);
-				aboutUsLogoScrollAlpha(image02.current, 35);
-			});
+				tl.fromTo(
+					title.current,
+					{
+						alpha: 0,
+						y: '50%',
+					},
+					{
+						alpha: 1,
+						y: '0%',
+						duration: 0.4,
+						ease: 'power4.out',
+					},
+					'<',
+				);
+			};
+
+			containerFadeIn();
+			titleFadeIn();
 		},
 		{ scope: container },
 	);
 
 	return (
-		<article className={styles.container} id={id} ref={container}>
-			<div className={styles.outer}>
-				<div className={styles.inner} ref={aboutUs}>
-					<Explanation ref={aboutUsText} />
-					<Logo image01Ref={image01} image02Ref={image02} />
-				</div>
+		<article className={styles.aboutUsContainer} id={id} ref={container}>
+			<div className={styles.background}>
+				<Title
+					colorLight={true}
+					lottieType={'scroll'}
+					lottieSetSpeed={1.6}
+					ref={title}
+				>
+					ABOUT US
+				</Title>
+				<Explanation />
 			</div>
 		</article>
 	);

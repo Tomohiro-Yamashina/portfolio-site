@@ -12,7 +12,8 @@ function Website() {
 	const images = Object.values(
 		import.meta.glob('../../../../assets/img/works/website/*', {
 			eager: true,
-			as: 'url',
+			query: '?url',
+			import: 'default',
 		}),
 	);
 

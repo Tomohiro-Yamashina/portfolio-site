@@ -5,7 +5,9 @@ import AccordionItem from './AccordionItem.jsx';
 // GSAP
 import { ScrollTrigger } from 'gsap/all'; //
 
-export default function Accordion() {
+export default function Accordion({ changeContainerHeight }) {
+	// console.log(changeContainerHeight);
+
 	// isOpenを各AccordionItemごとに管理するためのオブジェクト
 	const [openItems, setOpenItems] = useState({
 		panel1: false,
@@ -13,6 +15,7 @@ export default function Accordion() {
 		panel3: false,
 	});
 
+	// changeContainerHeight();
 	function handleClick(controls) {
 		setOpenItems((prev) => {
 			const newState = { ...prev };
@@ -31,14 +34,15 @@ export default function Accordion() {
 	useEffect(() => {
 		// アコーディオンのアニメーションが完了するまで待機
 		const timeoutId = setTimeout(() => {
+			// changeContainerHeight();
 			ScrollTrigger.refresh();
-		}, 300);
+		}, 400);
 		// cleanup functionでtimeoutをクリア
 		return () => clearTimeout(timeoutId);
-	}, [openItems]);
+	}, [openItems, changeContainerHeight]);
 
 	return (
-		<div>
+		<>
 			<AccordionItem
 				title={'主要取引先 （五十音順）'}
 				controls={'panel1'}
@@ -100,6 +104,6 @@ export default function Accordion() {
 					<li>グラフィックデザイン業務を中心に、企画から制作まで</li>
 				</ul>
 			</AccordionItem>
-		</div>
+		</>
 	);
 }

@@ -2,7 +2,7 @@ import Accordion from '@/components/main/Company/Accordion';
 import styles from './Information.module.scss';
 import { SubTitle } from '../../Utility/Utility.jsx';
 
-export default function Information() {
+export default function Information({ changeContainerHeight }) {
 	return (
 		<>
 			<section className={styles.container}>
@@ -31,7 +31,7 @@ export default function Information() {
 							<p> さわやか信用金庫 青山渋谷支店 当座******</p>
 						</div>
 					</div>
-					<Accordion />
+					<Accordion changeContainerHeight={changeContainerHeight} />
 				</div>
 			</section>
 		</>

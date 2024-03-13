@@ -1,57 +1,12 @@
 @charset 'utf-8';
-@use '../../../styles/mixin.scss' as *;
-
-.top {
-	position: relative;
-	width: 100%;
-	height: 100dvh;
-	overflow: hidden;
-	@include responsive-margin-block-lg(12rem, 'end');
-}
-
-.svg {
-	display: grid;
-	position: absolute;
-	width: 100%;
-	height: 100dvh;
-	place-items: center;
-}
+@use '@/styles/mixin' as *;
 
 .container {
+	// @include responsive-margin-block-lg(18rem, 'end');
 	display: grid;
-	position: absolute;
-	aspect-ratio: 1 / 1;
-	width: min(80vw, 600px);
-	place-items: center;
-}
-
-.svg_01 {
-	position: absolute;
-	z-index: -1;
-	// rotate: 5deg;
-}
-
-.svg_02 {
-	position: absolute;
-	z-index: -2;
-	opacity: 0.8;
-	fill: hsl(34, 25%, 75%);
-	scale: 1.1;
-	rotate: -5deg;
-}
-
-.svg_03 {
-	position: absolute;
-	z-index: -3;
-	fill: hsl(30, 26%, 89%);
-	scale: 1.2;
-	rotate: -10deg;
-}
-
-.loopTextContainer {
-	position: absolute;
 	width: 100%;
-	height: 100dvh;
-	font-family: 'ltc-goudy-oldstyle-pro', serif;
-	font-size: clamp(2rem, -0.182rem + 10.91vw, 8rem);
+	min-height: 100dvh;
+	padding-inline: 1.5rem;
+	overflow: hidden;
+	place-items: center;
 }

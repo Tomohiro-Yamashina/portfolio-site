@@ -23,21 +23,7 @@ body {
 	width: 100%;
 	min-height: 100dvh;
 	overflow-x: hidden;
-	background-color: hsl(15, 20%, 98%);
+	background-color: hsl(0, 0%, 100%);
 	background-image: url('https://www.transparenttextures.com/patterns/otis-redding.png');
 	font-family: var(--font-sans);
-
-	scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-
-	::-webkit-scrollbar {
-		width: var(--sb-size);
-	}
-	::-webkit-scrollbar-track {
-		border-radius: 10px;
-		background: var(--sb-track-color);
-	}
-	::-webkit-scrollbar-thumb {
-		border-radius: 10px;
-		background: var(--sb-thumb-color);
-	}
 }

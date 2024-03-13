@@ -1,12 +1,12 @@
 // React
 import { useRef } from 'react';
 // Component
+import Title from '@/components/Utility/Title/Title.jsx';
 import From from './From/From.jsx';
-import MailLottie from '@/components/Utility/MailLottie.jsx';
 // SCSS
 import styles from './Contact.module.scss';
 // GSAP
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 function Contact({ id }) {
@@ -15,52 +15,50 @@ function Contact({ id }) {
 
 	useGSAP(
 		() => {
-			gsap.fromTo(
+			const tl = gsap.timeline({
+				scrollTrigger: {
+					// markers: true,
+					trigger: container.current,
+					start: 'top center',
+					end: 'top top',
+					scrub: 1,
+					invalidateOnRefresh: true,
+				},
+			});
+
+			tl.fromTo(
 				container.current,
 				{
 					backgroundColor: 'hsl(0, 0%, 8%)',
 				},
 				{
 					backgroundColor: 'transparent',
+					duration: 0.4,
 					ease: 'power4.out',
-					scrollTrigger: {
-						trigger: `.${styles.titleWrapper}`,
-						start: 'top 35%',
-						end: 'center center',
-						scrub: 1,
-						invalidateOnRefresh: true,
-						toggleActions: 'play none none reverse ',
-						// markers: true,
-					},
 				},
+			).fromTo(
+				title.current,
+				{
+					opacity: 0,
+					y: '50%',
+				},
+				{
+					opacity: 1,
+					y: '0%',
+					duration: 0.4,
+					ease: 'power4.out',
+				},
+				'<',
 			);
-			gsap.from(`.${styles.title}`, {
-				alpha: 0,
-				y: '50%',
-				duration: 0.4,
-				ease: 'power4.out',
-				scrollTrigger: {
-					trigger: `.${styles.titleWrapper}`,
-					start: 'top 25%',
-					end: 'bottom bottom',
-					scrub: 1,
-					invalidateOnRefresh: true,
-					toggleActions: 'play none none reverse ',
-					// markers: true,
-				},
-			});
 		},
 		{ scope: container },
 	);
 
 	return (
 		<article className={styles.container} id={id} ref={container}>
-			<div className={styles.titleWrapper}>
-				<h2 className={styles.title} ref={title}>
-					CONTACT
-				</h2>
-				<MailLottie />
-			</div>
+			<Title lottieType={'mail'} lottieSetSpeed={2} ref={title}>
+				CONTACT
+			</Title>
 			<div className={styles.outer}>
 				<div className={styles.inner}>
 					<From />

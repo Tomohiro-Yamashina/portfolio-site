@@ -5,7 +5,7 @@
 .title {
 	position: relative;
 	height: fit-content;
-	border: 1px solid var(--borderSolidColor);
+	border-block-start: 1px solid hsla(0, 0%, 0%, 0.2);
 	font-size: 1rem;
 }
 
@@ -14,8 +14,8 @@
 	padding-left: 1.5rem;
 	padding-block: 1rem;
 	border: none;
-	background-color: var(--accentColorLight);
-	background-image: url('https://www.transparenttextures.com/patterns/otis-redding.png');
+	background-color: hsla(0, 0%, 40%, 0.3);
+	color: var(--textColorLight);
 	text-align: left;
 	&[aria-expanded='true'] + .arrow {
 		translate: 0 -50%;
@@ -32,8 +32,8 @@
 	translate: 0 -100%;
 	rotate: 135deg;
 	transition: translate rotate 0.3s ease-out;
-	border-top: solid 2.5px hsl(0, 0%, 10%);
-	border-right: solid 2.5px hsl(0, 0%, 10%);
+	border-top: solid 2.5px hsl(0, 0%, 100%);
+	border-right: solid 2.5px hsl(0, 0%, 100%);
 }
 
 .accordionItem {
@@ -54,8 +54,7 @@
 		margin-inline-start: max(113px, calc(100% / 4));
 		padding-block: 1rem;
 		padding-inline-end: 2rem;
-		border-left: 1px solid var(--borderSolidColor);
-
+		border-left: 1px solid hsla(30, 8%, 65%, 0.2);
 		li {
 			padding: 2px;
 		}

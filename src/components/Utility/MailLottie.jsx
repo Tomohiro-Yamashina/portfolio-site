@@ -1,13 +1,12 @@
-import { useLottie } from 'lottie-react';
+// React
+import { useState, useEffect, forwardRef } from 'react';
+// Lottie
+import Lottie from 'lottie-react';
+// JSON
 import mailAnimation from '@/library/mailAnimation.json';
-import { useState, useEffect } from 'react';
 
-const MailLottie = () => {
-	const options = {
-		animationData: mailAnimation,
-		loop: true,
-		autoplay: true,
-	};
+// eslint-disable-next-line react/display-name
+const MailLottie = forwardRef((props, ref) => {
 	const [style, setStyle] = useState({
 		position: 'absolute',
 		width: '500px',
@@ -37,14 +36,12 @@ const MailLottie = () => {
 				}));
 			}
 		};
-		handleResize();
+		window.addEventListener('load', handleResize);
 		window.addEventListener('resize', handleResize);
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);
 
-	const Lottie = useLottie(options, style);
-	Lottie.setSpeed(2);
-	return Lottie.View;
-};
+	return <Lottie animationData={mailAnimation} style={style} lottieRef={ref} />;
+});
 
 export default MailLottie;

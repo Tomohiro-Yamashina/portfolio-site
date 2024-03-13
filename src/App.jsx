@@ -1,30 +1,26 @@
+// React
+import { useRef, useEffect } from 'react';
+// Component
 import Header from '@/components/Header/Header.jsx';
-import Main from '@/components/Main/Main.jsx';
+import Main from '@/components/main/Main.jsx';
 import Footer from '@/components/Footer/Footer.jsx';
+// SCSS
 import './App.module.scss';
-import { useState, useRef, useEffect } from 'react';
-// スムーススクロール
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
-// アニメーション
+// GSAP
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { TextPlugin } from 'gsap/TextPlugin';
-
+import { useGSAP } from '@gsap/react';
+// Lenis
+import { ReactLenis } from '@studio-freight/react-lenis';
+// Font
 import './library/adobefont.js';
 
 // ****************************************************************
 // GSAP 初期設定
-
-// 使用する gsapプラグイン を登録する
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(TextPlugin);
-
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 // ****************************************************************
 
 function App() {
-	// Lenisを統合
-	const lenis = useLenis();
-
 	// GSAPとLenisを統合
 	const lenisRef = useRef();
 
@@ -39,8 +35,6 @@ function App() {
 		};
 	});
 
-	console.log(gsap.globalTimeline);
-	// gsap.globalTimeline.pause();
 	return (
 		<ReactLenis
 			root
@@ -55,12 +49,6 @@ function App() {
 			<Main />
 			<Footer />
 		</ReactLenis>
-
-		// <div>
-		// 	<Header />
-		// 	<Main />
-		// 	<Footer />
-		// </div>
 	);
 }
 

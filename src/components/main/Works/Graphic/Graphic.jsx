@@ -9,7 +9,8 @@ function Graphic() {
 	const images = Object.values(
 		import.meta.glob('../../../../assets/img/works/graphic/*', {
 			eager: true,
-			as: 'url',
+			query: '?url',
+			import: 'default',
 		}),
 	);
 

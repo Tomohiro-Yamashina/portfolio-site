@@ -2,59 +2,106 @@
 @use '@/styles/_mixin.scss' as *;
 
 .container {
+	display: grid;
+	width: 100%;
+	height: 100dvh;
+	padding-block: 4rem;
+	padding-inline: 1.5rem;
+	place-items: center;
+}
+
+.explanation {
+	width: min(100%, 1080px);
+	height: 100%;
+	overflow: hidden;
+	border: 1px solid hsla(30, 8%, 65%, 0.2);
+	border-radius: 6px;
+	background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.explanationText {
+	width: 100%;
+	margin-inline: auto;
+}
+
+.imageFirstWrapper {
+	display: grid;
 	position: relative;
-	flex: 1;
+	z-index: 1;
+	width: 100%;
+	overflow: hidden;
+	aspect-ratio: 16/9;
+	place-items: center;
 
-	@include mq-max(lg) {
-		flex: none;
-	}
-	@include mq-max(sm) {
-		padding-inline: 1rem;
-	}
-
-	.inner {
+	&::before {
+		content: '';
 		position: absolute;
-		width: 100%;
-
-		@include mq-max(lg) {
-			position: relative;
-		}
-	}
-
-	.titleWrapper {
-		display: grid;
-		align-items: center;
-		width: 100%;
-		aspect-ratio: 1 / 1;
-
-		@include mq-max(lg) {
-			aspect-ratio: auto;
-		}
+		z-index: -1;
+		aspect-ratio: 1/1;
+		background-image: url(../../../assets/img/about001.jpg);
+		background-size: cover;
+		rotate: 15deg;
+		translate: -0% -20%;
+		scale: 1.12;
+		inset: 0;
+		filter: grayscale(1) brightness(80%);
 	}
 
 	.title {
-		font-size: clamp(3.5rem, 2.383rem + 4.77vw, 5.6rem);
+		display: grid;
+		place-items: center;
+		width: 50%;
+		padding-block: 1rem;
+		border-radius: 6px;
+		background-color: hsla(0, 0%, 100%, 0.4);
+		color: hsl(0, 0%, 20%);
+		font-family: 'Inter', sans-serif;
+		font-size: clamp(2rem, -0.128rem + 9.08vw, 6rem);
 		font-weight: 400;
-	}
+		line-height: 1.4;
+		backdrop-filter: blur(8px);
 
-	.subTitle {
-		font-size: clamp(1.38rem, 0.944rem + 1.86vw, 2.2rem);
-		line-height: 1;
-	}
-
-	.textWrapper {
-		display: flex;
-		flex-direction: column;
-		gap: 40dvh;
-		@include mq-max(lg) {
-			gap: 20vh;
+		div {
+			width: fit-content;
+			span:first-child {
+				display: block;
+			}
+			span:nth-child(2) {
+				font-family: ltc-goudy-oldstyle-pro, serif;
+				letter-spacing: -0.1em;
+			}
 		}
+	}
+}
+
+.subtitle {
+	width: 100%;
+	font-size: clamp(1.3rem, 0.768rem + 2.27vw, 2.3rem);
+	text-align: center;
+}
+
+.textWrapper {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	margin-inline: auto;
+	gap: 10dvh;
+	@include mq-max(lg) {
+		width: 60%;
+	}
+	@include mq-max(md) {
+		width: 85%;
+	}
+	@include mq-max(sm) {
+		width: 100%;
 	}
 
 	.text {
+		width: 100%;
+		margin-inline: auto;
 		font-family: var(--font-sans);
 		font-size: var(--textFontSize);
-		line-height: 2.5;
+		line-height: 2.4;
 		text-align: justify;
 		text-justify: inter-ideograph; /* Edge */
 		word-wrap: break-word;
@@ -63,10 +110,94 @@
 		overflow-wrap: break-word;
 
 		&:first-child {
-			margin-block-start: 20vh;
+			margin-block-start: 10vh;
+			padding-block-end: 10vh;
+			border-bottom: 1px solid hsla(240, 8%, 65%, 0.4);
 		}
 		&:last-child {
 			margin-block-end: 10vh;
 		}
+
+		@include mq-max(md) {
+			width: 75%;
+		}
+		@include mq-max(sm) {
+			width: 100%;
+			padding-inline: 1.5rem;
+		}
+	}
+}
+
+.imageLastWrapper {
+	position: relative;
+	z-index: 1;
+	width: 50%;
+	margin-block-end: 3rem;
+	margin-inline: auto;
+	animation-name: star;
+	animation-duration: 90s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	border: 1px solid hsla(30, 8%, 65%, 0.2);
+	border-radius: 50%;
+	aspect-ratio: 1/1;
+
+	@keyframes star {
+		0% {
+			rotate: 0deg;
+		}
+		100% {
+			rotate: 360deg;
+		}
+	}
+
+	@include mq-max(md) {
+		width: 75%;
+	}
+	@include mq-max(sm) {
+		width: calc(100% - 3rem);
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		overflow: hidden;
+		animation-name: circle;
+		animation-duration: 60s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		border-radius: 50%;
+		background-image: url(../../../assets/img/about002.jpg);
+		background-position: center;
+		background-size: cover;
+		aspect-ratio: 1/1;
+		scale: 0.9;
+		inset: 0;
+		filter: grayscale(1) brightness(80%);
+
+		@keyframes circle {
+			0% {
+				rotate: 0deg;
+			}
+			100% {
+				rotate: 360deg;
+			}
+		}
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: 2;
+		top: 0%;
+		left: 50%;
+		translate: -50% -50%;
+		width: 3%;
+		border-radius: 50%;
+		background-color: rgb(221, 221, 221);
+		background-position: center;
+		background-size: cover;
+		aspect-ratio: 1/1;
 	}
 }

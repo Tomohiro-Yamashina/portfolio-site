@@ -11,6 +11,7 @@
 
 	/* borderColor 変数*/
 	--borderSolidColor: hsla(233, 26%, 35%, 0.2);
+	--borderSolidColorLight: hsla(0, 0%, 100%, 0.6);
 
 	/* colorText 変数*/
 	--textColorDark: hsl(0, 0%, 20%);
@@ -37,3 +38,17 @@
 	--subTitleFontSize: clamp(2.5rem, 0.757rem + 7.44vw, 6rem);
 	--textFontSize: clamp(1rem, 0.759rem + 0.67vw, 1.188rem);
 }
+
+// scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+
+// ::-webkit-scrollbar {
+// 	width: var(--sb-size);
+// }
+// ::-webkit-scrollbar-track {
+// 	border-radius: 10px;
+// 	background: var(--sb-track-color);
+// }
+// ::-webkit-scrollbar-thumb {
+// 	border-radius: 10px;
+// 	background: var(--sb-thumb-color);
+// }
