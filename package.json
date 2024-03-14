@@ -27,7 +27,7 @@
 		"postinstall": "npm run dev",
 		"deploy": "gh-pages -d dist"
 	},
-	"homepage": "https://tomohiro-yamashina.github.io/sample-site",
+	"homepage": "https://tomohiro-yamashina.github.io/portfolio-site",
 	"dependencies": {
 		"@gsap/react": "^2.1.0",
 		"@studio-freight/lenis": "^1.0.39",

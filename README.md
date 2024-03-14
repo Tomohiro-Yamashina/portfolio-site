@@ -4,7 +4,7 @@
 
 ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
 
-https://tomohiro-yamashina.github.io/sample-site/
+https://tomohiro-yamashina.github.io/portfolio-site/
 
 私事で恐縮ですが、Apple製品を所有しておらず、Safari、iOSでの動作確認はできておりません。Windows環境下において、IE以外の主要ブラウザでの動作確認は済ませております。ご了承ください。
 
