@@ -1,12 +1,15 @@
 // React
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 // Component
 import { SubTitle } from '@/components/Utility/Utility.jsx';
+import ImageDialog from '../ImageDialog/ImageDialog.jsx';
 // SCSS
 import styles from './Website.module.scss';
 // GSAP
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+// Lenis
+import { useLenis } from '@studio-freight/react-lenis';
 
 function Website() {
 	const images = Object.values(
@@ -23,6 +26,16 @@ function Website() {
 		}
 		return accumulator;
 	}, []);
+
+	const [dialogImages, setDialogImages] = useState([]);
+	const dialog = useRef(null);
+	const lenis = useLenis();
+
+	const openHandler = (index) => {
+		dialog.current.showModal();
+		lenis.stop();
+		setDialogImages(resultImages[index]);
+	};
 
 	const container = useRef(null);
 	const imgContainer = useRef(null);
@@ -103,8 +116,13 @@ function Website() {
 				<SubTitle ref={subTitle}>WEBSITE</SubTitle>
 				<div className={styles.imageContainer} ref={imgContainer}>
 					<div className={styles.flex}>
+						<ImageDialog ref={dialog} images={dialogImages} />
 						{resultImages.map((image, index) => (
-							<figure className={styles.figure} key={index}>
+							<figure
+								className={styles.figure}
+								key={index}
+								onClick={() => openHandler(index)}
+							>
 								<picture className={styles.show}>
 									<source />
 									<img src={image[0]} alt="website Works" />

@@ -1,12 +1,15 @@
 // React
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 // Component
 import { SubTitle } from '../../../Utility/Utility.jsx';
+import ImageDialog from '../ImageDialog/ImageDialog.jsx';
 // SCSS
 import styles from './Graphic.module.scss';
 // GSAP
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+// Lenis
+import { useLenis } from '@studio-freight/react-lenis';
 
 function Graphic() {
 	// 画像を取得
@@ -25,6 +28,16 @@ function Graphic() {
 		}
 		return accumulator;
 	}, []);
+
+	const [dialogImages, setDialogImages] = useState([]);
+	const dialog = useRef(null);
+	const lenis = useLenis();
+
+	const openHandler = (index) => {
+		dialog.current.showModal();
+		lenis.stop();
+		setDialogImages(resultImages[index]);
+	};
 
 	const container = useRef(null);
 	const imgContainer = useRef(null);
@@ -100,27 +113,34 @@ function Graphic() {
 	);
 
 	return (
-		<section className={styles.container} ref={container}>
-			<div className={styles.wrapper}>
-				<SubTitle ref={subTitle}>GRAPHIC</SubTitle>
-				<div className={styles.imageContainer} ref={imgContainer}>
-					<div className={styles.flex}>
-						{resultImages.map((image, index) => (
-							<figure className={styles.figure} key={index}>
-								<picture className={styles.show}>
-									<source />
-									<img src={image[0]} alt="Graphic Works" />
-								</picture>
-								<picture className={styles.hidden}>
-									<source />
-									<img src={image[1]} alt="Graphic Works" />
-								</picture>
-							</figure>
-						))}
+		<>
+			<section className={styles.container} ref={container}>
+				<div className={styles.wrapper}>
+					<SubTitle ref={subTitle}>GRAPHIC</SubTitle>
+					<div className={styles.imageContainer} ref={imgContainer}>
+						<div className={styles.flex}>
+							<ImageDialog ref={dialog} images={dialogImages} />
+							{resultImages.map((image, index) => (
+								<figure
+									className={styles.figure}
+									key={index}
+									onClick={() => openHandler(index)}
+								>
+									<picture className={styles.show}>
+										<source />
+										<img src={image[0]} alt="Graphic Works" />
+									</picture>
+									<picture className={styles.hidden}>
+										<source />
+										<img src={image[1]} alt="Graphic Works" />
+									</picture>
+								</figure>
+							))}
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</>
 	);
 }
 

@@ -21,6 +21,17 @@ li {
 	margin: 0;
 }
 
+dialog {
+	width: auto;
+	max-width: none;
+	height: auto;
+	max-height: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	border: none;
+}
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role='list'],
 ol[role='list'] {
